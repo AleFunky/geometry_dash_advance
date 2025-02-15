@@ -45,13 +45,11 @@ The map has its attributes aswell, those define the properties of the level, suc
 To change the level size, use Tiled's resize map tool to change the size of the level. The engine supports up to 124 vertical blocks. Make sure to fill the new area with metatile #0 (air).
 
 -- EXPORTING --
-Once you have finished the level, export the .tmx file into .json. Once you exported the level, open "export_levels.sh" in a text editor (make sure line breaks are set as CRLF) and 
+Once you have finished the level, export the .tmx file into .json. Once you exported the level, open "export_levels.sh" (or .bat in Windows) in a text editor (Linux, make sure line breaks are set as CRLF) and 
 add the name of the .json file into the arguments. The arguments are separated by spaces after "python3 export_levels.py". 
 
 Make sure you have installed python3 and make in your system. 
-Then run "make levels" to export all levels. If the export was succesful, the last message should say the final size of all levels. If an error popped, you probably have messed up something.
-
-On Windows you instead open the said .py file in IDLE and "Run... Customised" then you enter the said arguments from the sh file. Might require devkitpro??? idk I already had it.
+Then run the export levels script you just edited, to export all levels. If the export was succesful, the last message should say the final size of all levels. If an error popped, you probably have messed up something.
 
 -- BUILDING -- 
 There are two ways. Hard way is to use Linux. Easy way is to use Windows. Either way, you need to install devkitpro.
