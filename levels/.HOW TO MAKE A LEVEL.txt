@@ -46,10 +46,22 @@ To change the level size, use Tiled's resize map tool to change the size of the 
 
 -- EXPORTING --
 Once you have finished the level, export the .tmx file into .json. Once you exported the level, open "export_levels.sh" in a text editor (make sure line breaks are set as CRLF) and 
-add the name of the .json file into the arguments. The arguments are separated by spaces after "python3 export_levels.py". Make sure you have installed python3 and make in your system. 
+add the name of the .json file into the arguments. The arguments are separated by spaces after "python3 export_levels.py". 
+
+Make sure you have installed python3 and make in your system. 
 Then run "make levels" to export all levels. If the export was succesful, the last message should say the final size of all levels. If an error popped, you probably have messed up something.
 
+On Windows you instead open the said .py file in IDLE and "Run... Customised" then you enter the said arguments from the sh file. Might require devkitpro??? idk I already had it.
+
 -- BUILDING -- 
-You will need devkitpro in a Linux environment. You can either use a Linux virtual machine or use Windows's WSL feature. You can find instructions on how to install devkitpro here: https://devkitpro.org/wiki/Getting_Started
-Once you have installed devkitpro, to build the game run "make". If the game compiled, the last line should say "rom build/famidash_adv.gba", if not, an error probably occured.
+There are two ways. Hard way is to use Linux. Easy way is to use Windows. Either way, you need to install devkitpro.
+You can find instructions on how to install devkitpro here: https://devkitpro.org/wiki/Getting_Started
+[note] The official LINUX instruction is incomplete as it does include the part where you add devkitpro to path and to somewhere else (4 commands in command shell one). Also the whole installation is way harder. This is why using Windows is easier.[/note]
+
+Once you have installed devkitpro, to build the game run "make".
+In Windows, you use MSys2 to navigate it to your folder (path must have only eng symbols and "_"). Then run make.
+In Linux, just use the terminal lol. Also navigate it to your folder and run make.
+If the game compiled, the last line should say "rom build/famidash_adv.gba", if not, an error probably occured.
+
+Also you might need to delete the "build" folder every time you build a new version.
 
