@@ -139,6 +139,8 @@ extern struct Player player_2;
 extern struct Player curr_player;
 extern u8 curr_player_id;
 
+extern u8 num_steps;
+
 extern s32 gamemode_upload_buffer[2];
 
 extern EWRAM_DATA u8 coin_buffer[NUM_COINS_PER_LEVEL];

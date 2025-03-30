@@ -753,44 +753,44 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
     // Set related vars and set new player y position, only if this is not a center check
     
     if (side == TOP) {
-        s32 eject_value = eject_top << SUBPIXEL_BITS;
+        s32 eject_value = eject_top;
         s32 max_eject = gamemode_max_eject[curr_player.gamemode];
 
         // Raise eject cap if changed size
         if (curr_player.changed_size_frames) max_eject = 0x10;
 
-        if (eject_value < (max_eject << SUBPIXEL_BITS)) {
+        if (eject_value < max_eject) {
             if (curr_player.gamemode != GAMEMODE_CUBE || curr_player.gravity_dir == GRAVITY_UP) {
                 // We are resting on the ceiling so allow jumping and stuff
                 curr_player.on_floor = TRUE;
                 curr_player.on_floor_step = TRUE;
                 curr_player.snap_cube_rotation = TRUE;
             }
-            curr_player.player_y += eject_value;
+            curr_player.player_y += eject_value << SUBPIXEL_BITS;
             curr_player.player_y_speed = 0;
+            curr_player.trail_on = FALSE;
             
             curr_player.inverse_rotation_flag = FALSE;
-            curr_player.trail_on = FALSE;
-
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
             if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
         }
     } else if (side == BOTTOM) {   
-        s32 eject_value = eject_bottom << SUBPIXEL_BITS;
+        s32 eject_value = eject_bottom;
 
         // Raise eject cap if changed size
         s32 max_eject = gamemode_max_eject[curr_player.gamemode];
 
         if (curr_player.changed_size_frames) max_eject = 0x10;
-        if (eject_value < (max_eject << SUBPIXEL_BITS)) {
+
+        if (eject_value < max_eject) {
             if (curr_player.gamemode != GAMEMODE_CUBE || curr_player.gravity_dir == GRAVITY_DOWN) {
                 // We are resting on the floor so allow jumping and stuff
                 curr_player.on_floor = TRUE;
                 curr_player.on_floor_step = TRUE;
                 curr_player.snap_cube_rotation = TRUE;
             }
-            curr_player.player_y -= eject_value;
+            curr_player.player_y -= eject_value << SUBPIXEL_BITS;
             curr_player.player_y_speed = 0;
             curr_player.trail_on = FALSE;
 
@@ -798,6 +798,7 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
 
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
+            curr_player.player_y |= 0xffff;
             if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
         }
     }
@@ -1672,15 +1673,17 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
         if (!noclip) player_death = TRUE;
     }
 
+    s32 step = get_step(*player, slope);
+
     // If the player is a cube, then ignore ceiling slopes
     if (curr_player.gamemode == GAMEMODE_CUBE) {
-        if (curr_player.gravity_dir == GRAVITY_DOWN && get_step(*player, slope) == -1) {
+        if (curr_player.gravity_dir == GRAVITY_DOWN && step == -1) {
             // Die if the internal hitbox collides with an slope
             if (check_slope_collision(player_internal_hitbox, slope) != NO_SLOPE_COLL_DETECTED) {
                 if (!noclip) player_death = TRUE;
             }
             return TRUE;
-        } else if (curr_player.gravity_dir == GRAVITY_UP && get_step(*player, slope) == 1) {
+        } else if (curr_player.gravity_dir == GRAVITY_UP && step == 1) {
             // Die if the internal hitbox collides with an slope
             if (check_slope_collision(player_internal_hitbox, slope) != NO_SLOPE_COLL_DETECTED) {
                 if (!noclip) player_death = TRUE;
@@ -1704,11 +1707,12 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
     // Eject player
     curr_player.player_y += TO_FIXED(eject);
     curr_player.player_y &= ~0xffff;
+    curr_player.player_y |= (step == 1) ? 0xffff : 0;
     player->cy += eject;
 
     // If ball and 66.5 degree slope, halve speed
     if (curr_player.gamemode == GAMEMODE_BALL) {
-        if (type == DEGREES_63_5) {
+        if (type == DEGREES_63_5 || type == DEGREES_63_5_UD) {
             curr_player.player_y_speed /= 2;
         }
     } else if (curr_player.gamemode == GAMEMODE_WAVE) {
@@ -1752,6 +1756,7 @@ u32 collide_with_map_slopes(u64 x, u32 y, u32 width, u32 height) {
 
     // Make wave hitbox 2 pixels bigger
     if (curr_player.gamemode == GAMEMODE_WAVE) player.radius += 4;
+    else if (curr_player.gamemode == GAMEMODE_SHIP) player.radius -= 1;
 
     // Try to collide with sprite slopes only in the first layer check
     if (collide_with_obj_slopes(&player)) {
@@ -1826,7 +1831,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_45)
+            SLOPE_CHECK(DEGREES_45_UD)
             break;
 
         case COL_SLOPE_45_DOWN_UD:
@@ -1839,7 +1844,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x + 0x10;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_45_DOWN)
+            SLOPE_CHECK(DEGREES_45_UD_DOWN)
             break;
 
         // 22 deg
@@ -1908,7 +1913,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_26_5)
+            SLOPE_CHECK(DEGREES_26_5_UD)
             break;
 
         case COL_SLOPE_22_UP_UD_2:
@@ -1921,7 +1926,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x - 0x10;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_26_5)
+            SLOPE_CHECK(DEGREES_26_5_UD)
             break;
 
         case COL_SLOPE_22_DOWN_UD_1:
@@ -1934,7 +1939,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x + 0x20;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_26_5_DOWN)
+            SLOPE_CHECK(DEGREES_26_5_UD_DOWN)
             break;
 
         
@@ -1948,7 +1953,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x + 0x10;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_26_5_DOWN)
+            SLOPE_CHECK(DEGREES_26_5_UD_DOWN)
             break;
 
         // 66 DEG
@@ -2016,7 +2021,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x;
             slope.p3.y = slope_y - 0x10;
             
-            SLOPE_CHECK(DEGREES_63_5)
+            SLOPE_CHECK(DEGREES_63_5_UD)
             break;
 
         case COL_SLOPE_66_UP_UD_2:
@@ -2029,7 +2034,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_63_5)
+            SLOPE_CHECK(DEGREES_63_5_UD)
             break;
 
         case COL_SLOPE_66_DOWN_UD_1:
@@ -2042,7 +2047,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x + 0x10;
             slope.p3.y = slope_y;
             
-            SLOPE_CHECK(DEGREES_63_5_DOWN)
+            SLOPE_CHECK(DEGREES_63_5_UD_DOWN)
             break;
 
         case COL_SLOPE_66_DOWN_UD_2:
@@ -2055,7 +2060,7 @@ s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *pl
             slope.p3.x = slope_x + 0x10;
             slope.p3.y = slope_y - 0x10;
             
-            SLOPE_CHECK(DEGREES_63_5_DOWN)
+            SLOPE_CHECK(DEGREES_63_5_UD_DOWN)
             break;
 
     }

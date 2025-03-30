@@ -119,6 +119,8 @@ struct Player player_2;
 struct Player curr_player;
 u8 curr_player_id;
 
+u8 num_steps;
+
 // Holds the gamemode to upload on VBLANK
 s32 gamemode_upload_buffer[2];
 
