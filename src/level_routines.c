@@ -606,7 +606,7 @@ void scroll_screen_horizontally() {
 }
 
 const u8 gamemode_screen_y_offset[] = {
-    /* Cube */ 0xa0, // Only used on dual gamemode
+    /* Cube */ 0xa8, // Only used on dual gamemode
     /* Ship */ 0xa0,
     /* Ball */ 0x90,
     /* Ufo */  0xa0,

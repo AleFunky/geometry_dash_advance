@@ -19,6 +19,12 @@ In the case you want to put a block offgrid, you can place blocks on the tileset
 
 In the case of color triggers (sprite #3), the attribute set is different:
 - Channel: the color channel to be modified. One of the following: BG, GROUND, OBJ, LINE, 1, 2, 3, 4.
+  - The color in tiled specified the color Channel
+    - Pink is col 1
+    - Yellow is col 2
+    - Light blue is col 3 
+    - Green is col 4
+    - Dark Blue is LBG 
 - Color: the color in RGB888. This is converted into BGR555 by the export script.
 - Color blending: blends the color with the BG color using additive blending. This is the "blending" checkbox in GD's color triggers (added in 1.7).
 - Copy color: this enables copying a color from another channel. 

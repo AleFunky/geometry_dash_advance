@@ -56,4 +56,5 @@
     },
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.errorSquiggles": "disabled",
+    "makefile.configureOnOpen": false,
 }

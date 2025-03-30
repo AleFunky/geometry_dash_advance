@@ -150,8 +150,16 @@
 #include "electrodynamix/SP.h"
 #include "electrodynamix/properties.h"
 
+// hexagonforce
+#define hexagonforce_ID 15
+
+#include "hexagonforce/l1.h"
+#include "hexagonforce/l2.h"
+#include "hexagonforce/SP.h"
+#include "hexagonforce/properties.h"
+
 // test
-#define test_ID 15
+#define test_ID 16
 
 #include "test/l1.h"
 #include "test/l2.h"
@@ -159,7 +167,7 @@
 #include "test/properties.h"
 
 // test2
-#define test2_ID 16
+#define test2_ID 17
 
 #include "test2/l1.h"
 #include "test2/l2.h"
@@ -167,13 +175,13 @@
 #include "test2/properties.h"
 
 // leveleasy
-#define leveleasy_ID 17
+#define leveleasy_ID 18
 
 #include "leveleasy/l1.h"
 #include "leveleasy/l2.h"
 #include "leveleasy/SP.h"
 #include "leveleasy/properties.h"
 
-#define LEVEL_COUNT 18
+#define LEVEL_COUNT 19
 extern ROM_DATA const u16 *level_defines[][4];
 extern ROM_DATA const u8 *level_names[];
