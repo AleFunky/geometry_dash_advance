@@ -12,7 +12,7 @@
 #include <ctype.h>
 #include "color.h"
 
-const char *sound_test_songs_names[] = {
+ROM_DATA char *sound_test_songs_names[] = {
     "STEREO MADNESS",
     "BACK ON TRACK",
     "POLARGEIST",
@@ -33,7 +33,7 @@ const char *sound_test_songs_names[] = {
     "HEXAGON FORCE"
 };
 
-const char *sound_test_song_files[] = {
+ROM_DATA char *sound_test_song_files[] = {
     "STEREOMA.XM",
     "BACKOT.XM",
     "POLAR.XM",
@@ -54,7 +54,7 @@ const char *sound_test_song_files[] = {
     "HEXAGON.XM"
 };
 
-const u16 sound_test_song_ids[] = {
+ROM_DATA u16 sound_test_song_ids[] = {
     MOD_STEREOMA,
     MOD_BACKOT,
     MOD_POLAR,

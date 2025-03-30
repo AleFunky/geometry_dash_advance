@@ -6,7 +6,7 @@ const unsigned int hexagonforce_properties[] = {
  /*gamemode*/      0,
  /*speed*/         1,
  /*level height*/  35,
- /*level width*/   1038,
+ /*level width*/   1050,
  /*song*/          MOD_HEXAGON,
  /*name length*/   12,
  /*difficulty*/    4,
