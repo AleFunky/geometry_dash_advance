@@ -186,10 +186,15 @@ void cube_gamemode() {
         curr_player.inverse_rotation_flag = FALSE;
     }
 
+    // If player just launched from an slope, set gravity to 0 depending on slope, this makes the cube start falling later
     if (!curr_player.on_floor && curr_player.slope_counter) {
-        const FIXED_16 x_speed_doubled = curr_player.player_x_speed;
-        if (curr_player.player_y_speed >= -x_speed_doubled && curr_player.player_y_speed < x_speed_doubled) {
-            curr_player.gravity = 0;
+        switch (curr_player.slope_type) {
+            case DEGREES_26_5:
+            case DEGREES_26_5_UD:
+            case DEGREES_45:
+            case DEGREES_45_UD:
+                curr_player.gravity = 0;
+                break;
         }
     }
 

@@ -497,141 +497,147 @@ test_spr_data:
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 82
-   .hword 0x140 @ delta x
+   .hword 0x100 @ delta x
+   .hword 0x160 @ y
+   .hword 0x72 @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 83
+   .hword 0x40 @ delta x
    .hword 0x1b0 @ y
    .hword 0x13 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 83
+@ Object 84
    .hword 0x30 @ delta x
    .hword 0x1b0 @ y
    .hword 0x12 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 84
+@ Object 85
    .hword 0x90 @ delta x
    .hword 0x170 @ y
    .hword 0x2d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 85
+@ Object 86
    .hword 0x1a0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x1a @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 8192 @ rotation
-@ Object 86
+@ Object 87
    .hword 0x30 @ delta x
    .hword 0x1b0 @ y
    .hword 0xa @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 87
+@ Object 88
    .hword 0x50 @ delta x
    .hword 0x1a0 @ y
    .hword 0x9 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 88
+@ Object 89
    .hword 0xf0 @ delta x
    .hword 0x1b0 @ y
    .hword 0x13 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 89
+@ Object 90
    .hword 0x30 @ delta x
    .hword 0x1b0 @ y
    .hword 0x12 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 90
+@ Object 91
    .hword 0xa0 @ delta x
    .hword 0x1b0 @ y
    .hword 0xa @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 91
+@ Object 92
    .hword 0x50 @ delta x
    .hword 0x1a0 @ y
    .hword 0x10 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 92
+@ Object 93
    .hword 0x110 @ delta x
    .hword 0x190 @ y
    .hword 0xe @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 49152 @ rotation
-@ Object 93
+@ Object 94
    .hword 0x50 @ delta x
    .hword 0x190 @ y
    .hword 0xe @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 16384 @ rotation
-@ Object 94
+@ Object 95
    .hword 0x40 @ delta x
    .hword 0x1a0 @ y
    .hword 0x2 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 95
+@ Object 96
    .hword 0x50 @ delta x
    .hword 0x1a0 @ y
    .hword 0x34 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 96
+@ Object 97
    .hword 0x80 @ delta x
    .hword 0x1a0 @ y
    .hword 0x36 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 97
+@ Object 98
    .hword 0xc0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x37 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 98
+@ Object 99
    .hword 0x90 @ delta x
    .hword 0x1a0 @ y
    .hword 0x38 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 99
+@ Object 100
    .hword 0x90 @ delta x
    .hword 0x1a0 @ y
    .hword 0x35 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 100
+@ Object 101
    .hword 0x70 @ delta x
    .hword 0x1a0 @ y
    .hword 0x39 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 101
+@ Object 102
    .hword 0xa0 @ delta x
    .hword 0x1b0 @ y
    .hword 0xa @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 102
+@ Object 103
    .hword 0x40 @ delta x
    .hword 0x1a0 @ y
    .hword 0x10 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 103
+@ Object 104
    .hword 0xa0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x2 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 104
+@ Object 105
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x36 @ type

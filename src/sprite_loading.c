@@ -395,12 +395,14 @@ ARM_CODE void check_obj_collision(u32 index) {
     s16 center_x = obj_hitbox[curr_object.type][4];
     s16 center_y = obj_hitbox[curr_object.type][5];
 
-    if (curr_object.attrib1 & H_FLIP_FLAG) {
-        offset_x = center_x - (offset_x - center_x + obj_width); 
-    }
+    if (!(curr_object.attrib1 & ENABLE_ROTATION_FLAG)) {
+        if (curr_object.attrib1 & H_FLIP_FLAG) {
+            offset_x = center_x - (offset_x - center_x + obj_width); 
+        }
 
-    if (curr_object.attrib1 & V_FLIP_FLAG) {
-        offset_y = center_y - (offset_y - center_y + obj_height); 
+        if (curr_object.attrib1 & V_FLIP_FLAG) {
+            offset_y = center_y - (offset_y - center_y + obj_height); 
+        }
     }
 
     u32 obj_x = curr_object.x + offset_x;
