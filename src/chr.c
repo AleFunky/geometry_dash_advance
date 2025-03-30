@@ -292,7 +292,7 @@ void tile_v_flip(u8 *pointer) {
     }
 }
 
-void deoccupy_chr_slots() {
+ARM_CODE void deoccupy_chr_slots() {
     // If an object has been loaded in this frame, return to avoid desyncs
     if (loaded_object_buffer_offset > 0) return;
 
@@ -333,7 +333,7 @@ void deoccupy_chr_slots() {
     }
 }
 
-void load_chr_in_buffer() {
+ARM_CODE void load_chr_in_buffer() {
     // Iterate through the buffer
     for (s32 i = loaded_object_buffer_offset; i > 0; i--) {
         s16 slot_id = loaded_object_buffer[i - 1];
@@ -386,7 +386,7 @@ void load_chr_in_buffer() {
     loaded_object_buffer_offset = 0;
 }
 
-void unload_chr_in_buffer() {
+ARM_CODE void unload_chr_in_buffer() {
     // Iterate through the buffer
     for (s32 i = unloaded_object_buffer_offset; i > 0; i--) {
         s16 slot_id = unloaded_object_buffer[i - 1];

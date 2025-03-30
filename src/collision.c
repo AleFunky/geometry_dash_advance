@@ -864,14 +864,14 @@ ARM_CODE void do_collision_with_objects() {
     for (s32 slot = 0; slot < MAX_OBJECTS; slot++) {
         // Check collision only if the slot is occupied
         struct ObjectSlot curr_object = object_buffer[slot];
-        // If is occupied and it hasn't been activated yet, continue
-        if (curr_object.occupied && curr_object.activated[curr_player_id] == FALSE) {
-            // If it is behind the collision distance, skip
-            if (check_collision_distance(curr_object)) {
-                // If it has collision, continue. Check if this object is a touch col trigger, if so, check collision
-                if (curr_object.has_collision || (curr_object.object.type == COL_TRIGGER && curr_object.object.rotation & COL_TRIGGER_ROT_VAR_TOUCH_MASK)) {
+        // If it has collision, continue. Check if this object is a touch col trigger, if so, check collision
+        if (curr_object.has_collision || (curr_object.object.type == COL_TRIGGER && curr_object.object.rotation & COL_TRIGGER_ROT_VAR_TOUCH_MASK)) {   
+            // If is occupied and it hasn't been activated yet, continue
+            if (curr_object.occupied && curr_object.activated[curr_player_id] == FALSE) {
+                // If it is behind the collision distance, skip
+                if (check_collision_distance(curr_object)) {
                     check_obj_collision(slot); 
-                } 
+                }
             }
         }
     }
@@ -1428,7 +1428,10 @@ struct triangle_t {
     struct point_t p1;
     struct point_t p2;
     struct point_t p3;
+    u16 type;
 };
+
+const s32 slope_step[];
 
 void getLine(s32 x1, s32 y1, s32 x2, s32 y2, s32 *a, s32 *b, s32 *c){
        // (x- p1X) / (p2X - p1X) = (y - p1Y) / (p2Y - p1Y) 
@@ -1438,36 +1441,34 @@ void getLine(s32 x1, s32 y1, s32 x2, s32 y2, s32 *a, s32 *b, s32 *c){
 }
 
 s32 find_squared_distance_to_line(s32 point_x, s32 point_y, s32 x1, s32 y1, s32 x2, s32 y2) {
-    // Compute the squared length of the segment
-    s32 dx = x2 - x1;
-    s32 dy = y2 - y1;
-    s32 segment_length_sq = dx * dx + dy * dy;
+    const s32 dx = x2 - x1;
+    const s32 dy = y2 - y1;
+    const s32 segment_length_sq = dx * dx + dy * dy;
 
-    // If the segment is a single point, return squared distance to that point
+    // Early exit if segment is a point
     if (segment_length_sq == 0) {
-        s32 dx_p = point_x - x1;
-        s32 dy_p = point_y - y1;
+        const s32 dx_p = point_x - x1;
+        const s32 dy_p = point_y - y1;
         return dx_p * dx_p + dy_p * dy_p;
     }
 
-    // Compute the projection parameter t
-    s32 t = (point_x - x1) * dx + (point_y - y1) * dy;
+    const s32 px = point_x - x1;
+    const s32 py = point_y - y1;
+    const s32 t = px * dx + py * dy;  // Projection parameter (scaled by segment_length_sq)
 
-    // Clamp t to [0, segment_length_sq] to ensure it lies on the segment
-    if (t < 0) {
-        t = 0;
-    } else if (t > segment_length_sq) {
-        t = segment_length_sq;
+    // Clamp t to [0, segment_length_sq]
+    if (t <= 0) {
+        return px * px + py * py;  // Closest to (x1, y1)
+    } else if (t >= segment_length_sq) {
+        const s32 dx_p = point_x - x2;
+        const s32 dy_p = point_y - y2;
+        return dx_p * dx_p + dy_p * dy_p;  // Closest to (x2, y2)
+    } else {
+        // Compute squared distance using algebraic optimization
+        const s32 ap_sq = px * px + py * py;
+        const s32 numerator = ap_sq * segment_length_sq - t * t;
+        return numerator / segment_length_sq;
     }
-
-    // Find the closest point Q on the segment
-    s32 Qx = x1 + (t * dx) / segment_length_sq;
-    s32 Qy = y1 + (t * dy) / segment_length_sq;
-
-    // Compute the squared distance between the point and Q
-    s32 dx_q = point_x - Qx;
-    s32 dy_q = point_y - Qy;
-    return dx_q * dx_q + dy_q * dy_q;
 }
 
 void get_hipotenuse(struct triangle_t triangle, s32 *x1, s32 *y1, s32 *x2, s32 *y2) {
@@ -1549,20 +1550,7 @@ s32 check_distance_circle_vertical_edge(struct circle_t circle, struct triangle_
 }
 
 s32 get_step_call(struct triangle_t triangle) {
-    s32 edge_x1, edge_x2, edge_y;
-    s32 hipo_x1, hipo_y1, hipo_x2, hipo_y2;
-
-    get_hipotenuse(triangle, &hipo_x1, &hipo_y1, &hipo_x2, &hipo_y2);
-    get_horizontal_edge(triangle, &edge_x1, &edge_x2, &edge_y);
-
-    s32 half_height = (hipo_y1 + hipo_y2) / 2;
-
-    // Return negative or positive depending on relative position between center of triangle and horizontally-aligned edge
-    if (half_height > edge_y) {
-        return -1;
-    } else {
-        return 1;
-    }
+    return slope_step[triangle.type];
 }
 
 s32 get_step(struct circle_t circle, struct triangle_t triangle) {
@@ -1645,6 +1633,31 @@ const FIXED_16 slope_speed_multiplier[] = {
     FLOAT_TO_FIXED(2.0),  // COL_SLOPE_66_UP_UD_2
     FLOAT_TO_FIXED(-2.0), // COL_SLOPE_66_DOWN_UD_1
     FLOAT_TO_FIXED(-2.0), // COL_SLOPE_66_DOWN_UD_2
+};
+
+const s32 slope_step[] = {
+    1,  // COL_SLOPE_45_UP
+    1,  // COL_SLOPE_45_DOWN
+    -1, // COL_SLOPE_45_UP_UD
+    -1, // COL_SLOPE_45_DOWN_UD
+
+     1, // COL_SLOPE_22_UP_1
+    1,  // COL_SLOPE_22_UP_2
+    1,  // COL_SLOPE_22_DOWN_1
+    1,  // COL_SLOPE_22_DOWN_2
+    -1, // COL_SLOPE_22_UP_UD_1
+    -1, // COL_SLOPE_22_UP_UD_2
+    -1, // COL_SLOPE_22_DOWN_UD_1
+    -1, // COL_SLOPE_22_DOWN_UD_2
+
+    1,  // COL_SLOPE_66_UP_1
+    1,  // COL_SLOPE_66_UP_2
+    1,  // COL_SLOPE_66_DOWN_1
+    1,  // COL_SLOPE_66_DOWN_2
+    -1, // COL_SLOPE_66_UP_UD_1
+    -1, // COL_SLOPE_66_UP_UD_2
+    -1, // COL_SLOPE_66_DOWN_UD_1
+    -1, // COL_SLOPE_66_DOWN_UD_2
 };
 
 s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct circle_t *player, struct triangle_t slope) {
@@ -1770,6 +1783,7 @@ u32 collide_with_map_slopes(u64 x, u32 y, u32 width, u32 height) {
 
 s32 slope_type_check(u32 slope_x, u32 slope_y, u32 col_type, struct circle_t *player) {
     struct triangle_t slope;
+    slope.type = col_type - COL_SLOPE_START;
 
     s32 eject;
     switch (col_type) {
