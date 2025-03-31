@@ -944,87 +944,125 @@ ARM_CODE u32 is_colliding_circle_square(u32 x1, u32 y1, u32 w1, u32 h1, u32 cx2,
 
 // Rotated hitbox stuff, all in IWRAM for extra speed
 
-#define SCALE_FACTOR 8
-#define FIXED_ONE (1 << SCALE_FACTOR) // 1.0 in fixed-point
+// Q12 fixed-point constants and helpers
+#define Q12_SHIFT 12
+#define Q12_ONE (1 << Q12_SHIFT)
+#define Q12_HALF (Q12_ONE >> 1)
+#define Q12_MULT(a, b) (((a) * (b)) >> Q12_SHIFT)
+#define Q12_DIV(a, b) (((a) << Q12_SHIFT) / (b))
 
-// Rotate a point (px, py) around a center (cx, cy) using fixed-point math
-ARM_CODE INLINE void rotate_point_fixed(s32 cx, s32 cy, s32 px, s32 py, s16 sin_theta, s16 cos_theta, s32* rx, s32* ry) {
-    s32 dx = px - cx;
-    s32 dy = py - cy;
-
-    *rx = cx + (s32)(((s64)dx * cos_theta - (s64)dy * sin_theta) >> SCALE_FACTOR);
-    *ry = cy + (s32)(((s64)dx * sin_theta + (s64)dy * cos_theta) >> SCALE_FACTOR);
-}
-
-// Project a rectangle's corners onto an axis and calculate min/max projections
-ARM_CODE void project_onto_axis_fixed(s32* corners, s32 ax, s32 ay, s32* min, s32* max) {
-    *min = *max = (s32)(((s64)corners[0] * ax + (s64)corners[1] * ay) >> SCALE_FACTOR);
-
-    for (s32 i = 1; i < 4; i++) {
-        s32 projection = (s32)(((s64)corners[i << 1] * ax + (s64)corners[(i << 1) + 1] * ay) >> SCALE_FACTOR);
-        if (projection < *min) *min = projection;
-        if (projection > *max) *max = projection;
+// Helper function to get minimum of an array
+s32 get_min(s32* arr, s32 count) {
+    s32 min = arr[0];
+    for(s32 i = 1; i < count; i++) {
+        if(arr[i] < min) min = arr[i];
     }
+    return min;
 }
 
-// Check if projections overlap
-ARM_CODE INLINE s32 overlap_on_axis_fixed(s32 min1, s32 max1, s32 min2, s32 max2) {
-    return !(max1 < min2 || max2 < min1);
+// Helper function to get maximum of an array
+s32 get_max(s32* arr, s32 count) {
+    s32 max = arr[0];
+    for(s32 i = 1; i < count; i++) {
+        if(arr[i] > max) max = arr[i];
+    }
+    return max;
 }
 
-// Same function but with some improvements
+// Helper function to project a point onto an axis
+s32 project_point(s32 point_x, s32 point_y, s32 axis_x, s32 axis_y) {
+    return Q12_MULT(point_x, axis_x) + Q12_MULT(point_y, axis_y);
+}
+
 ARM_CODE s32 is_colliding_rotated_fixed(
-    s32 x1, s32 y1, s32 w1, s32 h1, 
-    s32 x2, s32 y2, s32 w2, s32 h2, 
-    s32 origin_x, s32 origin_y, s32 cx2offset, s32 cy2offset, u16 angle) {
-    // First do a simple AABB check to potentially early-out
-    if (x1 > x2 + w2 || x1 + w1 < x2 || y1 > y2 + h2 || y1 + h1 < y2) {
-        return FALSE;
-    }
+    s32 x1, s32 y1, s32 w1, s32 h1,                       // First rect (axis-aligned)
+    s32 rot_center_x, s32 rot_center_y, s32 w2, s32 h2,   // Rotation center for rect2
+    u16 angle)                                             // Rotation angle (0-FFFF)
+{
+    // Calculate fixed-point sine and cosine values
+    s32 sin_angle = lu_sin(angle);
+    s32 cos_angle = lu_cos(angle);
 
-    // Center of second rectangle
-    s32 cx2 = origin_x + cx2offset;
-    s32 cy2 = origin_y + cy2offset;
+    // Calculate half dimensions
+    s32 half_w2 = w2 >> 1;
+    s32 half_h2 = h2 >> 1;
 
-    // Get sine and cosine (lu_sin/lu_cos return .12f values)
-    s16 sin_theta = lu_sin(angle) / 16;  // Now .8f
-    s16 cos_theta = lu_cos(angle) / 16;  // Now .8f
-
-    // Calculate the four corners of the rotated rectangle
-    s32 corners[8];
-    rotate_point_fixed(cx2, cy2, x2, y2, sin_theta, cos_theta, &corners[0], &corners[1]);
-    rotate_point_fixed(cx2, cy2, x2 + w2, y2, sin_theta, cos_theta, &corners[2], &corners[3]);
-    rotate_point_fixed(cx2, cy2, x2 + w2, y2 + h2, sin_theta, cos_theta, &corners[4], &corners[5]);
-    rotate_point_fixed(cx2, cy2, x2, y2 + h2, sin_theta, cos_theta, &corners[6], &corners[7]);
-
-    // Define axes to test (adding some protection against degenerate cases)
-    s32 axes[4][2] = {
-        {FIXED_ONE, 0}, // Axis 1 of rect1
-        {0, FIXED_ONE}, // Axis 2 of rect1
-        {corners[2] - corners[0], corners[3] - corners[1]}, // Edge1 of rect2
-        {corners[6] - corners[0], corners[7] - corners[1]}  // Edge2 of rect2
+    // Define corners of first (axis-aligned) rectangle
+    s32 rect1_corners[4][2] = {
+        {x1,        y1       }, // Top-left
+        {x1 + w1,   y1       }, // Top-right
+        {x1 + w1,   y1 + h1  }, // Bottom-right
+        {x1,        y1 + h1  }  // Bottom-left
     };
 
-    // Project both rectangles onto each axis
-    for (s32 i = 0; i < 4; i++) {
-        s32 ax = axes[i][0];
-        s32 ay = axes[i][1];
+    // Define corners of second (rotated) rectangle relative to its rotation center
+    s32 rect2_corners[4][2];
+    s32 base_corners[4][2] = {
+        {-half_w2, -half_h2}, // Top-left
+        { half_w2, -half_h2}, // Top-right
+        { half_w2,  half_h2}, // Bottom-right
+        {-half_w2,  half_h2}  // Bottom-left
+    };
 
-        // Skip zero-length axes (degenerate case)
-        if (ax == 0 && ay == 0) continue;
+    // Rotate and translate corners of second rectangle
+    for(s32 i = 0; i < 4; i++) {
+        s32 x = base_corners[i][0];
+        s32 y = base_corners[i][1];
+        
+        // Rotate point
+        rect2_corners[i][0] = rot_center_x + 
+            (Q12_MULT(x, cos_angle) - Q12_MULT(y, sin_angle));
+        rect2_corners[i][1] = rot_center_y + 
+            (Q12_MULT(x, sin_angle) + Q12_MULT(y, cos_angle));
+    }
 
-        s32 min1, max1, min2, max2;
-        s32 rect1_corners[8] = {x1, y1, x1+w1, y1, x1+w1, y1+h1, x1, y1+h1};
+    // Define the axes we need to check
+    // For rect1, they're just vertical and horizontal
+    s32 axes[4][2] = {
+        {Q12_ONE, 0},      // Horizontal axis for rect1
+        {0, Q12_ONE},      // Vertical axis for rect1
+        {0, 0},            // Will store rotated horizontal axis for rect2
+        {0, 0}             // Will store rotated vertical axis for rect2
+    };
 
-        project_onto_axis_fixed(rect1_corners, ax, ay, &min1, &max1);
-        project_onto_axis_fixed(corners, ax, ay, &min2, &max2);
+    // Calculate rotated axes for rect2
+    axes[2][0] = cos_angle;
+    axes[2][1] = sin_angle;
+    axes[3][0] = -sin_angle;
+    axes[3][1] = cos_angle;
 
-        if (!overlap_on_axis_fixed(min1, max1, min2, max2)) {
-            return FALSE;
+    // Check projection onto each axis
+    for(s32 i = 0; i < 4; i++) {
+        s32 axis_x = axes[i][0];
+        s32 axis_y = axes[i][1];
+
+        // Project corners of rect1
+        s32 proj1[4];
+        for(s32 j = 0; j < 4; j++) {
+            proj1[j] = project_point(rect1_corners[j][0], rect1_corners[j][1],
+                                   axis_x, axis_y);
+        }
+
+        // Project corners of rect2
+        s32 proj2[4];
+        for(s32 j = 0; j < 4; j++) {
+            proj2[j] = project_point(rect2_corners[j][0], rect2_corners[j][1],
+                                   axis_x, axis_y);
+        }
+
+        // Find min and max projections
+        s32 min1 = get_min(proj1, 4);
+        s32 max1 = get_max(proj1, 4);
+        s32 min2 = get_min(proj2, 4);
+        s32 max2 = get_max(proj2, 4);
+
+        // Check for gap
+        if(max1 < min2 || max2 < min1) {
+            return 0; // Gap found, no collision
         }
     }
 
-    return TRUE;
+    return 1; // No gaps found, collision exists
 }
 
 void col_spike_top_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 spk_y) {

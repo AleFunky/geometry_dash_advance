@@ -2478,7 +2478,7 @@ electromanadventures_spr_data:
    .hword 333 @ metatile ID appareance
    .hword 0x0 @ z index 0
 @ Object 400
-   .hword 0x1f @ delta x
+   .hword 0x20 @ delta x
    .hword 0x162 @ y
    .hword 0x11 @ type
    .hword 0x20 @ bg layer 4 non rotated   
@@ -2523,13 +2523,13 @@ electromanadventures_spr_data:
    .hword 0x21 @ bg layer 4 non rotated  flipped vertically 
    .hword 0x0 @ z index 0
 @ Object 407
-   .hword 0x3 @ delta x
+   .hword 0x2 @ delta x
    .hword 0x1b4 @ y
    .hword 0x4b @ type
    .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 408
-   .hword 0xb @ delta x
+   .hword 0xc @ delta x
    .hword 0x162 @ y
    .hword 0xa @ type
    .hword 0x20 @ bg layer 4 non rotated   
@@ -2555,7 +2555,7 @@ electromanadventures_spr_data:
    .hword 0x11 @ bg layer 2 non rotated  flipped vertically 
    .hword 0x0 @ z index 0
 @ Object 412
-   .hword 0x1e @ delta x
+   .hword 0x1d @ delta x
    .hword 0x13a @ y
    .hword 0x11 @ type
    .hword 0x20 @ bg layer 4 non rotated   

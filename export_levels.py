@@ -197,6 +197,8 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                                     enable_rotation = bool(prop['value'])
                                 elif prop['name'] == 'rotation angle':
                                     rotation = int(prop['value'])
+                                    rotation = rotation % 360
+                                    if rotation < 0: rotation = 360 - rotation
                                 elif prop['name'] == 'metatile ID appearance':
                                     if gid == 43 or gid == 44:
                                         graphics = int(prop['value'])
