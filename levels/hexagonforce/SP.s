@@ -361,7 +361,7 @@ hexagonforce_spr_data:
    .hword 0x3d @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -16384 @ rotation
+   .hword 49152 @ rotation
 @ Object 57
    .hword 0x10 @ delta x
    .hword 0x230 @ y
@@ -1322,7 +1322,7 @@ hexagonforce_spr_data:
    .hword 0xe @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -9102 @ rotation
+   .hword 56433 @ rotation
 @ Object 203
    .hword 0x0 @ delta x
    .hword 0x180 @ y
@@ -1422,7 +1422,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -8192 @ rotation
+   .hword 57344 @ rotation
 @ Object 218
    .hword 0x0 @ delta x
    .hword 0x178 @ y
@@ -1436,7 +1436,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -8192 @ rotation
+   .hword 57344 @ rotation
 @ Object 220
    .hword 0x0 @ delta x
    .hword 0x188 @ y
@@ -1457,7 +1457,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -40960 @ rotation
+   .hword 24576 @ rotation
 @ Object 223
    .hword 0x10 @ delta x
    .hword 0x158 @ y
@@ -1471,14 +1471,14 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -40960 @ rotation
+   .hword 24576 @ rotation
 @ Object 225
    .hword 0x7c @ delta x
    .hword 0x158 @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -8192 @ rotation
+   .hword 57344 @ rotation
 @ Object 226
    .hword 0x0 @ delta x
    .hword 0x178 @ y
@@ -1492,7 +1492,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -8192 @ rotation
+   .hword 57344 @ rotation
 @ Object 228
    .hword 0x0 @ delta x
    .hword 0x188 @ y
@@ -1513,7 +1513,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -40960 @ rotation
+   .hword 24576 @ rotation
 @ Object 231
    .hword 0x10 @ delta x
    .hword 0x158 @ y
@@ -1527,7 +1527,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -40960 @ rotation
+   .hword 24576 @ rotation
 @ Object 233
    .hword 0xbe @ delta x
    .hword 0x100 @ y
@@ -1542,7 +1542,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 235
    .hword 0x0 @ delta x
    .hword 0x174 @ y
@@ -1556,7 +1556,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 237
    .hword 0x0 @ delta x
    .hword 0x17b @ y
@@ -1577,7 +1577,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 240
    .hword 0x10 @ delta x
    .hword 0x15c @ y
@@ -1591,7 +1591,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 242
    .hword 0x1f0 @ delta x
    .hword 0xb0 @ y
@@ -2458,7 +2458,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 370
    .hword 0x0 @ delta x
    .hword 0x140 @ y
@@ -2471,21 +2471,21 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 372
    .hword 0x0 @ delta x
    .hword 0x16c @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 373
    .hword 0x10 @ delta x
    .hword 0x165 @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 374
    .hword 0x10 @ delta x
    .hword 0x165 @ y
@@ -2520,28 +2520,28 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 379
    .hword 0x10 @ delta x
    .hword 0x114 @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 380
    .hword 0x30 @ delta x
    .hword 0x14c @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 381
    .hword 0x10 @ delta x
    .hword 0x145 @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 382
    .hword 0x10 @ delta x
    .hword 0x145 @ y
@@ -2576,28 +2576,28 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 387
    .hword 0x10 @ delta x
    .hword 0x144 @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 388
    .hword 0x20 @ delta x
    .hword 0x16c @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 389
    .hword 0x10 @ delta x
    .hword 0x165 @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 390
    .hword 0x10 @ delta x
    .hword 0x165 @ y
@@ -2633,7 +2633,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 395
    .hword 0x10 @ delta x
    .hword 0x12b @ y
@@ -2647,14 +2647,14 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 397
    .hword 0x10 @ delta x
    .hword 0x12b @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 398
    .hword 0x0 @ delta x
    .hword 0x155 @ y
@@ -2668,7 +2668,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 400
    .hword 0x0 @ delta x
    .hword 0x15c @ y
@@ -2689,7 +2689,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 403
    .hword 0x10 @ delta x
    .hword 0x11b @ y
@@ -2703,14 +2703,14 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 405
    .hword 0x10 @ delta x
    .hword 0x11b @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 406
    .hword 0x0 @ delta x
    .hword 0x145 @ y
@@ -2724,7 +2724,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 408
    .hword 0x0 @ delta x
    .hword 0x14c @ y
@@ -2745,7 +2745,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 411
    .hword 0x10 @ delta x
    .hword 0x13b @ y
@@ -2759,14 +2759,14 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 413
    .hword 0x10 @ delta x
    .hword 0x13b @ y
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 414
    .hword 0x0 @ delta x
    .hword 0x165 @ y
@@ -2780,7 +2780,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -37501 @ rotation
+   .hword 28034 @ rotation
 @ Object 416
    .hword 0x0 @ delta x
    .hword 0x16c @ y
@@ -2801,7 +2801,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 419
    .hword 0x10 @ delta x
    .hword 0x12b @ y
@@ -2815,7 +2815,7 @@ hexagonforce_spr_data:
    .hword 0x26 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
-   .hword -4733 @ rotation
+   .hword 60802 @ rotation
 @ Object 421
    .hword 0x20 @ delta x
    .hword 0xb0 @ y
