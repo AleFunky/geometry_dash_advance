@@ -3,6 +3,11 @@
 const unsigned int theoryofeverything_properties[] = {
  /*BG color*/      0x1005,
  /*GROUND color*/  0x3012,
+ /*COL1 color*/    0x7fff,
+ /*COL2 color*/    0x7fff,
+ /*COL3 color*/    0x7fff,
+ /*COL4 color*/    0x7fff,
+ /*OBJ color*/     0x7fff,
  /*gamemode*/      0,
  /*speed*/         1,
  /*level height*/  43,

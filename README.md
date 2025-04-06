@@ -1,4 +1,4 @@
-
+![image](https://github.com/AleFunky/geometry_dash_advance/blob/main/images/GDA.jpg)
 
 ## About
 Geometry Dash Advance is a demake of Geometry Dash for the GBA.

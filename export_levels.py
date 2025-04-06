@@ -373,17 +373,22 @@ def export_includes_h(levels):
         file.write("// Properties indexes\n")
         file.write("#define BG_COLOR_INDEX 0\n")
         file.write("#define GROUND_COLOR_INDEX 1\n")
-        file.write("#define GAMEMODE_INDEX 2\n")
-        file.write("#define SPEED_INDEX 3\n")
-        file.write("#define LEVEL_HEIGHT_INDEX 4\n")
-        file.write("#define LEVEL_WIDTH_INDEX 5\n")
-        file.write("#define LEVEL_SONG_INDEX 6\n\n")
-        file.write("#define LEVEL_NAME_LENGTH 7\n\n")
-        file.write("#define LEVEL_DIFFICULTY 8\n\n")
-        file.write("#define LEVEL_STARS_NUM 9\n\n")
-        file.write("#define LEVEL_COINS_NUM 10\n\n")
-        file.write("#define LEVEL_BACKGROUND_TYPE 11\n\n")
-        file.write("#define LEVEL_GROUND_TYPE 12\n")
+        file.write("#define COL1_COLOR_INDEX 2\n")
+        file.write("#define COL2_COLOR_INDEX 3\n")
+        file.write("#define COL3_COLOR_INDEX 4\n")
+        file.write("#define COL4_COLOR_INDEX 5\n")
+        file.write("#define OBJ_COLOR_INDEX 6\n")
+        file.write("#define GAMEMODE_INDEX 7\n")
+        file.write("#define SPEED_INDEX 8\n")
+        file.write("#define LEVEL_HEIGHT_INDEX 9\n")
+        file.write("#define LEVEL_WIDTH_INDEX 10\n")
+        file.write("#define LEVEL_SONG_INDEX 11\n\n")
+        file.write("#define LEVEL_NAME_LENGTH 12\n\n")
+        file.write("#define LEVEL_DIFFICULTY 13\n\n")
+        file.write("#define LEVEL_STARS_NUM 14\n\n")
+        file.write("#define LEVEL_COINS_NUM 15\n\n")
+        file.write("#define LEVEL_BACKGROUND_TYPE 16\n\n")
+        file.write("#define LEVEL_GROUND_TYPE 17\n")
         for level_name in levels:
             file.write(f"// {level_name}\n")
             file.write(f"#define {level_name}_ID {level_counter}\n\n")
@@ -424,6 +429,11 @@ def export_properties_to_h(level_name, output_path_h, output_path_c, json_file_p
         properties = json_data["properties"]
         bg_color = ""
         g_color = ""
+        col1 = ""
+        col2 = ""
+        col3 = ""
+        col4 = ""
+        obj_color = ""
         gamemode = 0
         menu_name = level_name
         speed = 1
@@ -437,6 +447,16 @@ def export_properties_to_h(level_name, output_path_h, output_path_c, json_file_p
                 bg_color = int(prop['value'][3:], 16)
             elif prop['name'] == 'GROUND':
                 g_color = int(prop['value'][3:], 16)
+            elif prop['name'] == 'COL1':
+                col1 = int(prop['value'][3:], 16)
+            elif prop['name'] == 'COL2':
+                col2 = int(prop['value'][3:], 16)
+            elif prop['name'] == 'COL3':
+                col3 = int(prop['value'][3:], 16)
+            elif prop['name'] == 'COL4':
+                col4 = int(prop['value'][3:], 16)
+            elif prop['name'] == 'OBJ':
+                obj_color = int(prop['value'][3:], 16)
             elif prop['name'] == 'Gamemode':
                 gamemode = int(prop['value'])
             elif prop['name'] == 'Speed':
@@ -471,6 +491,36 @@ def export_properties_to_h(level_name, output_path_h, output_path_c, json_file_p
             g_color_bgr555 = rgb888_to_rgb555_24bit(g_color)
         else:
             g_color_bgr555 = rgb888_to_rgb555_24bit(0x0000ff)
+
+        # COL1 color
+        if col1 != "":
+            col1_bgr555 = rgb888_to_rgb555_24bit(col1)
+        else:
+            col1_bgr555 = rgb888_to_rgb555_24bit(0xffffff)
+        
+        # COL2 color
+        if col2 != "":
+            col2_bgr555 = rgb888_to_rgb555_24bit(col2)
+        else:
+            col2_bgr555 = rgb888_to_rgb555_24bit(0xffffff)
+
+        # COL3 color
+        if col3 != "":
+            col3_bgr555 = rgb888_to_rgb555_24bit(col3)
+        else:
+            col3_bgr555 = rgb888_to_rgb555_24bit(0xffffff)
+
+        # COL4 color
+        if col4 != "":
+            col4_bgr555 = rgb888_to_rgb555_24bit(col4)
+        else:
+            col4_bgr555 = rgb888_to_rgb555_24bit(0xffffff)
+
+        # OBJ color
+        if obj_color != "":
+            obj_bgr555 = rgb888_to_rgb555_24bit(obj_color)
+        else:
+            obj_bgr555 = rgb888_to_rgb555_24bit(0xffffff)
     except Exception:
         raise Exception(f"Level {level_name} doesn't have attributes. To see the level attributes, go to \"Map\" on tiled and then \"Map attributes\"")
 
@@ -481,6 +531,11 @@ def export_properties_to_h(level_name, output_path_h, output_path_c, json_file_p
         file.write(f"const unsigned int {level_name}_properties[] = {{\n")
         file.write(f" /*BG color*/      {hex(bg_color_bgr555)},\n")
         file.write(f" /*GROUND color*/  {hex(g_color_bgr555)},\n")
+        file.write(f" /*COL1 color*/    {hex(col1_bgr555)},\n")
+        file.write(f" /*COL2 color*/    {hex(col2_bgr555)},\n")
+        file.write(f" /*COL3 color*/    {hex(col3_bgr555)},\n")
+        file.write(f" /*COL4 color*/    {hex(col4_bgr555)},\n")
+        file.write(f" /*OBJ color*/     {hex(obj_bgr555)},\n")
         file.write(f" /*gamemode*/      {gamemode},\n")
         file.write(f" /*speed*/         {speed},\n")
         file.write(f" /*level height*/  {level_height},\n")
