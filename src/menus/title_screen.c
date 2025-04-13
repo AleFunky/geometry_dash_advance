@@ -11,6 +11,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "color.h"
+#include "icon_kit.h"
 
 EWRAM_DATA u32 title_screen_color_index = 0;
 EWRAM_DATA u16 title_screen_color_transition_backup[6];
@@ -19,11 +20,21 @@ EWRAM_DATA u32 title_screen_scroll_x;
 
 void title_screen_players();
 void reset_title_screen_player();
+void draw_button_glyphs_title_screen();
 
 extern u16 __key_curr;
 
+INLINE void do_button_draw() {
+    nextSpr = 0;
+    
+    draw_button_glyphs_title_screen();
+    
+    obj_copy(oam_mem, shadow_oam, 128);
+    obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
+}
+
 void title_screen_loop() {
-    REG_DISPCNT = DCNT_MODE0 | DCNT_BG0 | DCNT_BG1 | DCNT_BG2;
+    REG_DISPCNT = DCNT_MODE0 | DCNT_OBJ | DCNT_OBJ_1D | DCNT_BG0 | DCNT_BG1 | DCNT_BG2;
 
     REG_BG0CNT  = BG_CBB(0) | BG_SBB(26) | BG_REG_32x32 | BG_PRIO(0);
     REG_BG0HOFS = 8;
@@ -47,6 +58,10 @@ void title_screen_loop() {
     memcpy32(&se_mem[26][0], title_screen_l0_tilemap, sizeof(title_screen_l0_tilemap) / sizeof(u32));
     memcpy32(&se_mem[27][0], title_screen_l1_tilemap, sizeof(title_screen_l1_tilemap) / sizeof(u32));
     memcpy32(&se_mem[28][0], square_background_tilemap, sizeof(square_background_tilemap) / sizeof(u32));
+
+    // Button glyph chr
+    memcpy16(&palette_buffer[0x1f0], button_glyph_pal, sizeof(button_glyph_pal) / sizeof(COLOR));
+    memcpy32(&tile_mem_obj[0][512], &title_screen_chr[0xf0], 24 * sizeof(TILE8) / 4);
     
     // Restore bg color
     memcpy16(&col_trigger_buffer[0], title_screen_color_transition_backup, 6);
@@ -56,18 +71,21 @@ void title_screen_loop() {
     scroll_y = BOTTOM_SCROLL_LIMIT + TO_FIXED(14);
     title_screen_scroll_x = 0;
 
-    fade_in();
+    memset32(shadow_oam, ATTR0_HIDE, 256);
+    memset16(rotation_buffer, 0x0000, NUM_ROT_SLOTS);
     
-    REG_DISPCNT = DCNT_MODE0 | DCNT_OBJ | DCNT_OBJ_1D | DCNT_BG0 | DCNT_BG1 | DCNT_BG2;
+    do_button_draw();
+    
+    fade_in();
 
     memset32(&player_1, 0, sizeof(player_1) / sizeof(u32));
     memset32(level_buffer, 0x0000, sizeof(level_buffer) / sizeof(u32));
     memset32(object_buffer, 0x0000, sizeof(object_buffer) / 4);
-    memset32(shadow_oam, ATTR0_HIDE, 256);
-    memset16(rotation_buffer, 0x0000, NUM_ROT_SLOTS);
+    
 
     // Set default player colors
-    set_player_colors(palette_buffer, DEFAULT_P1_COLOR, DEFAULT_P2_COLOR, DEFAULT_GLOW_COLOR);
+    set_player_colors(palette_buffer, palette_kit_colors[save_data.p1_col_selected], palette_kit_colors[save_data.p2_col_selected], palette_kit_colors[save_data.glow_col_selected]);
+    palette_buffer[0x10e] = CLR_WHITE;
 
     reset_title_screen_player();
 
@@ -81,7 +99,6 @@ void title_screen_loop() {
         REG_BG1HOFS = title_screen_scroll_x >> SUBPIXEL_BITS;
         REG_BG2HOFS = title_screen_scroll_x >> (2+SUBPIXEL_BITS);
         
-        nextSpr = 0;
         obj_copy(oam_mem, shadow_oam, 128);
         obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
 
@@ -124,8 +141,12 @@ void title_screen_loop() {
         memset32(shadow_oam, ATTR0_HIDE, 256);
         memset16(rotation_buffer, 0x0000, NUM_ROT_SLOTS);
 
+        nextSpr = 0;
+
         // Handle title screen players
         title_screen_players();
+
+        draw_button_glyphs_title_screen();
         
         sort_oam_by_prio();
         
@@ -135,6 +156,13 @@ void title_screen_loop() {
     
     memcpy16(title_screen_color_transition_backup, &col_trigger_buffer[0], 6);
     fade_out();
+}
+
+void draw_button_glyphs_title_screen() {
+    oam_metaspr(112, 100, menuButton, FALSE, FALSE, 512, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // A
+    oam_metaspr(112, 140, menuButton, FALSE, FALSE, 528, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // SELECT
+    oam_metaspr( 56,  94, menuButton, FALSE, FALSE, 524, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // L
+    oam_metaspr(168,  94, menuButton, FALSE, FALSE, 520, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // R
 }
 
 void reset_title_screen_player() {

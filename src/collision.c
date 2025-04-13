@@ -773,6 +773,12 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
         if (curr_player.changed_size_frames) max_eject = 0x10;
 
         if (eject_value < max_eject) {
+            // Disable trail if cube jumped and is on ground
+            if (curr_player.gamemode != GAMEMODE_CUBE || curr_player.airborne_jumped) curr_player.trail_on = FALSE;
+            
+            // If just landed and cube did a jump, then remove jumping status
+            if (!curr_player.on_floor && curr_player.airborne_jumped) curr_player.airborne_jumped = FALSE;
+
             if (curr_player.gamemode != GAMEMODE_CUBE || curr_player.gravity_dir == GRAVITY_UP) {
                 // We are resting on the ceiling so allow jumping and stuff
                 curr_player.on_floor = TRUE;
@@ -781,7 +787,6 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             }
             curr_player.player_y += eject_value << SUBPIXEL_BITS;
             curr_player.player_y_speed = 0;
-            curr_player.trail_on = FALSE;
             
             curr_player.inverse_rotation_flag = FALSE;
             // Remove subpixels
@@ -797,6 +802,12 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
         if (curr_player.changed_size_frames) max_eject = 0x10;
 
         if (eject_value < max_eject) {
+            // Disable trail if cube jumped and is on ground
+            if (curr_player.gamemode != GAMEMODE_CUBE || curr_player.airborne_jumped) curr_player.trail_on = FALSE;
+            
+            // If just landed and cube did a jump, then remove jumping status
+            if (!curr_player.on_floor && curr_player.airborne_jumped) curr_player.airborne_jumped = FALSE;
+            
             if (curr_player.gamemode != GAMEMODE_CUBE || curr_player.gravity_dir == GRAVITY_DOWN) {
                 // We are resting on the floor so allow jumping and stuff
                 curr_player.on_floor = TRUE;
@@ -805,13 +816,11 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             }
             curr_player.player_y -= eject_value << SUBPIXEL_BITS;
             curr_player.player_y_speed = 0;
-            curr_player.trail_on = FALSE;
 
             curr_player.inverse_rotation_flag = FALSE;
 
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
-            curr_player.player_y |= 0xffff;
             if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
         }
     }
@@ -1783,6 +1792,13 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
         if (!noclip) player_death = TRUE;
     }
     
+    // Sync if desynced
+    if (player_1.slope_speed_multiplier + 0x4000 == player_2.slope_speed_multiplier) {
+        curr_player.slope_speed_multiplier = player_1.slope_speed_multiplier = player_2.slope_speed_multiplier;
+    } else if (player_2.slope_speed_multiplier + 0x4000 == player_1.slope_speed_multiplier) {
+        curr_player.slope_speed_multiplier = player_2.slope_speed_multiplier = player_1.slope_speed_multiplier;
+    }
+
     // Set slope related variables
     curr_player.on_floor_step = TRUE;
     curr_player.on_floor = TRUE;
@@ -1825,7 +1841,7 @@ u32 collide_with_map_slopes(u64 x, u32 y, u32 width, u32 height) {
 
     // Make wave hitbox 2 pixels bigger
     if (curr_player.gamemode == GAMEMODE_WAVE) player.radius += 4;
-    else if (curr_player.gamemode == GAMEMODE_SHIP) player.radius -= 1;
+    else if (curr_player.gamemode == GAMEMODE_SHIP) player.radius -= 2;
 
     // Try to collide with sprite slopes only in the first layer check
     if (collide_with_obj_slopes(&player)) {

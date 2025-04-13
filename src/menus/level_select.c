@@ -72,6 +72,10 @@ void level_select_loop() {
     memcpy32(&se_mem[29][0], level_select_l2_tilemap, sizeof(level_select_l2_tilemap) / 4);
     memset32(&se_mem[30][0], dup16(SE_BUILD(0x00, 0, 0, 0)), sizeof(SCREENBLOCK) / 2);
 
+    // Button glyph chr
+    memcpy16(&palette_buffer[0x1f0], button_glyph_pal, sizeof(button_glyph_pal) / sizeof(COLOR));
+    memcpy32(&tile_mem_obj[0][512], &title_screen_chr[0xf0], 24 * sizeof(TILE8) / 4);
+
     s32 level_id = loaded_level_id;
     
     // Set BG color and disable any prior transition
@@ -102,6 +106,7 @@ void level_select_loop() {
 
         // Draw sprites
         put_level_info_sprites(level_id);
+        draw_button_glyphs_level_select();
 
         REG_BG2HOFS = REG_BG3HOFS = scroll_x >> SUBPIXEL_BITS;
 
@@ -166,6 +171,11 @@ void level_select_loop() {
         // Wait for VSYNC
         VBlankIntrWait();
     }
+}
+
+
+void draw_button_glyphs_level_select() {
+    oam_metaspr(16, 16, menuButton, FALSE, FALSE, 516, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // B
 }
 
 void do_menu_color_transition() {

@@ -7,6 +7,7 @@
 #include "level_select.h"
 #include "physics_defines.h"
 #include "../levels/includes.h"
+#include "icon_kit.h"
 
 #define TOP_SCROLL_Y 0x24
 #define BOTTOM_SCROLL_Y SCREEN_HEIGHT-0x24
@@ -228,22 +229,29 @@ ARM_CODE void decompress_column(u32 layer) {
     }
 }
 
-void set_initial_color(COLOR bg_color, COLOR ground_color) {
+void set_initial_color(COLOR bg_color, COLOR ground_color, COLOR col1_color, COLOR col2_color, COLOR col3_color, COLOR col4_color, COLOR obj_color) {
     set_bg_color(palette_buffer, bg_color);
     col_channels_color[BG_CHANNEL] = bg_color;
 
     set_ground_color(palette_buffer, ground_color);
     col_channels_color[GROUND_CHANNEL] = ground_color;
 
-    for (u32 channel = 0; channel < 4; channel++) {
-        set_color_channel_color(palette_buffer, CLR_RED, channel);
-        col_channels_color[channel] = CLR_RED;
-    }
+    set_color_channel_color(palette_buffer, col1_color, COL_1);
+    col_channels_color[COL_1] = col1_color;
+    
+    set_color_channel_color(palette_buffer, col2_color, COL_2);
+    col_channels_color[COL_2] = col2_color;
+    
+    set_color_channel_color(palette_buffer, col3_color, COL_3);
+    col_channels_color[COL_3] = col3_color;
+    
+    set_color_channel_color(palette_buffer, col4_color, COL_4);
+    col_channels_color[COL_4] = col4_color;
 
-    set_obj_color(palette_buffer, 0x7fff);
-    col_channels_color[OBJ_CHANNEL] = 0x7fff;
+    set_obj_color(palette_buffer, obj_color);
+    col_channels_color[OBJ_CHANNEL] = obj_color;
 
-    col_channels_color[LINE_CHANNEL] = 0x1fff;
+    col_channels_color[LINE_CHANNEL] = obj_color;
 
 }
 
@@ -276,6 +284,8 @@ void reset_variables() {
     cutscene_frame = 0;
     player_1.cutscene_initial_player_x = 0;
     player_1.cutscene_initial_player_y = 0;
+
+    player_1.trail_on = FALSE;
 
     scroll_x = 0;
     last_sprite_x = 0;
@@ -338,6 +348,11 @@ void load_level(u32 level_ID) {
     // Get level variables
     COLOR bg_color = properties_pointer[BG_COLOR_INDEX];
     COLOR ground_color = properties_pointer[GROUND_COLOR_INDEX];
+    COLOR col1_color = properties_pointer[COL1_COLOR_INDEX];
+    COLOR col2_color = properties_pointer[COL2_COLOR_INDEX];
+    COLOR col3_color = properties_pointer[COL3_COLOR_INDEX];
+    COLOR col4_color = properties_pointer[COL4_COLOR_INDEX];
+    COLOR obj_color = properties_pointer[OBJ_COLOR_INDEX];
     player_1.gamemode = properties_pointer[GAMEMODE_INDEX];
     speed_id = properties_pointer[SPEED_INDEX];
     curr_level_height = properties_pointer[LEVEL_HEIGHT_INDEX];
@@ -364,13 +379,13 @@ void load_level(u32 level_ID) {
     // Copy palettes into the buffer
     memcpy16(palette_buffer, blockPalette, sizeof(blockPalette) / sizeof(COLOR));
     memcpy16(&palette_buffer[256], spritePalette, sizeof(spritePalette) / sizeof(COLOR));
-    set_player_colors(palette_buffer, save_data.p1_col_selected, save_data.p2_col_selected, save_data.glow_col_selected);
+    set_player_colors(palette_buffer, palette_kit_colors[save_data.p1_col_selected], palette_kit_colors[save_data.p2_col_selected], palette_kit_colors[save_data.glow_col_selected]);
 
     // Set initial player gamemode CHR
     upload_player_chr(player_1.gamemode, ID_PLAYER_1);
 
     // Set BG and ground colors
-    set_initial_color(bg_color, ground_color);
+    set_initial_color(bg_color, ground_color, col1_color, col2_color, col3_color, col4_color, obj_color);
 
     // Reset gameplay vars
     reset_variables();
@@ -511,6 +526,7 @@ void fade_in_menu() {
         // Copy OAM buffer into OAM
         obj_copy(oam_mem, shadow_oam, 128);
         put_level_info_sprites(loaded_level_id);
+        draw_button_glyphs_level_select();
         
         clr_blend_fast(palette_buffer, (COLOR*) black_buffer, pal_bg_mem, 512, 32 - frame);
     }

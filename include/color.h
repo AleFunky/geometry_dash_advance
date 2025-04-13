@@ -84,5 +84,6 @@ void set_face_palettes(COLOR *dst);
 u16 lerp_color(COLOR color1, COLOR color2, FIXED time);
 COLOR blend_colors(COLOR col1, COLOR col2);
 void set_player_colors(COLOR *dst, COLOR p1, COLOR p2, COLOR glow);
+void set_player_colors_spr(COLOR *dst, COLOR p1, COLOR p2, COLOR glow);
 
 void run_col_trigger_changes();

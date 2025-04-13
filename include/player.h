@@ -127,6 +127,9 @@ struct Player {
     // Put a trail point in this frame
     // 0 : do not, 1 : do
     u8 trail_on;
+
+    // If player airborne was because of jumping
+    u8 airborne_jumped;
 };
 
 extern u8 player_death;

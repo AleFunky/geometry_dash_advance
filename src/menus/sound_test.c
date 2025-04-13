@@ -30,6 +30,7 @@ ROM_DATA char *sound_test_songs_names[] = {
     "ELECTRODYNAMIX",
     "MENU LOOP",
     "STAY INSIDE ME",
+    "GROUND TO SPACE",
     "HEXAGON FORCE",
     "BLAST PROCESSING",
 };
@@ -52,6 +53,7 @@ ROM_DATA char *sound_test_song_files[] = {
     "DYNAMIX.XM",
     "MENU.XM",
     "PRACTICE.XM",
+    "GROUND.XM",
     "HEXAGON.XM",
     "BLASTP.XM",
 };
@@ -74,6 +76,7 @@ ROM_DATA u16 sound_test_song_ids[] = {
     MOD_DYNAMIX,
     MOD_MENU,
     MOD_PRACTICE,
+    MOD_GROUND,
     MOD_HEXAGON,
     MOD_BLASTP,
 };

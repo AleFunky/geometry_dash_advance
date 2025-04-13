@@ -241,6 +241,30 @@ void set_player_colors(COLOR *dst, COLOR p1, COLOR p2, COLOR glow) {
     blend_p1_with_p2(&dst[PLAYER_BG_PAL]);
 }
 
+void set_player_colors_spr(COLOR *dst, COLOR p1, COLOR p2, COLOR glow) {
+    COLOR black = 0x0000;
+
+    // Modify sprite colors
+    dst[PLAYER_SPR_PAL + P1_COLOR] = p1;
+    dst[PLAYER_SPR_PAL + P2_COLOR] = p2;
+    dst[PLAYER_SPR_PAL + PLAYER_GLOW_COLOR] = glow;
+
+    // Blend P1
+    clr_blend(&dst[PLAYER_SPR_PAL + P1_COLOR], &black, &dst[PLAYER_SPR_PAL + P1_COLOR - 1], 1, 0x06);
+    clr_blend(&dst[PLAYER_SPR_PAL + P1_COLOR], &black, &dst[PLAYER_SPR_PAL + P1_COLOR - 2], 1, 0x0c);
+    clr_blend(&dst[PLAYER_SPR_PAL + P1_COLOR], &black, &dst[PLAYER_SPR_PAL + P1_COLOR - 3], 1, 0x13);
+    clr_blend(&dst[PLAYER_SPR_PAL + P1_COLOR], &black, &dst[PLAYER_SPR_PAL + P1_COLOR - 4], 1, 0x19);
+
+    // Blend P2
+    clr_blend(&dst[PLAYER_SPR_PAL + P2_COLOR], &black, &dst[PLAYER_SPR_PAL + P2_COLOR + 1], 1, 0x06);
+    clr_blend(&dst[PLAYER_SPR_PAL + P2_COLOR], &black, &dst[PLAYER_SPR_PAL + P2_COLOR + 2], 1, 0x0c);
+    clr_blend(&dst[PLAYER_SPR_PAL + P2_COLOR], &black, &dst[PLAYER_SPR_PAL + P2_COLOR + 3], 1, 0x13);
+    clr_blend(&dst[PLAYER_SPR_PAL + P2_COLOR], &black, &dst[PLAYER_SPR_PAL + P2_COLOR + 4], 1, 0x19);
+
+    // Blend P1 with P2
+    blend_p1_with_p2(&dst[PLAYER_SPR_PAL]);
+}
+
 ARM_CODE COLOR calculate_lbg(COLOR bg, COLOR p1) {
     // Get RGB structs
     struct RGB555 bg_rgb;

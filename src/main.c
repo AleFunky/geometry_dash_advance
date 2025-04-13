@@ -225,6 +225,12 @@ s32 main() {
     
     mmStart(MOD_MENU, MM_PLAY_LOOP);
 
+    // Set blending registers
+    REG_BLDCNT = BLD_BUILD(BLD_OBJ, BLD_BG0 | BLD_BG1 | BLD_BG2, BLD_MODE(1));
+
+    // Set additive blending
+    REG_BLDALPHA = BLDA_BUILD(16, 16);
+
     main_loop();
 
     return 0;
@@ -278,12 +284,6 @@ void game_loop() {
     REG_BG3CNT  = BG_CBB(2) | BG_SBB(30) | BG_REG_32x64 | BG_PRIO(0);
     REG_BG3HOFS = 0;
     REG_BG3VOFS = 256;
-
-    // Set blending registers
-    REG_BLDCNT = BLD_BUILD(BLD_OBJ, BLD_BG0 | BLD_BG1 | BLD_BG2, BLD_MODE(1));
-
-    // Update blend weights
-    REG_BLDALPHA = BLDA_BUILD(16, 12);
 
     // Set window registers
 

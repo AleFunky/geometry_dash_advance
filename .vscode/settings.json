@@ -52,7 +52,9 @@
         "save.h": "c",
         "gba_sram.h": "c",
         "stdbool.h": "c",
-        "sound_test.h": "c"
+        "sound_test.h": "c",
+        "math.h": "c",
+        "ctype.h": "c"
     },
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.errorSquiggles": "disabled",

@@ -52,9 +52,13 @@ void portal_transition_speed(u32 gamemode) {
 
 void cube_portal(struct ObjectSlot *objectSlot) {
     portal_transition_speed(GAMEMODE_CUBE);
-    if (curr_player.gamemode != GAMEMODE_CUBE) curr_player.inverse_rotation_flag = FALSE;
+    if (curr_player.gamemode != GAMEMODE_CUBE) {
+        curr_player.inverse_rotation_flag = FALSE;
+        curr_player.trail_on = FALSE;
+    }
     curr_player.gamemode = GAMEMODE_CUBE;
     curr_player.on_floor = FALSE;
+    curr_player.airborne_jumped = TRUE;
 
     gamemode_upload_buffer[curr_player_id] = GAMEMODE_CUBE;
 
@@ -68,6 +72,7 @@ void ship_portal(struct ObjectSlot *objectSlot) {
     curr_player.gamemode = GAMEMODE_SHIP;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
+    curr_player.airborne_jumped = TRUE;
 
     gamemode_upload_buffer[curr_player_id] = GAMEMODE_SHIP;
 
@@ -82,6 +87,7 @@ void ball_portal(struct ObjectSlot *objectSlot) {
     curr_player.gamemode = GAMEMODE_BALL;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
+    curr_player.airborne_jumped = TRUE;
     
     gamemode_upload_buffer[curr_player_id] = GAMEMODE_BALL;
     
@@ -96,6 +102,7 @@ void ufo_portal(struct ObjectSlot *objectSlot) {
     curr_player.gamemode = GAMEMODE_UFO;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
+    curr_player.airborne_jumped = TRUE;
 
     gamemode_upload_buffer[curr_player_id] = GAMEMODE_UFO;
     
@@ -109,6 +116,7 @@ void wave_portal(struct ObjectSlot *objectSlot) {
     curr_player.gamemode = GAMEMODE_WAVE;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
+    curr_player.airborne_jumped = TRUE;
 
     gamemode_upload_buffer[curr_player_id] = GAMEMODE_WAVE;
     
@@ -123,7 +131,8 @@ void blue_gravity_portal(struct ObjectSlot *objectSlot) {
         curr_player.player_y_speed /= 2;
         curr_player.gravity_dir = GRAVITY_DOWN;
         curr_player.on_floor = FALSE;
-        curr_player.trail_on = TRUE;
+        if (curr_player.gamemode != GAMEMODE_BALL) curr_player.trail_on = TRUE;
+        curr_player.airborne_jumped = TRUE;
         
         curr_player.ball_rotation_direction = -1;
         check_for_same_dual_gravity();
@@ -137,7 +146,8 @@ void yellow_gravity_portal(struct ObjectSlot *objectSlot) {
         curr_player.player_y_speed /= 2;
         curr_player.gravity_dir = GRAVITY_UP;
         curr_player.on_floor = FALSE;
-        curr_player.trail_on = TRUE;
+        if (curr_player.gamemode != GAMEMODE_BALL) curr_player.trail_on = TRUE;
+        curr_player.airborne_jumped = TRUE;
 
         curr_player.ball_rotation_direction = 1;
         check_for_same_dual_gravity();
@@ -290,6 +300,7 @@ void yellow_pad(struct ObjectSlot *objectSlot) {
     curr_player.inverse_rotation_flag = FALSE;
     curr_player.trail_on = TRUE;
     curr_player.on_floor = FALSE;
+    curr_player.airborne_jumped = TRUE;
     objectSlot->activated[curr_player_id] = TRUE;
 }
 
@@ -299,6 +310,7 @@ void blue_orb(struct ObjectSlot *objectSlot) {
         s32 sign = (curr_player.gravity_dir == GRAVITY_UP) ? -1 : 1;
         curr_player.inverse_rotation_flag = FALSE;
         curr_player.trail_on = TRUE;
+        curr_player.airborne_jumped = TRUE;
         
         curr_player.ball_rotation_direction = sign;
         
@@ -344,6 +356,7 @@ void blue_pad(struct ObjectSlot *objectSlot) {
     curr_player.ball_rotation_direction = sign;
     curr_player.inverse_rotation_flag = FALSE;
     curr_player.trail_on = TRUE;
+    curr_player.airborne_jumped = TRUE;
         
     curr_player.player_y_speed = orb_pad_bounces[curr_player.player_size][curr_player.gamemode][BLUE_ORB_PAD_INDEX] * sign;
     
@@ -374,6 +387,7 @@ void pink_pad(struct ObjectSlot *objectSlot) {
     curr_player.player_y_speed = orb_pad_bounces[curr_player.player_size][curr_player.gamemode][PINK_PAD_INDEX] * sign;
     curr_player.inverse_rotation_flag = FALSE;
     curr_player.trail_on = TRUE;
+    curr_player.airborne_jumped = TRUE;
     curr_player.on_floor = FALSE;
     objectSlot->activated[curr_player_id] = TRUE;
 }

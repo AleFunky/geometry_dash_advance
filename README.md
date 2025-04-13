@@ -1,4 +1,4 @@
-
+![image](https://github.com/AleFunky/geometry_dash_advance/blob/main/images/GDA.jpg)
 
 ## About
 Geometry Dash Advance is a demake of Geometry Dash for the GBA.
@@ -17,11 +17,11 @@ Download nightly build (unstable) [CLICK HERE](https://nightly.link/AleFunky/geo
 |[AleFunky](https://github.com/PinguLinux)|code, levels, testing and bugfixes.|
 |[ElAngel378](https://github.com/ElAngel378)|music, testing, bugfixes and graphics.|
 |[adrluc096](https://github.com/123456oil)|graphics.|
-|orionconstel|music and graphics.|
+|orionconstel|levels, music and graphics.|
 |[KawaiiDawn](https://github.com/Astroclimber26)|graphics.|
 |KirikkSiSq|graphics.|
 |[SeaGlowingPro](https://github.com/SeaGlowingPro)|levels.|
-|[banana6000](https://github.com/xXFamidashFan69Xx)|graphics and levels.|
+|[banana6000](https://github.com/xXFamidashFan69Xx)|graphics and levels. METATILES|
 |Nicolestarlight|music.|
 |Redgd|graphics.|
 

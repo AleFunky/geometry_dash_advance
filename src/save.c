@@ -16,12 +16,13 @@ void init_sram() {
 	// Clear if magic is invalid or different save version
 	if (save_data.magic != 0xdeadbeef || save_data.save_version != SAVE_VERSION) {
 		memcpy8(sram_mem, 0x00, SRAM_SIZE);
-		memset32((u32*)&save_data, 0x00, sizeof(save_data) / 4);
+		memset8((u8*)&save_data, 0x00, sizeof(save_data));
 		save_data.magic = 0xdeadbeef;
 		save_data.save_version = SAVE_VERSION;
 		save_data.p1_col_selected = DEFAULT_P1_COLOR;
 		save_data.p2_col_selected = DEFAULT_P2_COLOR;
 		save_data.glow_col_selected = DEFAULT_GLOW_COLOR;
+		save_data.glow_enabled = FALSE;
 		write_save_block();
 	}
 }

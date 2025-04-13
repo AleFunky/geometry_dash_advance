@@ -26,6 +26,7 @@ extern unsigned char level_select_l2_tilemap[1280];
 extern unsigned char title_screen_l0_tilemap[1280];
 extern unsigned char title_screen_l1_tilemap[1280];
 extern unsigned char icon_kit_l0_tilemap[1280];
+extern unsigned char palette_kit_tilemap[1280];
 extern unsigned char level_complete_l3_tilemap[1280];
 extern unsigned char circle_background_tilemap[2048];
 extern unsigned char line_background_tilemap[2048];

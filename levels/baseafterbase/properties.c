@@ -3,6 +3,11 @@
 const unsigned int baseafterbase_properties[] = {
  /*BG color*/      0x7ce5,
  /*GROUND color*/  0x6440,
+ /*COL1 color*/    0x7fff,
+ /*COL2 color*/    0x7fff,
+ /*COL3 color*/    0x7fff,
+ /*COL4 color*/    0x7fff,
+ /*OBJ color*/     0x7fff,
  /*gamemode*/      0,
  /*speed*/         1,
  /*level height*/  27,

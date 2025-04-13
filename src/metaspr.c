@@ -168,7 +168,42 @@ const u16 numberSpr[] = {
 const u16 iconKitSelection[] = {
     ATTR0_4BPP | ATTR0_SQUARE,
     ATTR1_SIZE_32x32,
+    ATTR2_PALBANK(0) | ATTR2_ID(992),
+    0,
+    0,
+    PRIO_IDOFF(0, 0, 0), // id offset
+    CENTER(8, 8),
+    0xffff
+};
+
+// Palette Kit selection
+const u16 paletteKitSelection[] = {
+    ATTR0_4BPP | ATTR0_SQUARE,
+    ATTR1_SIZE_16x16,
     ATTR2_PALBANK(0) | ATTR2_ID(1008),
+    0,
+    0,
+    PRIO_IDOFF(0, 0, 0), // id offset
+    CENTER(8, 8),
+    0xffff
+};
+
+// Palette Kit button
+const u16 paletteKitButton[] = {
+    ATTR0_4BPP | ATTR0_WIDE,
+    ATTR1_SIZE_8x32,
+    ATTR2_PALBANK(0),
+    0,
+    0,
+    PRIO_IDOFF(0, 0, 0), // id offset
+    CENTER(8, 8),
+    0xffff
+};
+
+const u16 menuButton[] = {
+    ATTR0_4BPP | ATTR0_SQUARE,
+    ATTR1_SIZE_16x16,
+    ATTR2_PALBANK(15),
     0,
     0,
     PRIO_IDOFF(0, 0, 0), // id offset
@@ -1743,11 +1778,12 @@ ARM_CODE void oam_metaspr(u16 x, u8 y, const u16 *data, u8 hflip, u8 vflip, u16 
         }
 
         // Set priority if modified
-        if (!(priority & 0b100)) {
+        if (!(priority & PRIORITY_DONT_MODIFY_PRIO)) {
             attribute2 = (attribute2 & ~ATTR2_PRIO_MASK) | ((priority << ATTR2_PRIO_SHIFT) & ATTR2_PRIO_MASK);
         }
 
-        if (!(attribute2 & ATTR2_PRIO_MASK)) {
+        // Convert priority 0 to 1 if not flagged
+        if (!(attribute2 & ATTR2_PRIO_MASK) && !(priority & PRIORITY_DONT_DISABLE_0)) {
             attribute2 = (attribute2 & ~ATTR2_PRIO_MASK) | (1 << ATTR2_PRIO_SHIFT);
         }
 

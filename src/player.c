@@ -181,6 +181,7 @@ void cube_gamemode() {
             curr_player.player_y_speed = -((curr_player.player_size == SIZE_BIG) ? CUBE_JUMP_SPEED : CUBE_MINI_JUMP_SPEED) * sign;       
         }
 
+        curr_player.airborne_jumped = TRUE;
         curr_player.player_buffering = ORB_BUFFER_END;
         curr_player.on_slope = FALSE;
         curr_player.inverse_rotation_flag = FALSE;
@@ -354,10 +355,6 @@ void ball_gamemode() {
     s8 sign = (curr_player.gravity_dir == GRAVITY_UP) ? -1 : 1;
     s8 mirror_sign = screen_mirrored ? -1 : 1;
 
-    if (curr_player.on_floor) {
-        curr_player.ball_rotation_direction = (curr_player.gravity_dir == GRAVITY_DOWN) ? 2 : -2;
-    }
-
     curr_player.cube_rotation -= 0x250 * curr_player.ball_rotation_direction * mirror_sign;
 
     curr_player.player_y_speed = CLAMP(curr_player.player_y_speed, -BALL_MAX_Y_SPEED, BALL_MAX_Y_SPEED);
@@ -410,6 +407,8 @@ void ball_gamemode() {
             if (curr_player.slope_counter) {
                 curr_player.player_y_speed += 0x4000 * -sign;
             }
+        } else if (curr_player.on_floor) {
+            curr_player.ball_rotation_direction = (curr_player.gravity_dir == GRAVITY_DOWN) ? 2 : -2;
         }
     }
 }

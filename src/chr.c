@@ -62,6 +62,11 @@ const COLOR icon_kit_palette[] = {
     0x7C1F, 0x0000, 0x294A, 0x7ED7, 0x7DEF, 0x7C0F, 0x480C, 0x7E16, 0x5409, 0x4427, 0x3027, 0x4529, 0x512D, 0x3CEA, 0x30A8, 0x0000, // c purples
     0x7C1F, 0x0000, 0x294A, 0x7EDF, 0x3C1F, 0x3012, 0x200C, 0x7C1F, 0x7C16, 0x3C0F, 0x1809, 0x7DFE, 0x5575, 0x4110, 0x2CCB, 0x0000, // d pinks
     0x7C1F, 0x0000, 0x294A, 0x7EEE, 0x560A, 0x3946, 0x28E4, 0x7FFF, 0x6F7B, 0x56B5, 0x4210, 0x2D6B, 0x2108, 0x0000, 0x0000, 0x0000, // e blues and grayscales
+    0x0000, 0x0000, 0x7FFF, 0x294a, 0x2108, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, // f palette kit background
+    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7FFF, 0x0000, // 10 
+    0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7FFF, 0x0000, // 11
+    0x0000, 0x0000, 0x0000, 0x27D8, 0x16CC, 0x09A7, 0x7FFF, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, // 12
+    0x0000, 0x0000, 0x0000, 0x5294, 0x3DEF, 0x2529, 0x7FFF, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, // 13
 };
 
 const COLOR menu_spr_palette[] = {
@@ -201,6 +206,9 @@ const SCR_ENTRY square_background_tilemap[] = {
     0x0020,0x0020,0x0020,0x0020,0x0020,0x0020,0x0020,0x0021
 };
 
+const COLOR button_glyph_pal[] = {
+    0x0000, 0x0000, 0x7fff
+};
 
 // This is all the color black for transition purposes
 const COLOR black_buffer[] = {
@@ -428,6 +436,34 @@ ARM_CODE void flip_player_colors(u8 *dst, u8 *src, u8 tile_num) {
             u32 left_pixel = obtain_flipped_pixel(tile_byte >> 4);
             
             u32 right_pixel = obtain_flipped_pixel(tile_byte & 0b1111);
+            
+            // Remove glow pixels if disabled
+            if (!save_data.glow_enabled) {
+                if (left_pixel == 15) left_pixel = 0;
+                if (right_pixel == 15) right_pixel = 0;
+            }
+
+            // Set new byte
+            dst[index] = (left_pixel << 4) | right_pixel;
+        }
+    }
+
+}
+ARM_CODE void remove_glow_pixels(u8 *dst, u8 *src, u8 tile_num) {
+    for (s32 curr_tile = 0; curr_tile < tile_num; curr_tile++) {
+        for (u32 byte = 0; byte < sizeof(TILE); byte++) {
+            s32 index = (curr_tile << 5) + byte;
+            
+            // Get byte
+            u32 tile_byte = src[index];
+
+            u32 left_pixel = tile_byte >> 4;
+            
+            u32 right_pixel = tile_byte & 0b1111;
+            
+            // Remove glow pixels if disabled
+            if (left_pixel == 15) left_pixel = 0;
+            if (right_pixel == 15) right_pixel = 0;
 
             // Set new byte
             dst[index] = (left_pixel << 4) | right_pixel;
@@ -493,6 +529,12 @@ u16 *icon_selection_table[] = {
     &save_data.wave_selected
 };
 
+u16 *color_selection_table[] = {
+    &save_data.p1_col_selected,
+    &save_data.p2_col_selected,
+    &save_data.glow_col_selected
+};
+
 void upload_player_chr(u32 gamemode, u32 player_id) {
     u16 icon_selected = *icon_selection_table[gamemode];
 
@@ -506,8 +548,17 @@ void upload_player_chr(u32 gamemode, u32 player_id) {
 
     if (player_id == ID_PLAYER_1) {
         // Copy player sprite into VRAM
-        memcpy32(&tile_mem_obj[0][0], &icon_kit[gamemode][index], PLAYER_CHR_SIZE);
-        memcpy32(&tile_mem_obj[0][2], &icon_kit[gamemode][index + 0x10], PLAYER_CHR_SIZE);
+        if (save_data.glow_enabled) {
+            memcpy32(&tile_mem_obj[0][0], &icon_kit[gamemode][index], PLAYER_CHR_SIZE);
+            memcpy32(&tile_mem_obj[0][2], &icon_kit[gamemode][index + 0x10], PLAYER_CHR_SIZE);
+        } else {
+            // Flip colors
+            remove_glow_pixels(vram_copy_buffer, (u8*)(&icon_kit[gamemode][index]), 2);
+            memcpy32(&tile_mem_obj[0][0], vram_copy_buffer, PLAYER_CHR_SIZE);
+            
+            remove_glow_pixels(vram_copy_buffer, (u8*)(&icon_kit[gamemode][index + 0x10]), 2);
+            memcpy32(&tile_mem_obj[0][2], vram_copy_buffer, PLAYER_CHR_SIZE);
+        }
     } else {
         // Flip colors
         flip_player_colors(vram_copy_buffer, (u8*)(&icon_kit[gamemode][index]), 2);
