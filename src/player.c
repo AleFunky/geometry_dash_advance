@@ -57,6 +57,7 @@ void do_cube_gravity();
 void do_ship_gravity(s32 max_y_speed, s32 max_y_speed_holding);
 void do_ball_gravity();
 void do_ufo_gravity();
+extern u8 kandomode;
 
 FIXED mirror_scaling;
 
@@ -684,10 +685,10 @@ void draw_player() {
         obj_aff_identity(&obj_aff_buffer[curr_player_id]);
 
         /// Change sprite size depending on player size and screen mirror status
-        if (curr_player.player_size == SIZE_BIG) {
+        if (curr_player.player_size == SIZE_BIG && !kandomode) {
             obj_aff_rotscale(&obj_aff_buffer[curr_player_id], mirror_scaling, float2fx(1.0) * sign, curr_player.lerped_cube_rotation);
         } else {
-            obj_aff_rotscale(&obj_aff_buffer[curr_player_id], scale_inv(fxmul(mirror_scaling, float2fx(MINI_SIZE))), scale_inv(float2fx(MINI_SIZE) * sign), curr_player.lerped_cube_rotation); 
+            obj_aff_rotscale(&obj_aff_buffer[curr_player_id], scale_inv(fxmul(mirror_scaling, float2fx(kandomode ? 2.7 : MINI_SIZE))), scale_inv(float2fx(kandomode ? 2.7 : MINI_SIZE) * sign), curr_player.lerped_cube_rotation); 
         }
     }
 }
