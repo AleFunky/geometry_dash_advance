@@ -411,7 +411,7 @@ void ball_gamemode() {
                 curr_player.player_y_speed += 0x4000 * -sign;
             }
         } else if (curr_player.on_floor) {
-            curr_player.ball_rotation_direction = (curr_player.gravity_dir == GRAVITY_DOWN) ? 2 : -2;
+            curr_player.ball_rotation_direction = (curr_player.gravity_dir == GRAVITY_DOWN) ? 3 : -3;
         }
     }
 }
