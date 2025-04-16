@@ -432,7 +432,7 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
     u32 x_inside_block = x & 0x0f;
     u32 y_inside_block = y & 0x0f;
 
-	if (kandomode && side == CENTER) {
+	if (kandomode && (side == CENTER || side == TOP)) {
                 break_brick(x, y, layer);
                 return 0;
     }
