@@ -11,7 +11,10 @@
 #define PRIORITY_DONT_MODIFY_PRIO (1 << 2)
 
 extern u8 nextSpr;
+
+#ifdef DEBUG
 extern const u16 noclipSpr[];
+#endif
 
 extern const u16 menuStarSpr[];
 extern const u16 menuNumberSpr[];
@@ -35,5 +38,5 @@ extern const u16 miniWaveTrailChunk[];
 extern const u16 normalTrailChunk[];
 extern const u16 menuButton[];
 
-ARM_CODE void oam_metaspr(u16 x, u8 y, const u16 *data, u8 hflip, u8 vflip, u16 tile_id, s16 palette, u8 priority, u8 zindex, u8 disable_mirror);
-ARM_CODE void oam_affine_metaspr(u16 x, u8 y, const u16 *data, u16 rotation, u8 aff_id, u8 dbl, u16 tile_id, s16 palette, u8 priority, u8 zindex, u8 disable_mirror);
+ARM_CODE void oam_metaspr(u16 x, u8 y, const u16 *data, u8 hflip, u8 vflip, u16 tile_id, s16 palette, u8 priority, u8 zindex, u8 disable_mirror, u8 disable_blending);
+ARM_CODE void oam_affine_metaspr(u16 x, u8 y, const u16 *data, u16 rotation, u8 aff_id, u8 dbl, u16 tile_id, s16 palette, u8 priority, u8 zindex, u8 disable_mirror, u8 disable_blending);

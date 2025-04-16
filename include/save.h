@@ -5,11 +5,6 @@
 #pragma once
 
 #define SAVE_BLOCK_ADDR 0
-#define SAVE_VERSION 9
-
-#define DEFAULT_P1_COLOR 15 
-#define DEFAULT_P2_COLOR 51
-#define DEFAULT_GLOW_COLOR 51
 
 struct SaveLevelData {
     u8 completed;

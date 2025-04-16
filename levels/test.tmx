@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="895" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="610">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="895" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="608">
  <editorsettings>
   <export target="test.json" format="json"/>
  </editorsettings>
@@ -183,7 +183,11 @@
   <object id="551" gid="16431" x="1304" y="432" width="16" height="16"/>
   <object id="552" gid="16430" x="1312" y="432" width="16" height="16"/>
   <object id="553" gid="16431" x="1320" y="432" width="16" height="16"/>
-  <object id="554" gid="16432" x="128" y="352" width="16" height="16"/>
+  <object id="554" gid="16432" x="128" y="352" width="16" height="16">
+   <properties>
+    <property name="color channel" value="LBG"/>
+   </properties>
+  </object>
   <object id="555" gid="16433" x="168" y="352" width="16" height="16"/>
   <object id="556" gid="16434" x="208" y="352" width="16" height="16"/>
   <object id="557" gid="16435" x="240" y="352" width="16" height="16"/>

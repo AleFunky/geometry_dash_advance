@@ -679,7 +679,7 @@ const s16 obj_hitbox[][6] = {
     Object_Hitbox_Circle("SAW_SMALL", TRUE, 7, 0, 0, 8, 8)
 
     Object_Hitbox_Rectangle("BASIC_BLOCK", 16, 16, 0, 0, 8, 8)
-    Object_Hitbox_Rectangle("BASIC_SLAB", 16, 8, 0, 0, 8, 8)
+    Object_Hitbox_Rectangle("BASIC_SLAB", 16, 16, 0, 0, 8, 8)
     
     Object_Hitbox_Rectangle("ORANGE_MIRROR_PORTAL", 26, 48, -3, -16, 8, 8)
     Object_Hitbox_Rectangle("BLUE_MIRROR_PORTAL"  , 26, 48, -3, -16, 8, 8)

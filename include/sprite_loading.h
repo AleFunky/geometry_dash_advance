@@ -2,11 +2,11 @@
 #include "memory.h"
 #include "player.h"
 #include "physics_defines.h"
+#include "defines.h"
 
 #ifndef SPR_LOADING_H
 #define SPR_LOADING_H
 
-#define MAX_OBJECTS 96
 #define NUM_ROT_SLOTS 27 // 5 are reserved to saws, music pulsing circles, and both players
 #define NUM_RESERVED_ROT_SLOTS 32 - NUM_ROT_SLOTS 
 
@@ -15,8 +15,6 @@
 #define AFF_SLOT_CLOCKWISE 2
 #define AFF_SLOT_COUNTERCLOCKWISE 3
 #define AFF_SLOT_PULSING 4
-
-#define VOLUME_INDEX 550
 
 #define H_FLIP_FLAG (1 << 1)
 #define V_FLIP_FLAG (1 << 0)

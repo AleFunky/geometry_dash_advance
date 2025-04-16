@@ -10,8 +10,6 @@
 #include "sprite_routines.h"
 #include "color.h"
 #include "save.h"
+#include "defines.h"
 #include <maxmod.h>
-
-// Enable DEBUG features
-#define DEBUG
 

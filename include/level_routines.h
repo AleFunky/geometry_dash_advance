@@ -18,7 +18,6 @@
 #define PLAYER_CHR_SIZE (2 * (sizeof(TILE) / sizeof(u32)))
 #define PLAYER_CHR_SIZE_BYTES (2 * sizeof(TILE))
 
-
 extern s32 seam_x;
 extern s32 seam_y;
 
@@ -75,6 +74,7 @@ void update_scroll();
 void set_background(u16 background_ID);
 void set_ground(u16 ground_ID);
 void put_practice_gui();
+u32 handle_key_holding(u16 keys);
 
 enum BG_types {
     BG_SQUARES,

@@ -4,21 +4,13 @@
 #include <maxmod.h>
 #include "sprite_loading.h"
 #include "sprite_routines.h"
-
-#define MAX_LEVEL_HEIGHT 128
-#define GROUND_HEIGHT MAX_LEVEL_HEIGHT - 4
-#define LEVEL_BUFFER_WIDTH 32
-#define LEVEL_LAYERS 2
+#include "defines.h"
 
 #define SCREENBLOCK_W 32
 #define SCREENBLOCK_H 32
 
 #define FIRST_NUMBER_ID 998
 #define PERCENTAGE_SYMBOL_ID 1008
-
-#define NUM_COINS_PER_LEVEL 3
-
-#define NUM_PRACTICE_CHECKPOINTS 100
 
 typedef s64 FIXED_LONG_16;
 typedef s32 FIXED_16;
@@ -92,8 +84,10 @@ extern u8 music_data[NUM_CHANNELS * (MM_SIZEOF_MODCH
 
 extern ALIGN4 u8 mixing_buffer[MM_MIXLEN_16KHZ];
 
+#ifdef DEBUG
 extern u8 debug_mode;
 extern u8 noclip;
+#endif
 
 extern u8 paused;
 

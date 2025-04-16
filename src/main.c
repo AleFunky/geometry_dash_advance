@@ -328,6 +328,7 @@ void level_loop() {
                 memcpy32(palette_buffer, pal_bg_mem, 256);
                 clear_checkpoints();
                 in_practice_mode = FALSE;
+                screen_mirrored = FALSE;
 
                 fade_out();
 
@@ -347,6 +348,7 @@ void level_loop() {
             screen_mirrored = FALSE;
             screen_mirrored_transition = FALSE;
             in_practice_mode = FALSE;
+            screen_mirrored = FALSE;
             return;
         }
         
@@ -364,7 +366,7 @@ void level_loop() {
         nextSpr = 0;
 
 #ifdef DEBUG
-        if (noclip) oam_metaspr(0, 0, noclipSpr, 0, 0, 0, -1, 0, 0, TRUE); 
+        if (noclip) oam_metaspr(0, 0, noclipSpr, 0, 0, 0, -1, 0, 0, TRUE, FALSE); 
 #endif
 
         // Draw level progress

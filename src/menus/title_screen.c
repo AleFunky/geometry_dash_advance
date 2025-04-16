@@ -159,10 +159,10 @@ void title_screen_loop() {
 }
 
 void draw_button_glyphs_title_screen() {
-    oam_metaspr(112, 100, menuButton, FALSE, FALSE, 512, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // A
-    oam_metaspr(112, 140, menuButton, FALSE, FALSE, 528, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // SELECT
-    oam_metaspr( 56,  94, menuButton, FALSE, FALSE, 524, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // L
-    oam_metaspr(168,  94, menuButton, FALSE, FALSE, 520, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE); // R
+    oam_metaspr(112, 100, menuButton, FALSE, FALSE, 512, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE, FALSE); // A
+    oam_metaspr(112, 140, menuButton, FALSE, FALSE, 528, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE, FALSE); // SELECT
+    oam_metaspr( 56,  94, menuButton, FALSE, FALSE, 524, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE, FALSE); // L
+    oam_metaspr(168,  94, menuButton, FALSE, FALSE, 520, 15, PRIORITY_DONT_DISABLE_0 | 0, 0, TRUE, FALSE); // R
 }
 
 void reset_title_screen_player() {

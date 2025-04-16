@@ -900,6 +900,12 @@
                  "height":16,
                  "id":554,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"color channel",
+                         "type":"string",
+                         "value":"LBG"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1544,7 +1550,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":607,
+ "nextobjectid":608,
  "orientation":"orthogonal",
  "properties":[
         {

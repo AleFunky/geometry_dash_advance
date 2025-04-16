@@ -232,6 +232,24 @@ void set_player_colors(COLOR *dst, COLOR p1, COLOR p2, COLOR glow) {
     clr_blend(&dst[PLAYER_SPR_PAL + P2_COLOR], &black, &dst[PLAYER_SPR_PAL + P2_COLOR + 3], 1, 0x13);
     clr_blend(&dst[PLAYER_SPR_PAL + P2_COLOR], &black, &dst[PLAYER_SPR_PAL + P2_COLOR + 4], 1, 0x19);
 
+    COLOR p1_mod = (p1 == CLR_BLACK) ? CLR_WHITE : p1;
+    COLOR p2_mod = (p2 == CLR_BLACK) ? CLR_WHITE : p2;
+
+    // SPR PALS
+    // P1
+    dst[P1_SPR_PAL + COL_ID_COLOR] = p1_mod;
+    clr_blend(&p1_mod, &black, &dst[P1_SPR_PAL + COL_ID_COLOR - 1], 1, 0x06);
+    clr_blend(&p1_mod, &black, &dst[P1_SPR_PAL + COL_ID_COLOR - 2], 1, 0x0c);
+    clr_blend(&p1_mod, &black, &dst[P1_SPR_PAL + COL_ID_COLOR - 3], 1, 0x13);
+    clr_blend(&p1_mod, &black, &dst[P1_SPR_PAL + COL_ID_COLOR - 4], 1, 0x19);
+    
+    // P2
+    dst[P2_SPR_PAL + COL_ID_COLOR] = p2_mod;
+    clr_blend(&p2_mod, &black, &dst[P2_SPR_PAL + COL_ID_COLOR - 1], 1, 0x06);
+    clr_blend(&p2_mod, &black, &dst[P2_SPR_PAL + COL_ID_COLOR - 2], 1, 0x0c);
+    clr_blend(&p2_mod, &black, &dst[P2_SPR_PAL + COL_ID_COLOR - 3], 1, 0x13);
+    clr_blend(&p2_mod, &black, &dst[P2_SPR_PAL + COL_ID_COLOR - 4], 1, 0x19);
+
     // Blend P1 with P2
     blend_p1_with_p2(&dst[PLAYER_SPR_PAL]);
 

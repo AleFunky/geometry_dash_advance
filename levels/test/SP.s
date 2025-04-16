@@ -48,7 +48,7 @@ test_spr_data:
    .hword 0x160 @ y
    .hword 0x2f @ type
    .hword 0x20 @ bg layer 4 non rotated   
-   .hword 0x0 @ z index 0
+   .hword 0x80 @ z index 0 pal 2
 @ Object 8
    .hword 0x10 @ delta x
    .hword 0x1b0 @ y

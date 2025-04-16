@@ -791,7 +791,11 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             curr_player.inverse_rotation_flag = FALSE;
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
-            if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
+            #ifdef DEBUG
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
+            #else
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL) player_death = TRUE;
+            #endif
         }
     } else if (side == BOTTOM) {   
         s32 eject_value = eject_bottom;
@@ -821,7 +825,11 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
 
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
-            if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
+            #ifdef DEBUG
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
+            #else
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL) player_death = TRUE;
+            #endif
         }
     }
    
@@ -1742,7 +1750,11 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
 
     // Die if the internal hitbox and normal hitbox collides with the vertical edge
     if (ejection_type == EJECTION_TYPE_VERT && check_slope_eject_type(player_internal_hitbox, slope) == EJECTION_TYPE_VERT) {
-        if (!noclip) player_death = TRUE;
+        #ifdef DEBUG
+            if (!noclip) player_death = TRUE;
+        #else
+            player_death = TRUE;
+        #endif
     }
 
     s32 step = get_step(*player, slope);
@@ -1752,13 +1764,21 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
         if (curr_player.gravity_dir == GRAVITY_DOWN && step == -1) {
             // Die if the internal hitbox collides with an slope
             if (check_slope_collision(player_internal_hitbox, slope) != NO_SLOPE_COLL_DETECTED) {
-                if (!noclip) player_death = TRUE;
+                #ifdef DEBUG
+                    if (!noclip) player_death = TRUE;
+                #else
+                    player_death = TRUE;
+                #endif
             }
             return TRUE;
         } else if (curr_player.gravity_dir == GRAVITY_UP && step == 1) {
             // Die if the internal hitbox collides with an slope
             if (check_slope_collision(player_internal_hitbox, slope) != NO_SLOPE_COLL_DETECTED) {
-                if (!noclip) player_death = TRUE;
+                #ifdef DEBUG
+                    if (!noclip) player_death = TRUE;
+                #else
+                    player_death = TRUE;
+                #endif
             }
             return TRUE;
         }
@@ -1789,7 +1809,11 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
         }
     } else if (curr_player.gamemode == GAMEMODE_WAVE) {
         // Kill if wave
-        if (!noclip) player_death = TRUE;
+        #ifdef DEBUG
+            if (!noclip) player_death = TRUE;
+        #else
+            player_death = TRUE;
+        #endif
     }
     
     // Sync if desynced

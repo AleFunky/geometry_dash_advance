@@ -136,7 +136,7 @@ void sound_test_loop() {
         }
 
         // Go right
-        if (key_hit(KEY_RIGHT)) {
+        if (handle_key_holding(KEY_RIGHT)) {
             // Increment song ID
             song_id++;
             song_id = WRAP(song_id, 0, MSL_NSONGS);
@@ -145,7 +145,7 @@ void sound_test_loop() {
         }
 
         // Go left
-        if (key_hit(KEY_LEFT)) {
+        if (handle_key_holding(KEY_LEFT)) {
             // Decrement song ID
             song_id--;
             song_id = WRAP(song_id, 0, MSL_NSONGS);

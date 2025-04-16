@@ -213,6 +213,11 @@ ARM_CODE void do_display(struct Object curr_object, s32 relative_x, s32 relative
     if (obj_palette) {
         palette = 15 - (obj_palette - 1);
     }
+
+    u32 disable_blending = FALSE;
+    if (obj_palette && palette != 8 && palette != 9) {
+        disable_blending = TRUE;
+    }
     
     u32 chr_rom_tile_num = obj_chr_offset[curr_object.type][1];
     s16 tile_id = get_tile_id(chr_rom_offset, chr_rom_tile_num);
@@ -220,7 +225,7 @@ ARM_CODE void do_display(struct Object curr_object, s32 relative_x, s32 relative
     // Handle continuous rotating objects separately
     if (curr_object.attrib2 & IS_ROTATING_FLAG) {
         u32 saw_rot_id = (curr_object.attrib2 & ROTATING_DIRECTION_BIT) ? AFF_SLOT_CLOCKWISE : AFF_SLOT_COUNTERCLOCKWISE;
-        oam_affine_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], saw_rotation[saw_rot_id - AFF_SLOT_CLOCKWISE], saw_rot_id, 0, tile_id, palette, priority, curr_object.z_index, FALSE);
+        oam_affine_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], saw_rotation[saw_rot_id - AFF_SLOT_CLOCKWISE], saw_rot_id, 0, tile_id, palette, priority, curr_object.z_index, FALSE, disable_blending);
         obj_aff_identity(&obj_aff_buffer[saw_rot_id]);
         obj_aff_rotscale(&obj_aff_buffer[saw_rot_id], mirror_scaling, float2fx(1.0), saw_rotation[saw_rot_id - 2]);
     } else if (curr_object.attrib1 & ENABLE_ROTATION_FLAG) {
@@ -235,15 +240,15 @@ ARM_CODE void do_display(struct Object curr_object, s32 relative_x, s32 relative
 
         if (slot >= 0) {
             // Draw affine sprite
-            oam_affine_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], curr_object.rotation, slot + NUM_RESERVED_ROT_SLOTS, 1, tile_id, palette, priority, curr_object.z_index, FALSE);
+            oam_affine_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], curr_object.rotation, slot + NUM_RESERVED_ROT_SLOTS, 1, tile_id, palette, priority, curr_object.z_index, FALSE, disable_blending);
             obj_aff_identity(&obj_aff_buffer[slot + NUM_RESERVED_ROT_SLOTS]);
             obj_aff_rotscale(&obj_aff_buffer[slot + NUM_RESERVED_ROT_SLOTS], mirror_scaling, float2fx(1.0), -rotation);
         } else {
             // Slots are full, so display a normal sprite
-            oam_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], hflip, vflip, tile_id, palette, priority, curr_object.z_index, FALSE);
+            oam_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], hflip, vflip, tile_id, palette, priority, curr_object.z_index, FALSE, disable_blending);
         }
     } else {    
-        oam_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], hflip, vflip, tile_id, palette, priority, curr_object.z_index, FALSE);
+        oam_metaspr(relative_x, relative_y, obj_sprites[curr_object.type], hflip, vflip, tile_id, palette, priority, curr_object.z_index, FALSE, disable_blending);
     }
 }
 

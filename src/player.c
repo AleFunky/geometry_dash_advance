@@ -62,7 +62,7 @@ FIXED mirror_scaling;
 
 void player_main() {    
     // Halve steps if dual
-    num_steps = (dual == DUAL_ON) ? (NUM_STEPS / 2) : NUM_STEPS;
+    num_steps = (dual == DUAL_ON) ? NUM_DUAL_STEPS : NUM_STEPS;
 
     if (complete_cutscene) {
         level_complete_cutscene();
@@ -216,13 +216,15 @@ void cube_gamemode() {
                 case DEGREES_26_5_UD_DOWN:
                 case DEGREES_63_5_DOWN:
                 case DEGREES_63_5_UD:
-                    curr_player.cube_rotation = snap_to_tan_theta_1_2(curr_player.cube_rotation);
+                    if (screen_mirrored) curr_player.cube_rotation = snap_to_tan_theta_1_2_rotated_90(curr_player.cube_rotation);
+                    else curr_player.cube_rotation = snap_to_tan_theta_1_2(curr_player.cube_rotation);
                     break;
                 case DEGREES_63_5:
                 case DEGREES_63_5_UD_DOWN:
                 case DEGREES_26_5_DOWN:
                 case DEGREES_26_5_UD:
-                    curr_player.cube_rotation = snap_to_tan_theta_1_2_rotated_90(curr_player.cube_rotation);
+                    if (screen_mirrored) curr_player.cube_rotation = snap_to_tan_theta_1_2(curr_player.cube_rotation);
+                    else curr_player.cube_rotation = snap_to_tan_theta_1_2_rotated_90(curr_player.cube_rotation);
                     break;
             }
         } else {
@@ -355,7 +357,7 @@ void ball_gamemode() {
     s8 sign = (curr_player.gravity_dir == GRAVITY_UP) ? -1 : 1;
     s8 mirror_sign = screen_mirrored ? -1 : 1;
 
-    curr_player.cube_rotation -= 0x250 * curr_player.ball_rotation_direction * mirror_sign;
+    curr_player.cube_rotation -= (curr_player.player_x_speed >> 8) * curr_player.ball_rotation_direction * mirror_sign;
 
     curr_player.player_y_speed = CLAMP(curr_player.player_y_speed, -BALL_MAX_Y_SPEED, BALL_MAX_Y_SPEED);
     
@@ -408,7 +410,7 @@ void ball_gamemode() {
                 curr_player.player_y_speed += 0x4000 * -sign;
             }
         } else if (curr_player.on_floor) {
-            curr_player.ball_rotation_direction = (curr_player.gravity_dir == GRAVITY_DOWN) ? 2 : -2;
+            curr_player.ball_rotation_direction = (curr_player.gravity_dir == GRAVITY_DOWN) ? 3 : -3;
         }
     }
 }
@@ -657,25 +659,25 @@ void draw_player() {
                     y_offset = 9;
                 }
                 
-                oam_metaspr(curr_player.relative_player_x - x_offset, curr_player.relative_player_y - y_offset, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE);
+                oam_metaspr(curr_player.relative_player_x - x_offset, curr_player.relative_player_y - y_offset, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE, FALSE);
                 break;
             case GAMEMODE_SHIP:
                 sign = curr_player.gravity_dir ? -1 : 1;
 
                 y_offset = curr_player.gravity_dir ? 9 : 7;
 
-                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - y_offset, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE);
+                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - y_offset, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE, FALSE);
                 break;
             case GAMEMODE_BALL:
-                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - 8, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE); 
+                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - 8, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE, FALSE); 
                 break;
             case GAMEMODE_UFO:
                 sign = curr_player.gravity_dir ? -1 : 1;
                 
-                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - 8, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE); 
+                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - 8, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE, FALSE); 
                 break;
             case GAMEMODE_WAVE:
-                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - 8, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE); 
+                oam_metaspr(curr_player.relative_player_x - 8, curr_player.relative_player_y - 8, player_sprite, FALSE, FALSE, 0, -1, priority, 0, FALSE, FALSE); 
                 break;
         }
         

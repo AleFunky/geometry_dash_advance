@@ -178,7 +178,7 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                         zindex = 0
                         pal = 0
                         
-                        possible_spr_color_channels = ["BLACK", "LBG", "1", "2", "3", "4"]
+                        possible_spr_color_channels = ["DEFAULT", "BLACK", "LBG", "1", "2", "3", "4", "P2", "P1"]
 
                         if gid == 43: # sprite block
                             graphics = 2 # block
@@ -211,9 +211,9 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                                 elif prop['name'] == 'color channel':
                                     pal_name = prop['value']
                                     if pal_name not in possible_spr_color_channels:
-                                        raise Exception(f"Encounterd invalid color channel of non trigger object in pos {x/16}, {y/16}. Must be one of the following: BLACK, LBG, 1, 2, 3, 4.")  
+                                        raise Exception(f"Encounterd invalid color channel of non trigger object in pos {x/16}, {y/16}. Must be one of the following: DEFAULT, BLACK, P1, P2, LBG, 1, 2, 3, 4.")  
                                     
-                                    pal = possible_spr_color_channels.index(pal_name) + 1
+                                    pal = possible_spr_color_channels.index(pal_name)
                         except KeyError:
                             pass
                         
