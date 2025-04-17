@@ -2,7 +2,7 @@
 #define ICON_COUNT_SHIPS 3
 #define ICON_COUNT_BALLS 5
 #define ICON_COUNT_UFOS 8
-#define ICON_COUNT_WAVES 1
+#define ICON_COUNT_WAVES 2
 
 #define ICONS_COLUMNS 7
 #define ICONS_ROWS 2
