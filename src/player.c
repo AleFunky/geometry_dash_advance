@@ -175,7 +175,7 @@ void cube_gamemode() {
     s8 mirror_sign = screen_mirrored ? -1 : 1;
    
     // If on floor and holding A or UP, jump
-    if ((curr_player.on_floor || kandomode) && key_is_down(KEY_A | KEY_UP)) {
+    if ((curr_player.on_floor) && key_is_down(KEY_A | KEY_UP)) {
         if (key_hit(KEY_A | KEY_UP)) {
             curr_player.player_y_speed = -((curr_player.player_size == SIZE_BIG) ? CUBE_FIRST_JUMP_SPEED : CUBE_MINI_FIRST_JUMP_SPEED) * sign;     
         } else {
