@@ -1821,6 +1821,10 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
         #else
             player_death = kandomode ? FALSE : TRUE;
         #endif
+    } else if (curr_player.gamemode == GAMEMODE_UFO) {
+        if (type == DEGREES_63_5 || type == DEGREES_63_5_UD) {
+            curr_player.player_y_speed = curr_player.player_y_speed / 4 * 3;
+        }
     }
     
     // Sync if desynced
@@ -1871,7 +1875,7 @@ u32 collide_with_map_slopes(u64 x, u32 y, u32 width, u32 height) {
     player.cy = y + (height >> 1);
 
     // Make wave hitbox 2 pixels bigger
-    if (curr_player.gamemode == GAMEMODE_WAVE) player.radius += 4;
+    if (curr_player.gamemode == GAMEMODE_WAVE) player.radius += 2;
     else if (curr_player.gamemode == GAMEMODE_SHIP) player.radius -= 2;
 
     // Try to collide with sprite slopes only in the first layer check

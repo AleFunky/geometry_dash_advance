@@ -365,14 +365,14 @@ test2_spr_data:
    .hword 0x0 @ z index 0
 @ Object 56
    .hword 0x40 @ delta x
-   .hword 0x198 @ y
+   .hword 0x190 @ y
    .hword 0x2b @ type
    .hword 0x20 @ bg layer 4   
    .hword 1490 @ metatile ID appareance
    .hword 0x0 @ z index 0
 @ Object 57
    .hword 0x10 @ delta x
-   .hword 0x1a8 @ y
+   .hword 0x1a0 @ y
    .hword 0x2b @ type
    .hword 0x20 @ bg layer 4   
    .hword 1490 @ metatile ID appareance
@@ -579,6 +579,18 @@ test2_spr_data:
    .hword 0x160 @ delta x
    .hword 0x1a0 @ y
    .hword 0x35 @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 92
+   .hword 0x30 @ delta x
+   .hword 0x1a0 @ y
+   .hword 0x39 @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 93
+   .hword 0x20 @ delta x
+   .hword 0x1a0 @ y
+   .hword 0x37 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
    .byte 0xff
