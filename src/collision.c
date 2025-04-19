@@ -18,6 +18,8 @@ u32 coll_y;
 u32 eject_top = 0;
 u32 eject_bottom = 0;
 
+extern u8 kandomode;
+
 ARM_CODE u32 run_coll(u32 x, u32 y, u32 layer, u8 side);
 ARM_CODE void collide_with_map_spikes(u32 x, u32 y, u32 width, u32 height, u8 layer);
 s32 do_center_checks(u32 x, u32 y, u32 width, u32 height, u32 layer);
@@ -351,22 +353,22 @@ s32 do_center_checks(u32 x, u32 y, u32 width, u32 height, u32 layer) {
     if(curr_player.changed_size_frames) return FALSE;
 
     if (run_coll(x, y, layer, CENTER)) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
         return TRUE;
     }
 
     if (run_coll(x + width, y, layer, CENTER)) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
         return TRUE;
     }
 
     if (run_coll(x, y + height, layer, CENTER)) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
         return TRUE;
     }
 
     if (run_coll(x + width, y + height, layer, CENTER)) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
         return TRUE;
     }
 
@@ -430,339 +432,344 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
     u32 x_inside_block = x & 0x0f;
     u32 y_inside_block = y & 0x0f;
 
-    switch (col_type) {
-        case COL_FLOOR_CEIL:
-        case COL_FULL:
-        case COL_MINIBLOCK_1111:
-            eject_bottom = y_inside_block;
-            eject_top = 0x10 - y_inside_block;
-            break;
-            
-        // Normal slab 
-
-        case COL_MINIBLOCK_1100:
-        case COL_SLAB_TOP:
-            if (y_inside_block < 0x8) {
-                eject_bottom = y_inside_block & 0x07;
-                eject_top = 0x08 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        case COL_MINIBLOCK_0011:
-        case COL_SLAB_BOTTOM:
-            if (y_inside_block >= 0x8) {
-                eject_bottom = y_inside_block - 0x08;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        case COL_MINIBLOCK_1010:
-        case COL_SLAB_LEFT:
-            if (x_inside_block < 0x8) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        case COL_MINIBLOCK_0101:
-        case COL_SLAB_RIGHT:
-            if (x_inside_block >= 0x8) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        // Medium slab
-
-        case COL_SLAB_MED_TOP:
-            if (x_inside_block >= 0x02 && x_inside_block < 0x0e) {
-                if (y_inside_block < 0x8) {
-                    eject_bottom = y_inside_block & 0x07;
-                    eject_top = 0x08 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_SLAB_MED_BOTTOM:
-            if (x_inside_block >= 0x02 && x_inside_block < 0x0e) {
-                if (y_inside_block >= 0x8) {
-                    eject_bottom = y_inside_block - 0x08;
-                    eject_top = 0x10 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_SLAB_MED_LEFT:
-            if (y_inside_block >= 0x02 && y_inside_block < 0x0e) {
-                if (x_inside_block < 0x8) {
-                    eject_bottom = y_inside_block - 0x02;
-                    eject_top = 0x0e - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_SLAB_MED_RIGHT:
-            if (y_inside_block >= 0x02 && y_inside_block < 0x0e) {
-                if (x_inside_block >= 0x8) {
-                    eject_bottom = y_inside_block - 0x02;
-                    eject_top = 0x0e - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-            
-        // Tiny slab
-
-        case COL_SLAB_TINY_TOP:
-            if (x_inside_block >= 0x05 && x_inside_block < 0x0b) {
-                if (y_inside_block < 0x8) {
-                    eject_bottom = y_inside_block & 0x07;
-                    eject_top = 0x8 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_SLAB_TINY_BOTTOM:
-            if (x_inside_block >= 0x05 && x_inside_block < 0x0b) {
-                if (y_inside_block >= 0x8) {
-                    eject_bottom = y_inside_block - 0x08;
-                    eject_top = 0x10 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_SLAB_TINY_LEFT:
-            if (y_inside_block >= 0x05 && y_inside_block < 0x0b) {
-                if (x_inside_block < 0x8) {
-                    eject_bottom = y_inside_block - 0x05;
-                    eject_top = 0x0b - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_SLAB_TINY_RIGHT:
-            if (y_inside_block >= 0x05 && y_inside_block < 0x0b) {
-                if (x_inside_block >= 0x8) {
-                    eject_bottom = y_inside_block - 0x05;
-                    eject_top = 0x0b - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        // Electroman adventures ball part slab 
-
-        case COL_EA_SLAB_TOP:
-            if (y_inside_block < 0xa) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x0a - y_inside_block;
-                break;
-            }
-            return 0;
-
-        case COL_EA_SLAB_BOTTOM:
-            if (y_inside_block >= 0x6) {
-                eject_bottom = y_inside_block - 0x06;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        case COL_EA_SLAB_LEFT:
-            if (x_inside_block < 0xa) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        case COL_EA_SLAB_RIGHT:
-            if (x_inside_block >= 0x6) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-            return 0;
-
-        // Electroman adventures ball part corner slab 
-
-        case COL_EA_CORNER_SLAB_TOP_LEFT:
-            if (x_inside_block < 0xa) {
-                if (y_inside_block < 0xa) {
-                    eject_bottom = y_inside_block;
-                    eject_top = 0xa - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_EA_CORNER_SLAB_TOP_RIGHT:
-            if (x_inside_block >= 0x6) {
-                if (y_inside_block < 0xa) {
-                    eject_bottom = y_inside_block;
-                    eject_top = 0xa - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_EA_CORNER_SLAB_BOTTOM_LEFT:
-            if (x_inside_block < 0xa) {
-                if (y_inside_block >= 0x6) {
-                    eject_bottom = y_inside_block - 0x06;
-                    eject_top = 0x10 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_EA_CORNER_SLAB_BOTTOM_RIGHT:
-            if (x_inside_block >= 0x6) {
-                if (y_inside_block >= 0x6) {
-                    eject_bottom = y_inside_block - 0x06;
-                    eject_top = 0x10 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        // Electroman adventures ball part inside corner slab 
-
-        case COL_EA_CORNER_INSIDE_SLAB_TOP_LEFT:
-            if (x_inside_block < 0xa) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            } else {
-                if (y_inside_block < 0xa) {
-                    eject_bottom = y_inside_block;
-                    eject_top = 0xa - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_EA_CORNER_INSIDE_SLAB_TOP_RIGHT:
-            if (x_inside_block >= 0x6) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            } else {
-                if (y_inside_block < 0xa) {
-                    eject_bottom = y_inside_block;
-                    eject_top = 0xa - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_EA_CORNER_INSIDE_SLAB_BOTTOM_LEFT:
-            if (x_inside_block < 0xa) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            } else {
-                if (y_inside_block >= 0x6) {
-                    eject_bottom = y_inside_block - 0x6;
-                    eject_top = 0x10 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_EA_CORNER_INSIDE_SLAB_BOTTOM_RIGHT:
-            if (x_inside_block >= 0x6) {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            } else {
-                if (y_inside_block >= 0x6) {
-                    eject_bottom = y_inside_block - 0x6;
-                    eject_top = 0x10 - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-        
-        // Breakable brick
-
-        case BREAKABLE_BRICK:
-            if (side == CENTER) {
+	if (kandomode && (side == CENTER || side == TOP)) {
                 break_brick(x, y, layer);
                 return 0;
-            } else {
-                eject_bottom = y_inside_block;
-                eject_top = 0x10 - y_inside_block;
-                break;
-            }
-
-        case COL_CENTERED_MINI_BLOCK:
-            if (x_inside_block >= 0x04 && x_inside_block < 0x0c) {
-                if (y_inside_block >= 0x04 && y_inside_block < 0x0c) {
-                    eject_bottom = y_inside_block - 0x04;
-                    eject_top = 0xc - y_inside_block;
-                    break;
-                }
-            }
-            return 0;
-
-        case COL_MINIBLOCK_0001:
-            if (bottom_right_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_0010:
-            if (bottom_left_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_0100:
-            if (top_right_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_1000:
-            if (top_left_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_1011:
-            if (top_left_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_right_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_left_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_0111:
-            if (top_right_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_right_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_left_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_1110:
-            if (top_right_corner(x_inside_block, y_inside_block)) break;
-            if (top_left_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_left_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_1101:
-            if (top_right_corner(x_inside_block, y_inside_block)) break;
-            if (top_left_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_right_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_1001:
-            if (top_left_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_right_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-        case COL_MINIBLOCK_0110:
-            if (top_right_corner(x_inside_block, y_inside_block)) break;
-            if (bottom_left_corner(x_inside_block, y_inside_block)) break;
-            return 0;
-
-        // Everything else
-        default:
-            return 0;
     }
+	else {
+		switch (col_type) {
+			case COL_FLOOR_CEIL:
+			case COL_FULL:
+			case COL_MINIBLOCK_1111:
+				eject_bottom = y_inside_block;
+				eject_top = 0x10 - y_inside_block;
+				break;
+				
+			// Normal slab 
 
+			case COL_MINIBLOCK_1100:
+			case COL_SLAB_TOP:
+				if (y_inside_block < 0x8) {
+					eject_bottom = y_inside_block & 0x07;
+					eject_top = 0x08 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			case COL_MINIBLOCK_0011:
+			case COL_SLAB_BOTTOM:
+				if (y_inside_block >= 0x8) {
+					eject_bottom = y_inside_block - 0x08;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			case COL_MINIBLOCK_1010:
+			case COL_SLAB_LEFT:
+				if (x_inside_block < 0x8) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			case COL_MINIBLOCK_0101:
+			case COL_SLAB_RIGHT:
+				if (x_inside_block >= 0x8) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			// Medium slab
+
+			case COL_SLAB_MED_TOP:
+				if (x_inside_block >= 0x02 && x_inside_block < 0x0e) {
+					if (y_inside_block < 0x8) {
+						eject_bottom = y_inside_block & 0x07;
+						eject_top = 0x08 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_SLAB_MED_BOTTOM:
+				if (x_inside_block >= 0x02 && x_inside_block < 0x0e) {
+					if (y_inside_block >= 0x8) {
+						eject_bottom = y_inside_block - 0x08;
+						eject_top = 0x10 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_SLAB_MED_LEFT:
+				if (y_inside_block >= 0x02 && y_inside_block < 0x0e) {
+					if (x_inside_block < 0x8) {
+						eject_bottom = y_inside_block - 0x02;
+						eject_top = 0x0e - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_SLAB_MED_RIGHT:
+				if (y_inside_block >= 0x02 && y_inside_block < 0x0e) {
+					if (x_inside_block >= 0x8) {
+						eject_bottom = y_inside_block - 0x02;
+						eject_top = 0x0e - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+				
+			// Tiny slab
+
+			case COL_SLAB_TINY_TOP:
+				if (x_inside_block >= 0x05 && x_inside_block < 0x0b) {
+					if (y_inside_block < 0x8) {
+						eject_bottom = y_inside_block & 0x07;
+						eject_top = 0x8 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_SLAB_TINY_BOTTOM:
+				if (x_inside_block >= 0x05 && x_inside_block < 0x0b) {
+					if (y_inside_block >= 0x8) {
+						eject_bottom = y_inside_block - 0x08;
+						eject_top = 0x10 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_SLAB_TINY_LEFT:
+				if (y_inside_block >= 0x05 && y_inside_block < 0x0b) {
+					if (x_inside_block < 0x8) {
+						eject_bottom = y_inside_block - 0x05;
+						eject_top = 0x0b - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_SLAB_TINY_RIGHT:
+				if (y_inside_block >= 0x05 && y_inside_block < 0x0b) {
+					if (x_inside_block >= 0x8) {
+						eject_bottom = y_inside_block - 0x05;
+						eject_top = 0x0b - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			// Electroman adventures ball part slab 
+
+			case COL_EA_SLAB_TOP:
+				if (y_inside_block < 0xa) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x0a - y_inside_block;
+					break;
+				}
+				return 0;
+
+			case COL_EA_SLAB_BOTTOM:
+				if (y_inside_block >= 0x6) {
+					eject_bottom = y_inside_block - 0x06;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			case COL_EA_SLAB_LEFT:
+				if (x_inside_block < 0xa) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			case COL_EA_SLAB_RIGHT:
+				if (x_inside_block >= 0x6) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+				return 0;
+
+			// Electroman adventures ball part corner slab 
+
+			case COL_EA_CORNER_SLAB_TOP_LEFT:
+				if (x_inside_block < 0xa) {
+					if (y_inside_block < 0xa) {
+						eject_bottom = y_inside_block;
+						eject_top = 0xa - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_EA_CORNER_SLAB_TOP_RIGHT:
+				if (x_inside_block >= 0x6) {
+					if (y_inside_block < 0xa) {
+						eject_bottom = y_inside_block;
+						eject_top = 0xa - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_EA_CORNER_SLAB_BOTTOM_LEFT:
+				if (x_inside_block < 0xa) {
+					if (y_inside_block >= 0x6) {
+						eject_bottom = y_inside_block - 0x06;
+						eject_top = 0x10 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_EA_CORNER_SLAB_BOTTOM_RIGHT:
+				if (x_inside_block >= 0x6) {
+					if (y_inside_block >= 0x6) {
+						eject_bottom = y_inside_block - 0x06;
+						eject_top = 0x10 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			// Electroman adventures ball part inside corner slab 
+
+			case COL_EA_CORNER_INSIDE_SLAB_TOP_LEFT:
+				if (x_inside_block < 0xa) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				} else {
+					if (y_inside_block < 0xa) {
+						eject_bottom = y_inside_block;
+						eject_top = 0xa - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_EA_CORNER_INSIDE_SLAB_TOP_RIGHT:
+				if (x_inside_block >= 0x6) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				} else {
+					if (y_inside_block < 0xa) {
+						eject_bottom = y_inside_block;
+						eject_top = 0xa - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_EA_CORNER_INSIDE_SLAB_BOTTOM_LEFT:
+				if (x_inside_block < 0xa) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				} else {
+					if (y_inside_block >= 0x6) {
+						eject_bottom = y_inside_block - 0x6;
+						eject_top = 0x10 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_EA_CORNER_INSIDE_SLAB_BOTTOM_RIGHT:
+				if (x_inside_block >= 0x6) {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				} else {
+					if (y_inside_block >= 0x6) {
+						eject_bottom = y_inside_block - 0x6;
+						eject_top = 0x10 - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+			
+			// Breakable brick
+
+			case BREAKABLE_BRICK:
+				if (side == CENTER) {
+					break_brick(x, y, layer);
+					return 0;
+				} else {
+					eject_bottom = y_inside_block;
+					eject_top = 0x10 - y_inside_block;
+					break;
+				}
+
+			case COL_CENTERED_MINI_BLOCK:
+				if (x_inside_block >= 0x04 && x_inside_block < 0x0c) {
+					if (y_inside_block >= 0x04 && y_inside_block < 0x0c) {
+						eject_bottom = y_inside_block - 0x04;
+						eject_top = 0xc - y_inside_block;
+						break;
+					}
+				}
+				return 0;
+
+			case COL_MINIBLOCK_0001:
+				if (bottom_right_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_0010:
+				if (bottom_left_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_0100:
+				if (top_right_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_1000:
+				if (top_left_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_1011:
+				if (top_left_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_right_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_left_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_0111:
+				if (top_right_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_right_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_left_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_1110:
+				if (top_right_corner(x_inside_block, y_inside_block)) break;
+				if (top_left_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_left_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_1101:
+				if (top_right_corner(x_inside_block, y_inside_block)) break;
+				if (top_left_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_right_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_1001:
+				if (top_left_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_right_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+			case COL_MINIBLOCK_0110:
+				if (top_right_corner(x_inside_block, y_inside_block)) break;
+				if (bottom_left_corner(x_inside_block, y_inside_block)) break;
+				return 0;
+
+			// Everything else
+			default:
+				return 0;
+		}
+	}
     // Set related vars and set new player y position, only if this is not a center check
     
     if (side == TOP) {
@@ -792,9 +799,9 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
             #ifdef DEBUG
-                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip && !kandomode) player_death = TRUE;
             #else
-                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL) player_death = TRUE;
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !kandomode) player_death = TRUE;
             #endif
         }
     } else if (side == BOTTOM) {   
@@ -826,9 +833,9 @@ u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             // Remove subpixels
             curr_player.player_y &= ~0xffff;
             #ifdef DEBUG
-                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip) player_death = TRUE;
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !noclip && !kandomode) player_death = TRUE;
             #else
-                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL) player_death = TRUE;
+                if (curr_player.gamemode == GAMEMODE_WAVE && col_type != COL_FLOOR_CEIL && !kandomode) player_death = TRUE;
             #endif
         }
     }
@@ -1087,7 +1094,7 @@ void col_spike_top_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 sp
         x, y, width, height,
         spk_x + 0x07, spk_y + 0x05, 0x02, 0x06
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1096,7 +1103,7 @@ void col_spike_left_right(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 sp
         x, y, width, height,
         spk_x + 0x05, spk_y + 0x07, 0x06, 0x02
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1105,7 +1112,7 @@ void col_small_spike_top(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 spk
         x, y, width, height,
         spk_x + 0x06, spk_y + 0x02, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1114,7 +1121,7 @@ void col_small_spike_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 
         x, y, width, height,
         spk_x + 0x06, spk_y + 0x0b, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1123,7 +1130,7 @@ void col_small_spike_right(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 s
         x, y, width, height,
         spk_x + 0x0b, spk_y + 0x06, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1132,7 +1139,7 @@ void col_small_spike_left(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 sp
         x, y, width, height,
         spk_x + 0x02, spk_y + 0x06, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1141,7 +1148,7 @@ void col_medium_spike_top(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 sp
         x, y, width, height,
         spk_x + 0x07, spk_y + 0x02, 0x02, 0x04
     )) {
-        player_death = TRUE; 
+        player_death = kandomode ? FALSE : TRUE; 
     }
 }
 
@@ -1150,7 +1157,7 @@ void col_medium_spike_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32
         x, y, width, height,
         spk_x + 0x07, spk_y + 0x09, 0x02, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1159,7 +1166,7 @@ void col_medium_spike_right(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 
         x, y, width, height,
         spk_x + 0x09, spk_y + 0x07, 0x04, 0x02
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1168,7 +1175,7 @@ void col_medium_spike_left(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 s
         x, y, width, height,
         spk_x + 0x02, spk_y + 0x07, 0x04, 0x02
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1177,7 +1184,7 @@ void col_ground_spike_top(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 sp
         x, y, width, height,
         spk_x + 0x06, spk_y - 0x02, 0x04, 0x06
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1186,7 +1193,7 @@ void col_ground_spike_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32
         x, y, width, height,
         spk_x + 0x06, spk_y + 0x0c, 0x04, 0x06
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1195,7 +1202,7 @@ void col_ground_spike_right(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 
         x, y, width, height,
         spk_x + 0x0c, spk_y + 0x06, 0x06, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1204,7 +1211,7 @@ void col_ground_spike_left(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u32 s
         x, y, width, height,
         spk_x - 0x02, spk_y + 0x06, 0x06, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1213,7 +1220,7 @@ void col_ground_wavy_spike_top(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u
         x, y, width, height,
         spk_x + 0x06, spk_y, 0x04, 0x04
     )) {
-        player_death = TRUE; 
+        player_death = kandomode ? FALSE : TRUE; 
     }
 }
 
@@ -1222,7 +1229,7 @@ void col_ground_wavy_spike_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x
         x, y, width, height,
         spk_x + 0x06, spk_y + 0x0c, 0x04, 0x04
     )) {
-        player_death = TRUE; 
+        player_death = kandomode ? FALSE : TRUE; 
     }
 }
 
@@ -1231,7 +1238,7 @@ void col_ground_wavy_spike_right(u32 x, u32 y, u32 width, u32 height, u32 spk_x,
         x, y, width, height,
         spk_x + 0x0c, spk_y + 0x06, 0x04, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1240,7 +1247,7 @@ void col_ground_wavy_spike_left(u32 x, u32 y, u32 width, u32 height, u32 spk_x, 
         x, y, width, height,
         spk_x , spk_y + 0x06, 0x04, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1249,7 +1256,7 @@ void col_ground_bush_spike_top(u32 x, u32 y, u32 width, u32 height, u32 spk_x, u
         x, y, width, height,
         spk_x + 0x04, spk_y - 0x03, 0x08, 0x0a
     )) {
-        player_death = TRUE;  
+        player_death = kandomode ? FALSE : TRUE;  
     }
 }
 
@@ -1258,7 +1265,7 @@ void col_ground_bush_spike_bottom(u32 x, u32 y, u32 width, u32 height, u32 spk_x
         x, y, width, height,
         spk_x + 0x04, spk_y + 0x09, 0x08, 0x0a
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1267,7 +1274,7 @@ void col_ground_bush_spike_right(u32 x, u32 y, u32 width, u32 height, u32 spk_x,
         x, y, width, height,
         spk_x + 0x09, spk_y + 0x04, 0x0a, 0x08
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1276,7 +1283,7 @@ void col_ground_bush_spike_left(u32 x, u32 y, u32 width, u32 height, u32 spk_x, 
         x, y, width, height,
         spk_x - 0x03, spk_y + 0x04, 0x0a, 0x08
     )) {
-        player_death = TRUE;  
+        player_death = kandomode ? FALSE : TRUE;  
     }
 }
 
@@ -1285,7 +1292,7 @@ void col_ground_wavy_spike_edge_bl(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x04, spk_y + 0x0c, 0x03, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1294,7 +1301,7 @@ void col_ground_wavy_spike_edge_br(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x0c, spk_y + 0x0c, 0x03, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1303,7 +1310,7 @@ void col_ground_wavy_spike_edge_tl(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x04, spk_y, 0x03, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1312,7 +1319,7 @@ void col_ground_wavy_spike_edge_tr(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x0c, spk_y, 0x03, 0x04
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1321,7 +1328,7 @@ void col_ground_wavy_spike_edge_lb(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x04, spk_y + 0x09, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1330,7 +1337,7 @@ void col_ground_wavy_spike_edge_lt(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x04, spk_y, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1339,7 +1346,7 @@ void col_ground_wavy_spike_edge_rb(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x0c, spk_y + 0x09, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1348,7 +1355,7 @@ void col_ground_wavy_spike_edge_rt(u32 x, u32 y, u32 width, u32 height, u32 spk_
         x, y, width, height,
         spk_x + 0x0c, spk_y, 0x04, 0x03
     )) {
-        player_death = TRUE;
+        player_death = kandomode ? FALSE : TRUE;
     }
 }
 
@@ -1751,9 +1758,9 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
     // Die if the internal hitbox and normal hitbox collides with the vertical edge
     if (ejection_type == EJECTION_TYPE_VERT && check_slope_eject_type(player_internal_hitbox, slope) == EJECTION_TYPE_VERT) {
         #ifdef DEBUG
-            if (!noclip) player_death = TRUE;
+            if (!noclip) player_death = kandomode ? FALSE : TRUE;
         #else
-            player_death = TRUE;
+            player_death = kandomode ? FALSE : TRUE;
         #endif
     }
 
@@ -1765,9 +1772,9 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
             // Die if the internal hitbox collides with an slope
             if (check_slope_collision(player_internal_hitbox, slope) != NO_SLOPE_COLL_DETECTED) {
                 #ifdef DEBUG
-                    if (!noclip) player_death = TRUE;
+                    if (!noclip) player_death = kandomode ? FALSE : TRUE;
                 #else
-                    player_death = TRUE;
+                    player_death = kandomode ? FALSE : TRUE;
                 #endif
             }
             return TRUE;
@@ -1775,9 +1782,9 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
             // Die if the internal hitbox collides with an slope
             if (check_slope_collision(player_internal_hitbox, slope) != NO_SLOPE_COLL_DETECTED) {
                 #ifdef DEBUG
-                    if (!noclip) player_death = TRUE;
+                    if (!noclip) player_death = kandomode ? FALSE : TRUE;
                 #else
-                    player_death = TRUE;
+                    player_death = kandomode ? FALSE : TRUE;
                 #endif
             }
             return TRUE;
@@ -1810,9 +1817,9 @@ s32 slope_check(u16 type, u32 col_type, s32 eject, u32 ejection_type, struct cir
     } else if (curr_player.gamemode == GAMEMODE_WAVE) {
         // Kill if wave
         #ifdef DEBUG
-            if (!noclip) player_death = TRUE;
+            if (!noclip) player_death = kandomode ? FALSE : TRUE;
         #else
-            player_death = TRUE;
+            player_death = kandomode ? FALSE : TRUE;
         #endif
     } else if (curr_player.gamemode == GAMEMODE_UFO) {
         if (type == DEGREES_63_5 || type == DEGREES_63_5_UD) {

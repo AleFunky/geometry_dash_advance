@@ -13,6 +13,8 @@
 #define PINK_PAD_INDEX 3
 #define BLUE_ORB_PAD_INDEX 4
 
+extern u8 kandomode;
+
 const s32 orb_pad_bounces[][GAMEMODE_COUNT][5] = {
     { // Big
         /* Cube */ {CUBE_YELLOW_ORB_JUMP_SPEED, CUBE_YELLOW_PAD_JUMP_SPEED, CUBE_PINK_ORB_JUMP_SPEED, CUBE_PINK_PAD_JUMP_SPEED, CUBE_BLUE_ORB_PAD_INITIAL_SPEED},
@@ -453,9 +455,9 @@ void do_nothing(UNUSED struct ObjectSlot *objectSlot) {
 
 void kill_player(struct ObjectSlot *objectSlot) {
 #ifdef DEBUG
-    if (!noclip) player_death = TRUE;
+    if (!noclip) { if (!kandomode) player_death = TRUE; }
 #else
-    player_death = TRUE;
+    if (!kandomode) player_death = TRUE;
 #endif
     objectSlot->activated[curr_player_id] = TRUE;
 }

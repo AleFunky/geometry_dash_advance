@@ -123,6 +123,8 @@ u8 curr_player_id;
 
 u8 num_steps;
 
+u8 kandomode;
+
 // Holds the gamemode to upload on VBLANK
 s32 gamemode_upload_buffer[2];
 
