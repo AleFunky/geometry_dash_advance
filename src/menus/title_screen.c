@@ -23,6 +23,7 @@ void reset_title_screen_player();
 void draw_button_glyphs_title_screen();
 
 extern u16 __key_curr;
+extern u8 kandomode;
 
 INLINE void do_button_draw() {
     nextSpr = 0;
@@ -115,10 +116,14 @@ void title_screen_loop() {
         }
 
         // Sound test
-        if (key_hit(KEY_SELECT)) {
+        if (key_hit(KEY_SELECT) && !key_is_down(KEY_B)) {
             game_state = STATE_SOUND_TEST;
             break;
         }
+
+		if (handle_key_holding(KEY_B) && key_hit(KEY_SELECT)) {
+			kandomode = 0x01;
+		}
 
         // Do scroll
         title_screen_scroll_x += SPEED_1x;
