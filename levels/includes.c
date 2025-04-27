@@ -16,8 +16,6 @@ ROM_DATA const u16 *level_defines[][4] = {
    { electromanadventures_l1_level_data, electromanadventures_l2_level_data, electromanadventures_spr_data, (u16 *) electromanadventures_properties },
    { clubstep_l1_level_data, clubstep_l2_level_data, clubstep_spr_data, (u16 *) clubstep_properties },
    { electrodynamix_l1_level_data, electrodynamix_l2_level_data, electrodynamix_spr_data, (u16 *) electrodynamix_properties },
-   { test_l1_level_data, test_l2_level_data, test_spr_data, (u16 *) test_properties },
-   { test2_l1_level_data, test2_l2_level_data, test2_spr_data, (u16 *) test2_properties },
    { leveleasy_l1_level_data, leveleasy_l2_level_data, leveleasy_spr_data, (u16 *) leveleasy_properties },
    { groundtospace_l1_level_data, groundtospace_l2_level_data, groundtospace_spr_data, (u16 *) groundtospace_properties },
 };
@@ -38,8 +36,6 @@ ROM_DATA const u8 *level_names[] = {
    electromanadventures_name,
    clubstep_name,
    electrodynamix_name,
-   test_name,
-   test2_name,
    leveleasy_name,
    groundtospace_name,
 };
