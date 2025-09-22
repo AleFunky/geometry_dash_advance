@@ -163,8 +163,16 @@
 #include "leveleasy/SP.h"
 #include "leveleasy/properties.h"
 
+// dorabaebasic7
+#define dorabaebasic7_ID 16
+
+#include "dorabaebasic7/l1.h"
+#include "dorabaebasic7/l2.h"
+#include "dorabaebasic7/SP.h"
+#include "dorabaebasic7/properties.h"
+
 // groundtospace
-#define groundtospace_ID 16
+#define groundtospace_ID 17
 
 #include "groundtospace/l1.h"
 #include "groundtospace/l2.h"
@@ -172,7 +180,7 @@
 #include "groundtospace/properties.h"
 
 // ultimatedestruction
-#define ultimatedestruction_ID 17
+#define ultimatedestruction_ID 18
 
 #include "ultimatedestruction/l1.h"
 #include "ultimatedestruction/l2.h"
@@ -180,7 +188,7 @@
 #include "ultimatedestruction/properties.h"
 
 // thenightmare
-#define thenightmare_ID 18
+#define thenightmare_ID 19
 
 #include "thenightmare/l1.h"
 #include "thenightmare/l2.h"
@@ -188,7 +196,7 @@
 #include "thenightmare/properties.h"
 
 // rose
-#define rose_ID 19
+#define rose_ID 20
 
 #include "rose/l1.h"
 #include "rose/l2.h"
@@ -196,7 +204,7 @@
 #include "rose/properties.h"
 
 // problematic
-#define problematic_ID 20
+#define problematic_ID 21
 
 #include "problematic/l1.h"
 #include "problematic/l2.h"
@@ -204,7 +212,7 @@
 #include "problematic/properties.h"
 
 // deathmoon
-#define deathmoon_ID 21
+#define deathmoon_ID 22
 
 #include "deathmoon/l1.h"
 #include "deathmoon/l2.h"
@@ -212,7 +220,7 @@
 #include "deathmoon/properties.h"
 
 // everyend
-#define everyend_ID 22
+#define everyend_ID 23
 
 #include "everyend/l1.h"
 #include "everyend/l2.h"
@@ -220,7 +228,7 @@
 #include "everyend/properties.h"
 
 // test
-#define test_ID 23
+#define test_ID 24
 
 #include "test/l1.h"
 #include "test/l2.h"
@@ -228,13 +236,13 @@
 #include "test/properties.h"
 
 // test2
-#define test2_ID 24
+#define test2_ID 25
 
 #include "test2/l1.h"
 #include "test2/l2.h"
 #include "test2/SP.h"
 #include "test2/properties.h"
 
-#define LEVEL_COUNT 25
+#define LEVEL_COUNT 26
 extern ROM_DATA const u16 *level_defines[][4];
 extern ROM_DATA const u8 *level_names[];
