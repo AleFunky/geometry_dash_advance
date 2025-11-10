@@ -4,7 +4,7 @@ If you want to make a level, copy the template.tmx file and open it in Tiled.
 There are a total of 3 layers: L1, L2 and SP. 
 
 L1 and L2 are tiled layers and use metatiles/blocks. They are found in the tileset called "famidash".
-For the colored blocks, the color scheme follows the 1.9 editor mode, this is:
+For the colored blocks, the color scheme follows the 1.9 editor mode (Basically disabled preview mode), this is:
 - The color in tiled specified the color Channel
     - Black is the default black color
     - Pink is col 1
