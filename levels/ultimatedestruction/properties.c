@@ -1,6 +1,6 @@
 #include "soundbank.h"
 // ultimatedestruction properties
-const unsigned int ultiatedestruction_properties[] = {
+const unsigned int ultimatedestruction_properties[] = {
  /*BG color*/      0x7de5,
  /*GROUND color*/  0x7d80,
  /*COL1 color*/    0x7fff,
@@ -21,6 +21,6 @@ const unsigned int ultiatedestruction_properties[] = {
  /*ground*/        0,
 };
 
-const unsigned char ultiatedestruction_name[] = {
+const unsigned char ultimatedestruction_name[] = {
    "ULTIATE DESTRUCTION"
 };
