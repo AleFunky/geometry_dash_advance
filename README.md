@@ -31,6 +31,7 @@ If you want to access to developer builds, you can download the latest nightly b
 |[banana6000](https://github.com/xXFamidashFan69Xx)|graphics, levels and metatiles|
 |Nicolestarlight|music|
 |Redgd|graphics|
+|[FijiAura](https://github.com/FijiAura)|bugfixes|
 
 ## Music credits
 Here are the original authors of the soundtrack and the person in charge of cover them to work on the GBA: [Click Here](https://github.com/AleFunky/geometry_dash_advance/blob/main/audio/Audio%20credits.md)
