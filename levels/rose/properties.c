@@ -14,7 +14,7 @@ const unsigned int rose_properties[] = {
  /*level width*/   892,
  /*song*/          MOD_ROSE,
  /*name length*/   4,
- /*difficulty*/    5,
+ /*difficulty*/    3,
  /*stars*/         10,
  /*coins number*/  1,
  /*background*/    0,
