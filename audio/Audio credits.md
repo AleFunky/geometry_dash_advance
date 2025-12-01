@@ -6,7 +6,7 @@
 |---|---|---|
 |Main Menu|RobTop|ElAngel378 & Orionconstel|
 |Practice|OcularNebula-Stay Inside Me|Orionconstel|
-|Stereo madness|Forever Bound|ElAngel378|
+|Stereo Madness|Forever Bound|ElAngel378|
 |Back On Track|DJVI|ElAngel378|
 |Polargeist|Step|Orionconstel|
 |Dry Out|DJVI|Orionconstel & ElAngel378|
