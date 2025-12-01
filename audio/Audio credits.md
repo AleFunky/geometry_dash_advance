@@ -2,32 +2,32 @@
 
 ## Main levels Music
 
-| Song | author | covered by |
+| Song | Author | Covered by |
 |---|---|---|
-|Main menu|Robtop|ElAngel378 & Orionconstel|
-|Practice|OcularNebula-stay inside me|Orionconstel|
+|Main Menu|RobTop|ElAngel378 & Orionconstel|
+|Practice|OcularNebula-Stay Inside Me|Orionconstel|
 |Stereo madness|Forever Bound|ElAngel378|
-|Back on track|DJVI|ElAngel378|
+|Back On Track|DJVI|ElAngel378|
 |Polargeist|Step|Orionconstel|
 |Dry Out|DJVI|Orionconstel & ElAngel378|
-|Base after base|DJVI|ElAngel378|
-|Can't let go|DJVI|ElAngel378|
+|Base After Base|DJVI|ElAngel378|
+|Can't Let Go|DJVI|ElAngel378|
 |Jumper|Waterflame|Orionconstel|
-|Time machine|Waterflame|Nicolestarlight|
+|Time Machine|Waterflame|Nicolestarlight and Orionconstel|
 |Cycles|DJVI|Orionconstel and ElAngel378|
-|Xstep|DJVI|Nicolestarlight|
+|xStep|DJVI|Nicolestarlight|
 |Clutterfunk|Waterflame|Orionconstel|
-|Theory of everything|DJ-Nate|Orionconstel|
+|Theory of Everything|DJ-Nate|Orionconstel|
 |Clubstep|DJ-Nate|Orionconstel|
-|Electroman adventures|waterflame|Orionconstel|
+|Electroman Adventures|Waterflame|Orionconstel|
 |Electrodynamix|DJ-Nate|Orionconstel|
 
 ## Custom Music
 
-| Song | author | covered by |
+| Song | Author | Covered by |
 |---|---|---|
-|Grond to space|Seaglowingpro|Orionconstel|
+|Ground to Space|SeaGlowingPro|Orionconstel|
 |Rose|Cornandbeans|Orionconstel|
-|EveryEnd|Dimrain47|Orionconstel|
+|Every End|Dimrain47|Orionconstel|
 |Problematic|Rukkus|HatSwitch|
-|Ultimate Destruction|DJVI|Orionconstel|
+|Ultimate Destruction|TMM43|Orionconstel|
