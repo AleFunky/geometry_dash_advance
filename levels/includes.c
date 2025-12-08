@@ -27,8 +27,6 @@ ROM_DATA const u16 *level_defines[][4] = {
    { problematic_l1_level_data, problematic_l2_level_data, problematic_spr_data, (u16 *) problematic_properties },
    { deathmoon_l1_level_data, deathmoon_l2_level_data, deathmoon_spr_data, (u16 *) deathmoon_properties },
    { everyend_l1_level_data, everyend_l2_level_data, everyend_spr_data, (u16 *) everyend_properties },
-   { test_l1_level_data, test_l2_level_data, test_spr_data, (u16 *) test_properties },
-   { test2_l1_level_data, test2_l2_level_data, test2_spr_data, (u16 *) test2_properties },
 };
 
 ROM_DATA const u8 *level_names[] = {
@@ -58,6 +56,4 @@ ROM_DATA const u8 *level_names[] = {
    problematic_name,
    deathmoon_name,
    everyend_name,
-   test_name,
-   test2_name,
 };
