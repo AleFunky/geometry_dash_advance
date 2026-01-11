@@ -14,7 +14,7 @@ const unsigned int problematic_properties[] = {
  /*level width*/   646,
  /*song*/          MOD_PROBLEM,
  /*name length*/   11,
- /*difficulty*/    5,
+ /*difficulty*/    8,
  /*stars*/         10,
  /*coins number*/  3,
  /*background*/    2,

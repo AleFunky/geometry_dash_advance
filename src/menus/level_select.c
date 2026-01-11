@@ -31,6 +31,188 @@ EWRAM_DATA u16 bg_lvl_select_color_target;
 u64 target_scroll_x;
 #define scroll_page intended_scroll_y // REPURPOSED FOR MENU
 
+struct FaceDefinition {
+    u16 tiles[4*4];
+    COLOR color[3]; // 0 = lighter, 1 = darker, 2 = eye/tongue color
+};
+
+ROM_DATA const struct FaceDefinition faces[DIFF_COUNT] = {
+    // Easy
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xA0, 0xA1, 0x5F,
+            0x5F, 0xB0, 0xB1, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            CLR_CYAN, CLR_BLUE, CLR_RED
+        }
+    },
+    // Normal
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xA2, 0xA3, 0x5F,
+            0x5F, 0xB2, 0xB3, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x03E0, 0x0202, CLR_RED
+        }
+    },
+    // Hard
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xA4, 0xA5, 0x5F,
+            0x5F, 0xB4, 0xB5, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x03FF, 0x01FF, CLR_RED
+        }
+    },
+    // Harder
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xA6, 0xA7, 0x5F,
+            0x5F, 0xB6, 0xB7, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x01DF, 0x001F, CLR_RED
+        }
+    },
+    // Insane
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xA8, 0xA9, 0x5F,
+            0x5F, 0xB8, 0xB9, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x6DFF, 0x785D, CLR_RED
+        }
+    },
+    // Demon
+    {
+        .tiles = {
+            0xC8, 0xC9, 0xCA, 0xCB,
+            0xD8, 0xD9, 0xDA, 0xDB,
+            0xE8, 0xE9, 0xEA, 0xEB,
+            0xF8, 0xF9, 0xFA, 0xFB,
+        },
+        .color = {
+            0x28FF, 0x009C, CLR_LIME
+        }
+    },
+    // Auto
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xAC, 0xAD, 0x5F,
+            0x5F, 0xBC, 0xBD, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x03FF, 0x01FF, CLR_CYAN
+        }
+    },
+    // NA
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xAA, 0xAB, 0x5F,
+            0x5F, 0xBA, 0xBB, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x4A52, 0x35AD, CLR_BLACK
+        }
+    },
+    // Easy Demon
+    {
+        .tiles = {
+            0x5F, 0x5F, 0x5F, 0x5F,
+            0x5F, 0xD1, 0xD2, 0x5F,
+            0x5F, 0xE1, 0xE2, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x7D12, 0x3C4B, CLR_CYAN
+        }
+    },
+    // Medium Demon
+    {
+        .tiles = {
+            0x5F, 0xC5, 0xC6, 0x5F,
+            0x5F, 0xD5, 0xD6, 0x5F,
+            0x5F, 0xE5, 0xE6, 0x5F,
+            0x5F, 0x5F, 0x5F, 0x5F,
+        },
+        .color = {
+            0x64FB, 0x284F, 0x53C2
+        }
+    },
+    // Hard Demon
+    {
+        .tiles = {
+            0xC8, 0xC9, 0xCA, 0xCB,
+            0xD8, 0xD9, 0xDA, 0xDB,
+            0xE8, 0xE9, 0xEA, 0xEB,
+            0xF8, 0xF9, 0xFA, 0xFB,
+        },
+        .color = {
+            0x28FF, 0x009C, CLR_LIME
+        }
+    },
+    // Insane demon
+    {
+        .tiles = {
+            0xCC, 0xCD, 0xCE, 0xCF,
+            0xDC, 0xDD, 0xDE, 0xDF,
+            0xEC, 0xED, 0xEE, 0xEF,
+            0xFC, 0xFD, 0xFE, 0xFF,
+        },
+        .color = {
+            0x0C9E, 0x000F, CLR_YELLOW
+        }
+    },
+    // Extreme demon
+    {
+        .tiles = {
+            0x100, 0x101, 0x102, 0x103,
+            0x110, 0x111, 0x112, 0x113,
+            0x120, 0x121, 0x122, 0x123,
+            0x130, 0x131, 0x132, 0x133,
+        },
+        .color = {
+            0x0416, 0x0008, CLR_YELLOW
+        }
+    },
+};
+
+
+#define FIRST_FACE_PAL 0x30
+#define FIRST_FACE_COLOR 0x2
+#define LAST_FACE_COLOR  0xb
+
+void make_face_palette(u16 difficulty, u16 pal) {
+    struct FaceDefinition face = faces[difficulty];
+    
+    palette_buffer[pal + 0x01] = CLR_WHITE;
+    palette_buffer[pal + 0x0d] = face.color[2];
+    
+    s32 value = 0;
+    for (s32 id = FIRST_FACE_COLOR; id <= LAST_FACE_COLOR; id++) {
+        palette_buffer[pal + id] = blend_clr(face.color[0], face.color[1], value);
+        value += 0x1f / (LAST_FACE_COLOR - FIRST_FACE_COLOR + 1);
+    }
+}
+
 ARM_CODE void hblank_lvl_select_handler() {
     u32 vcount = REG_VCOUNT;
     if (vcount < 128) {
@@ -43,10 +225,6 @@ ARM_CODE void hblank_lvl_select_handler() {
             pal_bg_mem[0x24] = blended_darker;
             pal_bg_mem[0x3e] = blended_darker;
             pal_bg_mem[0x4e] = blended_darker;
-            pal_bg_mem[0x5e] = blended_darker;
-            pal_bg_mem[0x6e] = blended_darker;
-            pal_bg_mem[0x7e] = blended_darker;
-            pal_bg_mem[0x8e] = blended_darker;
             pal_bg_mem[0x122] = blended_darker;
         } else {
             pal_bg_mem[0x2] = blended_darker;
@@ -72,7 +250,6 @@ void level_select_loop() {
 
     memset32(palette_buffer, 0, 256);
     memcpy16(palette_buffer, menu_palette, sizeof(menu_palette) / sizeof(COLOR));
-    set_face_palettes(palette_buffer);
 
     memcpy16(&palette_buffer[256], menu_spr_palette, sizeof(menu_spr_palette) / sizeof(COLOR));
 
@@ -95,8 +272,8 @@ void level_select_loop() {
 
     tte_set_special(0x2000);
 
-    memcpy32(&tile_mem[0][0], level_select_chr, sizeof(level_select_chr) / 8);
-    memcpy32(&tile_mem_obj[0][0], &level_select_chr[256], sizeof(level_select_chr) / 8);
+    memcpy32(&tile_mem[0][0], level_select_chr, sizeof(level_select_chr) / 4);
+    memcpy32(&tile_mem_obj[0][0], &level_select_chr[0x180], sizeof(level_select_chr) / 8);
     memcpy32(&tile_mem_obj[0][992], level_text_chr, sizeof(TILE) * 32 / 4);
 
     memcpy32(&se_mem[26][0], level_select_l0_tilemap, sizeof(level_select_l0_tilemap) / 4);
@@ -444,15 +621,19 @@ void print_level_info(u16 level_id) {
     // Now place the face
     u32 *properties_pointer = (u32*) level_defines[level_id][LEVEL_PROPERTIES_INDEX];
     u32 difficulty = properties_pointer[LEVEL_DIFFICULTY];
-    u32 difficulty_top_index = FACE_TILE_ID_OFFSET + (difficulty << 1);
     
-    u32 palette = difficulty + 3;
+    u32 palette = 3 + (scroll_page & 1);
+
+    make_face_palette(difficulty, palette << 4);
 
     // Plot tiles
-    se_plot(&se_mem[sb_number][0], face_x    , face_y    , SE_BUILD(difficulty_top_index,        palette, 0, 0));
-    se_plot(&se_mem[sb_number][0], face_x + 1, face_y    , SE_BUILD(difficulty_top_index + 1,    palette, 0, 0));
-    se_plot(&se_mem[sb_number][0], face_x    , face_y + 1, SE_BUILD(difficulty_top_index + 0x10, palette, 0, 0));
-    se_plot(&se_mem[sb_number][0], face_x + 1, face_y + 1, SE_BUILD(difficulty_top_index + 0x11, palette, 0, 0));
+    for (s32 x = 0; x < 4; x++) { 
+        for (s32 y = 0; y < 4; y++) {
+            u32 face_index = x + (y << 2);
+            u16 tile = faces[difficulty].tiles[face_index];
+            se_plot(&se_mem[sb_number][0], x + face_x - 1, y + face_y - 1, SE_BUILD(tile, palette, 0, 0));
+        }
+    }
 }
 
 #define PROGRESS_BAR_POS_X 6

@@ -564,10 +564,10 @@ def export_properties_to_h(level_name, output_path_h, output_path_c, json_file_p
                 song = prop['value']
             elif prop['name'] == 'Difficulty':
                 diff_string = prop['value']
-                possible_diff = ["EASY", "NORMAL", "HARD", "HARDER", "INSANE", "DEMON"]
+                possible_diff = ["EASY", "NORMAL", "HARD", "HARDER", "INSANE", "DEMON", "AUTO", "NA", "EASY_DEMON", "MEDIUM_DEMON", "HARD_DEMON", "INSANE_DEMON", "EXTREME_DEMON"]
 
                 if diff_string not in possible_diff:
-                    raise Exception(f"Encountered invalid difficulty: {diff_string} Must be one of the following: EASY, NORMAL, HARD, HARDER, INSANE, DEMON") 
+                    raise Exception(f"Encountered invalid difficulty: {diff_string} Must be one of the following: EASY, NORMAL, HARD, HARDER, INSANE, DEMON, AUTO, NA, EASY_DEMON, MEDIUM_DEMON, HARD_DEMON, INSANE_DEMON, EXTREME_DEMON.") 
 
                 difficulty = possible_diff.index(diff_string)
 

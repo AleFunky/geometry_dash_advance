@@ -6,16 +6,6 @@
 #include "mgba_log.h"
 #include "math.h"
 
-#define NUM_FACES 6
-const COLOR face_colors[][2] = {
-    {CLR_CYAN, CLR_BLUE}, // Easy
-    {0x03E0, 0x0202}, // Normal
-    {0x03FF, 0x01FF}, // Hard
-    {0x01DF, 0x001F}, // Harder
-    {0x6DFF, 0x785D}, // Insane
-    {0x28FF, 0x009C}, // Demon
-};
-
 const COLOR menu_bg_colors[] = {
     0x6C00, // Stereo Madness
     0x741D, // Back on Track
@@ -123,7 +113,7 @@ void menu_set_bg_color(COLOR *dst, COLOR color) {
     dst[0x12] = dst[0x122] = dst[0x24] = dst[0x04];
 
     if (game_state == STATE_LEVEL_SELECT) {
-        for (s32 i = 3; i < NUM_FACES + 3; i++) {
+        for (s32 i = 3; i < 5; i++) {
             dst[(i << 4) + 0x0e] = dst[0x04];
         }
     }
@@ -459,28 +449,6 @@ void run_col_trigger_changes() {
                 col_trigger_buffer[channel][COL_TRIG_BUFF_ACTIVE] = FALSE;
             }
         }
-    }
-}
-
-#define FIRST_FACE_PAL 0x30
-#define FIRST_FACE_COLOR 0x2
-#define LAST_FACE_COLOR  0xb
-
-void set_face_palettes(COLOR *dst) {
-    s32 difficulty = 0;
-    for (s32 pal = FIRST_FACE_PAL; pal < (FIRST_FACE_PAL + (NUM_FACES * 0x10)); pal += 0x10) {    
-        s32 value = 0;
-        dst[pal + 0x01] = CLR_WHITE;
-
-        // Demon face uses green instead of red
-        if (pal == 0x80) dst[pal + 0x0d] = CLR_LIME;
-        else dst[pal + 0x0d] = CLR_RED;
-
-        for (s32 id = FIRST_FACE_COLOR; id <= LAST_FACE_COLOR; id++) {
-            dst[pal + id] = blend_clr(face_colors[difficulty][0], face_colors[difficulty][1], value);
-            value += 0x1f / (LAST_FACE_COLOR - FIRST_FACE_COLOR + 1);
-        }
-        difficulty++;
     }
 }
 

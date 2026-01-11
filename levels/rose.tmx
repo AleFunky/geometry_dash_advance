@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="892" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="4929">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="892" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="4929">
  <editorsettings>
   <export target="rose.json" format="json"/>
  </editorsettings>
@@ -10,7 +10,7 @@
   <property name="COL2" type="color" value="#ff000000"/>
   <property name="COL3" type="color" value="#ff000000"/>
   <property name="COL4" type="color" value="#ff000000"/>
-  <property name="Difficulty" value="DEMON"/>
+  <property name="Difficulty" value="EASY_DEMON"/>
   <property name="GROUND" type="color" value="#ff000000"/>
   <property name="Gamemode" type="int" value="0"/>
   <property name="Ground Type" type="int" value="0"/>

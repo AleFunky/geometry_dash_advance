@@ -14,7 +14,7 @@ const unsigned int deathmoon_properties[] = {
  /*level width*/   1818,
  /*song*/          MOD_DEATHMOON,
  /*name length*/   9,
- /*difficulty*/    5,
+ /*difficulty*/    8,
  /*stars*/         10,
  /*coins number*/  0,
  /*background*/    1,

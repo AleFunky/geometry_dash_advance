@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="646" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="2405">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="646" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="2405">
  <editorsettings>
   <export target="problematic.json" format="json"/>
  </editorsettings>
@@ -10,7 +10,7 @@
   <property name="COL2" type="color" value="#ff42ff9a"/>
   <property name="COL3" type="color" value="#ff00bf92"/>
   <property name="COL4" type="color" value="#ff313232"/>
-  <property name="Difficulty" value="DEMON"/>
+  <property name="Difficulty" value="EASY_DEMON"/>
   <property name="GROUND" type="color" value="#ff439d5c"/>
   <property name="Gamemode" type="int" value="0"/>
   <property name="Ground Type" type="int" value="0"/>

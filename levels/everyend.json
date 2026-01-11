@@ -7304,7 +7304,7 @@
         {
          "name":"Difficulty",
          "type":"string",
-         "value":"DEMON"
+         "value":"EXTREME_DEMON"
         }, 
         {
          "name":"GROUND",

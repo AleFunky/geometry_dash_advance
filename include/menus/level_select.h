@@ -15,6 +15,23 @@ enum GameState {
     STATE_PLAYING
 };
 
+enum DifficultyEnum {
+    DIFF_EASY,
+    DIFF_NORMAL,
+    DIFF_HARD,
+    DIFF_HARDER,
+    DIFF_INSANE,
+    DIFF_DEMON,
+    DIFF_AUTO,
+    DIFF_NA,
+    DIFF_EASY_DEMON,
+    DIFF_NORMAL_DEMON,
+    DIFF_HARD_DEMON,
+    DIFF_INSANE_DEMON,
+    DIFF_EXTREME_DEMON,
+    DIFF_COUNT,
+};
+
 enum MenuDirection {
     MENU_LEFT,
     MENU_RIGHT,

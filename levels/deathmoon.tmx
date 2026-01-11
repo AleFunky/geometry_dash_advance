@@ -10,7 +10,7 @@
   <property name="COL2" type="color" value="#ff000000"/>
   <property name="COL3" type="color" value="#ff000000"/>
   <property name="COL4" type="color" value="#ff000000"/>
-  <property name="Difficulty" value="DEMON"/>
+  <property name="Difficulty" value="EASY_DEMON"/>
   <property name="GROUND" type="color" value="#ff000000"/>
   <property name="Gamemode" type="int" value="0"/>
   <property name="Ground Type" type="int" value="6"/>

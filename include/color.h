@@ -66,7 +66,6 @@ struct HSV {
     FIXED_16 value;
 };
 
-extern const COLOR face_colors[][2];
 extern const COLOR menu_bg_colors[9];
 extern const u16 pal_bg_to_spr[8];
 extern const u16 pal_bg_to_spr_index[8];
@@ -83,7 +82,6 @@ void set_obj_color(COLOR *dst, COLOR color);
 void set_ground_color(COLOR *dst, COLOR color);
 void set_line_color(COLOR *dst, COLOR color);
 void set_color_channel_color(COLOR *dst, COLOR color, u32 channel);
-void set_face_palettes(COLOR *dst);
 u16 lerp_color(COLOR color1, COLOR color2, FIXED time);
 COLOR blend_colors(COLOR col1, COLOR col2);
 void set_player_colors(COLOR *dst, COLOR p1, COLOR p2, COLOR glow);

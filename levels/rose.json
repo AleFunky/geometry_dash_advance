@@ -44811,7 +44811,7 @@
         {
          "name":"Difficulty",
          "type":"string",
-         "value":"DEMON"
+         "value":"EASY_DEMON"
         }, 
         {
          "name":"GROUND",

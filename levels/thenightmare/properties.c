@@ -14,7 +14,7 @@ const unsigned int thenightmare_properties[] = {
  /*level width*/   947,
  /*song*/          MOD_POLAR,
  /*name length*/   12,
- /*difficulty*/    5,
+ /*difficulty*/    8,
  /*stars*/         10,
  /*coins number*/  0,
  /*background*/    0,
