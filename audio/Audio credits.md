@@ -7,7 +7,7 @@
 |Main Menu|RobTop|ElAngel378 & orionConstel|
 |Practice|OcularNebula-Stay Inside Me|orionConstel & okujassu|
 |Stereo Madness|Forever Bound|orionConstel & ElAngel378|
-|Back On Track|DJVI|ElAngel378 & Crafty Jumper|
+|Back On Track|DJVI|ElAngel378 (old by crafty_jumper)|
 |Polargeist|Step|orionConstel|
 |Dry Out|DJVI|Orionconstel, ElAngel378 & okujassu|
 |Base After Base|DJVI|orionConstel, ElAngel378 & okujassu|
@@ -27,12 +27,12 @@
 
 | Song | Author | Covered by |
 |---|---|---|
-|Detious - Golden Haze|DeadRewind|Sotos_24|
+|Detious - Golden Haze (ReTray)|DeadRewind|Sotos_24|
 |Ground to Space|SeaGlowingPro|Orionconstel|
 |Rose|Cornandbeans|Orionconstel|
 |Every End|Dimrain47|Orionconstel|
 |Problematic|Rukkus|HatSwitch|
 |Ultimate Destruction|TMM43|Orionconstel|
-|Clown Party|Waterflame|Orionconstel|
+|Clown Party Remix (Dorabaebasic 7) |Waterflame|Orionconstel|
 |Death Moon|SoundHolicK|HatSwitch|
 |Select Payment Type|Crafty Jumper| Crafty Jumper|
