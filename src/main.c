@@ -380,7 +380,7 @@ void level_loop() {
 #endif
 
         // Draw level progress
-        draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+        if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
 
         if (player_death) {
             mmEffect(SFX_EXPLOSION);
@@ -444,7 +444,7 @@ u32 paused_routines() {
         }
 
         // Practice mode
-        if (key_hit(KEY_SELECT)) {
+        if (key_hit(KEY_SELECT) && loaded_level_id != endless_ID) {
             clear_checkpoints();
             
             in_practice_mode ^= 1;

@@ -7,6 +7,7 @@
 #include "level_select.h"
 #include "physics_defines.h"
 #include "../levels/includes.h"
+#include "../levels/endless_includes.h"
 #include "icon_kit.h"
 #include "math.h"
 
@@ -23,6 +24,11 @@ s32 seam_x, seam_y;
 // Last decompressed column
 u8 decompressed_column;
 
+// Current column relative to level data (used in endless)
+u32 curr_column_relative;
+u32 curr_column_absolute;
+s32 curr_endless_part_id;
+
 
 void screen_scroll_load();
 ARM_CODE void decompress_column(u32 layer);
@@ -38,6 +44,8 @@ void decompress_first_screen() {
     // Decompress the first screen
     for (u32 layer = 0; layer < LEVEL_LAYERS; layer++) {
         curr_column = 0;
+        curr_column_relative = 0;
+        curr_column_absolute = 0;
         seam_x = scroll_x >> SUBPIXEL_BITS;
         // Init RLE values for this layer
         unpack_rle_packet(layer);
@@ -70,6 +78,36 @@ void put_ground() {
 void increment_column() {
     // Increment for the next column of metatiles
     curr_column++;
+    curr_column_absolute++;
+    curr_column_relative++;
+
+    if (loaded_level_id == endless_ID) {
+        u32 part_width;
+
+        if (curr_endless_part_id >= 0) {
+            u32 *endless_part_properties_pointer = (u32*) endless_part_defines[curr_endless_part_id][LEVEL_PROPERTIES_INDEX];
+            part_width = endless_part_properties_pointer[ENDLESS_LEVEL_WIDTH_INDEX];
+        } else {
+            u32 *properties_pointer = (u32*) level_defines[endless_ID][LEVEL_PROPERTIES_INDEX];
+            part_width = properties_pointer[LEVEL_WIDTH_INDEX];
+        }
+
+        if (curr_column_relative >= part_width) {
+            curr_column_relative = 0;
+            curr_endless_part_id = qran_range(0, ENDLESS_PART_COUNT);
+
+            // Reset bitstream            
+            bitstream[0] = bitstream[1] = 0;
+            bits_left[0] = bits_left[1] = 0;
+            length[0] = length[1] = -1; 
+
+            last_sprite_x = curr_column_absolute << 4;
+
+            level_pointer[0] = (u32*) endless_part_defines[curr_endless_part_id][L1_DATA_INDEX];
+            level_pointer[1] = (u32*) endless_part_defines[curr_endless_part_id][L2_DATA_INDEX];
+            sprite_pointer   = (u16*) endless_part_defines[curr_endless_part_id][SPRITE_DATA_INDEX];
+        }
+    }
 
     // If we are past the buffer width, go back to the start of it
     if (curr_column >= LEVEL_BUFFER_WIDTH) curr_column = 0;
@@ -276,6 +314,10 @@ void reset_variables() {
     player_1.cube_rotation = 0;
     player_1.lerped_cube_rotation = 0;
 
+    curr_endless_part_id = -1;
+    curr_column_relative = 0;
+    curr_column_absolute = 0;
+
     screen_mirrored = FALSE;
     mirror_scaling = float2fx(1.0);
     transition_frame = 0;
@@ -473,7 +515,7 @@ void transition_update_spr() {
     // Update OAM
     obj_copy(oam_mem, shadow_oam, 128);
     obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
-    draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+    if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
     draw_both_players();
     display_objects();
@@ -525,7 +567,7 @@ void fade_in_level() {
     VBlankIntrWait();
     key_poll();
     nextSpr = 0;
-    draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+    if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
     
     update_flags = UPDATE_ALL;
@@ -572,7 +614,7 @@ void reset_level() {
     update_flags = UPDATE_OAM | UPDATE_SCROLL;
     
     nextSpr = 0;
-    draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+    if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
     draw_both_players();
     display_objects();
@@ -652,7 +694,7 @@ void scroll_screen_horizontally() {
     if (player_1.player_x >= 0x500000) {
         // Stop scroll at the end wall
         u64 screen_scroll_limit = ((u64)(curr_level_width - (SCREEN_WIDTH_T/2)) << (SUBPIXEL_BITS + 4));
-        if (scroll_x > screen_scroll_limit - TO_FIXED(7)) {
+        if (loaded_level_id != endless_ID && scroll_x > screen_scroll_limit - TO_FIXED(7)) {
             // Ease out
             scroll_x = approach_value_asymptotic(scroll_x, screen_scroll_limit, 0x2800, 0x30000);
         } else {  
@@ -793,6 +835,8 @@ void draw_attempt_counter() {
 }
 
 u32 get_level_progress() {
+    if (loaded_level_id == endless_ID) return 0;
+
     u32 percentage;
     if (curr_player.player_x < 0) {
         percentage = 0;

@@ -158,20 +158,22 @@ void player_main() {
         }
 
         if (curr_player.horizontal_slope_counter) curr_player.horizontal_slope_counter--;
+        
+        if (loaded_level_id != endless_ID) {
+            // Check if the level complete cutscene should start
+            s64 player_x_limit = (s64)((curr_level_width << 4) - 0x98) << (SUBPIXEL_BITS);
+            if (curr_player.player_x > player_x_limit) {
+                complete_cutscene = TRUE;
 
-        // Check if the level complete cutscene should start
-        s64 player_x_limit = (s64)((curr_level_width << 4) - 0x98) << (SUBPIXEL_BITS);
-        if (curr_player.player_x > player_x_limit) {
-            complete_cutscene = TRUE;
-
-            // Copy position for player 1
-            curr_player.cutscene_initial_player_x = curr_player.player_x >> SUBPIXEL_BITS;
-            curr_player.cutscene_initial_player_y = curr_player.player_y >> SUBPIXEL_BITS;
-            
-            if (dual == DUAL_ON) {
-                // Copy positions for player 2 as well
-                player_2.cutscene_initial_player_x = curr_player.cutscene_initial_player_x;
-                player_2.cutscene_initial_player_y = player_2.player_y >> SUBPIXEL_BITS;
+                // Copy position for player 1
+                curr_player.cutscene_initial_player_x = curr_player.player_x >> SUBPIXEL_BITS;
+                curr_player.cutscene_initial_player_y = curr_player.player_y >> SUBPIXEL_BITS;
+                
+                if (dual == DUAL_ON) {
+                    // Copy positions for player 2 as well
+                    player_2.cutscene_initial_player_x = curr_player.cutscene_initial_player_x;
+                    player_2.cutscene_initial_player_y = player_2.player_y >> SUBPIXEL_BITS;
+                }
             }
         }
 

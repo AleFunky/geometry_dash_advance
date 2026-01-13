@@ -31,6 +31,7 @@ ROM_DATA const u16 *level_defines[][4] = {
    { everyend_l1_level_data, everyend_l2_level_data, everyend_spr_data, (u16 *) everyend_properties },
    { test_l1_level_data, test_l2_level_data, test_spr_data, (u16 *) test_properties },
    { test2_l1_level_data, test2_l2_level_data, test2_spr_data, (u16 *) test2_properties },
+   { endless_l1_level_data, endless_l2_level_data, endless_spr_data, (u16 *) endless_properties },
 };
 
 ROM_DATA const u8 *level_names[] = {
@@ -64,4 +65,5 @@ ROM_DATA const u8 *level_names[] = {
    everyend_name,
    test_name,
    test2_name,
+   endless_name,
 };

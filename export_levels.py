@@ -514,7 +514,50 @@ def export_includes_h(levels):
         
         file.write("};\n")
 
+def export_endless_part_properties_to_h(level_name, output_path_h, output_path_c, level_array):
+    level_width = len(level_array[0])
+    
+    with open(output_path_c, 'w') as file:
+        file.write(f"// Endless {level_name} properties\n")
 
+        file.write(f"const unsigned int endless_{level_name}_properties[] = {{\n")
+        file.write(f" /*level width*/   {level_width}\n")
+        file.write(f"}};\n\n")
+
+    with open(output_path_h, 'w') as file:
+        file.write("#pragma once\n\n")
+        file.write(f"// Endless {level_name} properties\n")
+
+        file.write(f"extern const unsigned int endless_{level_name}_properties[];\n")
+
+def export_endless_part_includes_h(levels):
+    with open("levels/endless_includes.h", 'w') as file:
+        level_counter = 0
+        file.write("#pragma once\n\n")
+        file.write("#include <tonc.h>\n\n")
+        file.write("#include \"memory.h\"\n\n")
+        file.write("// Properties indexes\n")
+        file.write("#define ENDLESS_LEVEL_WIDTH_INDEX 0\n")
+        for level_name in levels:
+            file.write(f"// {level_name}\n")
+            file.write(f"#define {level_name}_ID {level_counter}\n\n")
+            file.write(f"#include \"endless_parts/{level_name}/l1.h\"\n")
+            file.write(f"#include \"endless_parts/{level_name}/l2.h\"\n")
+            file.write(f"#include \"endless_parts/{level_name}/SP.h\"\n")
+            file.write(f"#include \"endless_parts/{level_name}/properties.h\"\n\n")
+
+            level_counter += 1
+
+        file.write(f"#define ENDLESS_PART_COUNT {level_counter}\n")
+        file.write(f"extern ROM_DATA const u16 *endless_part_defines[][4];\n")
+    
+    with open("levels/endless_includes.c", 'w') as file:
+        file.write(f"#include \"endless_includes.h\"\n\n")
+        file.write(f"ROM_DATA const u16 *endless_part_defines[][4] = {{\n")
+        for level_name in levels:
+            file.write(f"   {{ {level_name}_l1_level_data, {level_name}_l2_level_data, {level_name}_spr_data, (u16 *) endless_{level_name}_properties }},\n")
+        
+        file.write("};\n\n")
 
 def export_properties_to_h(level_name, output_path_h, output_path_c, json_file_path, level_array, coins):
     level_height = len(level_array)
@@ -664,6 +707,71 @@ def get_size(level_array):
             flat_level.append(level_array[row][col])
     return len(flat_level) * 2
 
+def export_parts(original_size_list, size_list):
+    total_size = 0
+    import os
+    files = []
+    for file_name in os.listdir("levels/endless_parts"):
+        if file_name.endswith(".json"):
+            level_name, ext = os.path.splitext(file_name)
+            files.append(level_name)
+            print(f"---Endless {level_name}---")
+            if not os.path.exists(f"levels/endless_parts/{level_name}"):
+                os.makedirs(f"levels/endless_parts/{level_name}")
+
+            layer = "l1"
+            file_path = f"levels/endless_parts/{level_name}.json" # JSON file
+            output_s_path = f"levels/endless_parts/{level_name}/{layer}.s"  # Output .s file
+            output_h_path = f"levels/endless_parts/{level_name}/{layer}.h"  # Output .h file
+            level_array = load_json_to_array(file_path, layer)
+            
+            original_size_list[-3] += get_size(level_array)
+            unpacked = rle_compress_level(level_array)
+            compressed = pack_rle_data(unpacked)
+            size_list[-3] += len(compressed) * 4
+            total_size += len(compressed) * 4
+
+            print(f"Layer {layer} size: {len(compressed) * 4} B")
+            export_compressed_to_s_file(level_name, layer, compressed, output_s_path)
+            export_header_file(level_name, layer, level_array, compressed, output_h_path)
+            print(f"Exported compressed data to {output_s_path} and header to {output_h_path}")
+
+            layer = f"l2"
+            output_s_path = f"levels/endless_parts/{level_name}/{layer}.s"  # Output .s file
+            output_h_path = f"levels/endless_parts/{level_name}/{layer}.h"  # Output .h file
+                
+            level_array = load_json_to_array(file_path, layer)
+            unpacked = rle_compress_level(level_array)
+            
+            original_size_list[-2] += get_size(level_array)
+            unpacked = rle_compress_level(level_array)
+            compressed = pack_rle_data(unpacked)
+            size_list[-2] += len(compressed) * 4
+            total_size += len(compressed) * 4
+
+            print(f"Layer {layer} size: {len(compressed) * 4} B")
+            export_compressed_to_s_file(level_name, layer, compressed, output_s_path)
+            export_header_file(level_name, layer, level_array, compressed, output_h_path)
+            print(f"Exported compressed data to {output_s_path} and header to {output_h_path}")
+
+            layer = f"SP"
+            output_s_path = f"levels/endless_parts/{level_name}/{layer}.s"  # Output .s file
+            output_h_path = f"levels/endless_parts/{level_name}/{layer}.h"  # Output .h file
+
+            object_size, coins = export_objects_to_assembly(file_path, level_name, layer, output_s_path, output_h_path)
+            total_size += object_size
+
+            size_list[-1] += (object_size)
+
+            output_h_path = f"levels/endless_parts/{level_name}/properties.h"  # Output .h file
+            output_c_path = f"levels/endless_parts/{level_name}/properties.c"  # Output .c file
+
+            export_endless_part_properties_to_h(level_name, output_h_path, output_c_path, level_array)
+
+    export_endless_part_includes_h(files)
+
+    return total_size
+
 def main():
     original_size_list = []
     size_list = []
@@ -723,6 +831,9 @@ def main():
 
         export_properties_to_h(level_name, output_h_path, output_c_path, file_path, level_array, coins)
 
+        if level_name == "endless":
+            print("======================= EXPORTING ENDLESS PARTS ======================")
+            total_size += export_parts(original_size_list, size_list)
         
         print(f"{level_name} TOTAL size: {total_size} B\n")
         total_total_size += total_size
