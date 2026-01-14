@@ -2522,8 +2522,8 @@ u32 collide_with_map_slopes(u64 x, u32 y, u32 width, u32 height) {
     player.cx = x + (width >> 1);
     player.cy = y + (height >> 1);
 
-    // Make wave hitbox 2 pixels bigger
-    if (curr_player.gamemode == GAMEMODE_WAVE) player.radius += 2;
+    // Make mini wave hitbox 2 pixels bigger
+    if (curr_player.player_size == SIZE_MINI && curr_player.gamemode == GAMEMODE_WAVE) player.radius += 2;
 
     // Try to collide with sprite slopes only in the first layer check
     if (collide_with_obj_slopes(&player)) {
