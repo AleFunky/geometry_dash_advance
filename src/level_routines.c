@@ -29,6 +29,41 @@ u32 curr_column_relative;
 u32 curr_column_absolute;
 s32 curr_endless_part_id;
 
+// This tables assings the milestones to a star value that the endless level will have
+const u32 endless_stars[][2] = {
+    // Blocks, Stars
+    { 250,    1 },
+    { 500,    2 },
+    { 750,    3 },
+    { 1000,   4 },
+    { 1500,   5 },
+    { 2000,   6 },
+    { 2500,   7 },
+    { 3000,   8 },
+    { 4000,   9 },
+    { 5000,   10 },
+    { 15000,  15 },
+    { 30000,  20 },
+    { 50000,  25 },
+    { 75000,  30 },
+    { 125000, 45 },
+    { 200000, 50 },
+};
+
+u32 get_endless_star_value() {
+    u32 returned_stars = 0;
+    for (u32 i = 0; i < sizeof(endless_stars) / (sizeof(u32) * 2); i++) {
+        u32 distance = endless_stars[i][0];
+        u32 stars = endless_stars[i][1];
+
+        // If we have more distance saved, then save the stars
+        if (save_data.endless_distance >= distance) returned_stars = stars;
+        else break; // We reached the first non reached milestone, stop
+    }
+
+    return returned_stars;
+}
+
 
 void screen_scroll_load();
 ARM_CODE void decompress_column(u32 layer);
@@ -516,6 +551,7 @@ void transition_update_spr() {
     obj_copy(oam_mem, shadow_oam, 128);
     obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+    else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
     draw_both_players();
     display_objects();
@@ -568,6 +604,7 @@ void fade_in_level() {
     key_poll();
     nextSpr = 0;
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+    else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
     
     update_flags = UPDATE_ALL;
@@ -615,6 +652,7 @@ void reset_level() {
     
     nextSpr = 0;
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+    else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
     draw_both_players();
     display_objects();
@@ -813,6 +851,15 @@ void set_attempt_x() {
     attempt_y = (scroll_y >> SUBPIXEL_BITS) + 60;
 }
 
+void draw_endless_distance(u32 x, u32 y, u32 distance, const u16* number_sprite, u16 priority) {
+    u32 digits = get_n_digits(distance);
+    u32 pixels = (digits + 1) * 8;
+
+    u32 percentage_pos = x + (pixels / 2);
+
+    draw_sprite_number(percentage_pos, y, distance, FIRST_NUMBER_ID, number_sprite, priority);
+}
+
 void draw_percentage(u32 x, u32 y, u32 percentage, const u16* number_sprite, u16 priority) {
     u32 digits = get_n_digits(percentage);
     u32 pixels = (digits + 1) * 8;
@@ -835,7 +882,12 @@ void draw_attempt_counter() {
 }
 
 u32 get_level_progress() {
-    if (loaded_level_id == endless_ID) return 0;
+    if (loaded_level_id == endless_ID) {
+        if (curr_player.player_x < 0) return 0;
+        
+        // Return blocks
+        return curr_player.player_x >> (SUBPIXEL_BITS + 4);
+    }
 
     u32 percentage;
     if (curr_player.player_x < 0) {
@@ -849,6 +901,16 @@ u32 get_level_progress() {
 }
 
 void set_new_best(u32 new_best, u32 mode) {
+    // Handle endless distance record
+    if (loaded_level_id == endless_ID) {
+        if (save_data.endless_distance <= new_best) {
+            save_data.endless_distance = new_best;
+            write_save_block();
+        }
+        return;
+    }
+
+
     struct SaveLevelData *level_data = obtain_level_data(loaded_level_id);
 
     if (mode == NORMAL_MODE) {

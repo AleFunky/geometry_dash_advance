@@ -26,6 +26,10 @@ extern s32 seam_y;
 
 extern u8 decompressed_column;
 
+extern const u32 endless_stars[][2];
+
+u32 get_endless_star_value();
+
 void decompress_first_screen();
 void load_level(u32 level_ID);
 void screen_scroll_load();
@@ -51,6 +55,7 @@ void unmirror_screen();
 void swap_screen_dir();
 
 void draw_percentage(u32 x, u32 y, u32 percentage, const u16* number_sprite, u16 priority);
+void draw_endless_distance(u32 x, u32 y, u32 distance, const u16* number_sprite, u16 priority);
 void draw_attempt_counter();
 void set_attempt_x();
 u32 get_level_progress();

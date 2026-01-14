@@ -28,6 +28,9 @@ void init_sram() {
 		
 		write_save_block();
 	}else if (save_data.level_version != LEVEL_VERSION) {
+		// Endless was added on version 8
+		if (save_data.level_version < 8) save_data.endless_distance = 0;
+
 		memset8((u8*)&save_data.saved_levels, 0x00, sizeof(save_data.saved_levels));
 
 		save_data.level_version = LEVEL_VERSION;

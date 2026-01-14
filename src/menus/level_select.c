@@ -22,6 +22,7 @@ u16 game_state;
 
 void print_level_info(u16 level_id);
 void do_page_change(u16 level_id);
+void draw_endless_distance_menu(s32 x, s32 y, s32 page, u32 value);
 
 #define HALF_U64 ((u64)1 << 63)
 
@@ -195,6 +196,18 @@ ROM_DATA const struct FaceDefinition faces[DIFF_COUNT] = {
     },
 };
 
+#define NORMAL_MODE_X 9
+#define NORMAL_MODE_Y 10
+
+#define PRACTICE_MODE_X 8
+#define PRACTICE_MODE_Y 13
+
+#define BEST_DISTANCE_X 8
+#define BEST_DISTANCE_Y 10
+
+ROM_DATA const char normal_mode_text[] = { 0x14, 0x1e, 0x18, 0x15, 0x19, 0x16, 0x00, 0x00, 0x15, 0x1e, 0x1f, 0x1d };
+ROM_DATA const char practice_mode_text[] = { 0x17, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1a, 0x1d, 0x00, 0x00, 0x15, 0x1e, 0x1f, 0x1d };
+ROM_DATA const char best_distance_text[] = { 0x11, 0x1d, 0x13, 0x1b, 0x00, 0x00, 0x1f, 0x1c, 0x13, 0x1b, 0x19, 0x14, 0x1a, 0x1d };
 
 #define FIRST_FACE_PAL 0x30
 #define FIRST_FACE_COLOR 0x2
@@ -433,8 +446,11 @@ void do_menu_color_transition() {
 
 void do_page_change(u16 level_id) {
     // Erase written text depending on page
-    if (scroll_page & 1) tte_erase_rect(0, 256, 240, 512);
-    else tte_erase_rect(0, 0, 240, 256);
+    if (scroll_page & 1) {
+        tte_erase_rect(0, 256, 240, 512);
+    } else {
+        tte_erase_rect(0, 0, 240, 256);
+    }
 
     // Write level name
     print_level_info(level_id);
@@ -634,6 +650,25 @@ void print_level_info(u16 level_id) {
             se_plot(&se_mem[sb_number][0], x + face_x - 1, y + face_y - 1, SE_BUILD(tile, palette, 0, 0));
         }
     }
+
+    // Put progress bar text
+    if (level_id != endless_ID) {
+        // Non endless have normal mode and practice mode texts
+        for (u32 i = 0; i < sizeof(normal_mode_text); i++) {
+            se_plot(&se_mem[sb_number][0], NORMAL_MODE_X + i, NORMAL_MODE_Y, SE_BUILD(normal_mode_text[i], 2, 0, 0));
+        }
+
+        for (u32 i = 0; i < sizeof(practice_mode_text); i++) {
+            se_plot(&se_mem[sb_number][0], PRACTICE_MODE_X + i, PRACTICE_MODE_Y, SE_BUILD(practice_mode_text[i], 2, 0, 0));
+        }
+    } else {
+        // Endless only has a bar, called best distance
+        for (u32 i = 0; i < sizeof(best_distance_text); i++) {
+            se_plot(&se_mem[sb_number][0], BEST_DISTANCE_X + i, BEST_DISTANCE_Y, SE_BUILD(best_distance_text[i], 2, 0, 0));
+        }
+        
+        tte_erase_rect(48, 104, 192, 120);
+    }
 }
 
 #define PROGRESS_BAR_POS_X 6
@@ -663,8 +698,13 @@ void put_level_info_sprites(u16 level_id, s32 min, s32 max) {
 
     put_star_number(level_id, page);
     put_coin_sprites(level_id, page);
-    draw_progress_bar(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, sb, page, level_properties->normal_progress, 100, BAR_WIDTH_PX, BAR_TYPE_NORMAL_MODE);
-    draw_progress_bar(PROGRESS_BAR_POS_X, PRACTICE_PROGRESS_BAR_POS_Y, sb, page, level_properties->practice_progress, 100, BAR_WIDTH_PX, BAR_TYPE_PRACTICE_MODE);
+
+    if (level_id != endless_ID) {
+        draw_progress_bar(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, sb, page, level_properties->normal_progress, 100, BAR_WIDTH_PX, BAR_TYPE_NORMAL_MODE);
+        draw_progress_bar(PROGRESS_BAR_POS_X, PRACTICE_PROGRESS_BAR_POS_Y, sb, page, level_properties->practice_progress, 100, BAR_WIDTH_PX, BAR_TYPE_PRACTICE_MODE);
+    } else {
+        draw_endless_distance_menu(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, page, save_data.endless_distance);
+    }
     
     // Adjacent page (going to that one when switching)
     struct SaveLevelData *adjacent_properties = obtain_level_data(adjacent_level_id);
@@ -673,8 +713,28 @@ void put_level_info_sprites(u16 level_id, s32 min, s32 max) {
 
     put_star_number(adjacent_level_id, page ^ 1);
     put_coin_sprites(adjacent_level_id, page ^ 1);
-    draw_progress_bar(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, adjacent_sb, page ^ 1, adjacent_properties->normal_progress, 100, BAR_WIDTH_PX, BAR_TYPE_NORMAL_MODE);
-    draw_progress_bar(PROGRESS_BAR_POS_X, PRACTICE_PROGRESS_BAR_POS_Y, adjacent_sb, page ^ 1, adjacent_properties->practice_progress, 100, BAR_WIDTH_PX, BAR_TYPE_PRACTICE_MODE);
+    
+    if (adjacent_level_id != endless_ID) {
+        draw_progress_bar(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, adjacent_sb, page ^ 1, adjacent_properties->normal_progress, 100, BAR_WIDTH_PX, BAR_TYPE_NORMAL_MODE);
+        draw_progress_bar(PROGRESS_BAR_POS_X, PRACTICE_PROGRESS_BAR_POS_Y, adjacent_sb, page ^ 1, adjacent_properties->practice_progress, 100, BAR_WIDTH_PX, BAR_TYPE_PRACTICE_MODE);
+    } else {
+        draw_endless_distance_menu(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, page ^ 1, save_data.endless_distance);
+    }
+}
+
+void draw_endless_distance_menu(s32 x, s32 y, s32 page, u32 value) {
+    // Obtain relatives
+    u32 offset_x = ((page & 1) ? 256 : 0);
+    s32 relative_x = (offset_x + ((x - 1) << 3)) - ((scroll_x >> SUBPIXEL_BITS) & 0x1ff);
+
+    s32 calc_x = relative_x + (BAR_WIDTH_PX >> 1);
+
+    u32 digits = get_n_digits(value);
+    u32 pixels = digits * 8;
+
+    u32 percentage_pos = calc_x + (pixels / 2);
+
+    draw_sprite_number(percentage_pos, y << 3, value, FIRST_NUMBER_ID, menuNumberSpr, 2);
 }
 
 #define STAR_COUNT_POS_X 172
@@ -689,6 +749,8 @@ void put_star_number(u16 level_id, u16 page) {
     
     u32 *properties_pointer = (u32*) level_defines[level_id][LEVEL_PROPERTIES_INDEX];
     u32 stars = properties_pointer[LEVEL_STARS_NUM];
+
+    if (level_id == endless_ID) stars = get_endless_star_value();
 
     draw_sprite_number(relative_x, STAR_COUNT_POS_Y, stars, FIRST_NUMBER_ID, menuNumberSpr, 2);
 }

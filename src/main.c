@@ -381,6 +381,8 @@ void level_loop() {
 
         // Draw level progress
         if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
+        else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+        
 
         if (player_death) {
             mmEffect(SFX_EXPLOSION);
