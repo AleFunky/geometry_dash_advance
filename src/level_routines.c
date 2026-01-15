@@ -1879,7 +1879,10 @@ void player_code() {
     draw_player();
 
     // Start the song once the player goes from negative to positive x position, if not in practice mode
-    if ((last_player_x < 0) != (curr_player.player_x < 0) && !in_practice_mode) mmStart(loaded_song_id, MM_PLAY_ONCE);
+    if ((last_player_x < 0) != (curr_player.player_x < 0) && !in_practice_mode) {
+        mm_pmode loop = (loaded_level_id == endless_ID ? MM_PLAY_LOOP : MM_PLAY_ONCE);
+        mmStart(loaded_song_id, loop);
+    }
 
     player_1 = curr_player;
 
