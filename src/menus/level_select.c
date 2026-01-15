@@ -310,7 +310,7 @@ void level_select_loop() {
     menu_set_bg_color(palette_buffer, menu_bg_colors[level_id % (sizeof(menu_bg_colors) / sizeof(COLOR))]);
 
     // Page wraps with the approach function are weird, so I just make it all continuous by placing it in the middle of an u64
-    // It would take 290 and a half years of non stop pressing A every frame to get an overflow
+    // It would take 290 and a half years of non stop pressing right/left every frame to get an overflow
     target_scroll_x = HALF_U64 + ((level_id * 256) << SUBPIXEL_BITS);
     scroll_x = target_scroll_x;
     scroll_page = HALF_U64 + level_id; 
@@ -667,7 +667,7 @@ void print_level_info(u16 level_id) {
             se_plot(&se_mem[sb_number][0], BEST_DISTANCE_X + i, BEST_DISTANCE_Y, SE_BUILD(best_distance_text[i], 2, 0, 0));
         }
         
-        tte_erase_rect(48, 104, 192, 120);
+        se_rect(&se_mem[sb_number][0], 6, 13, 24, 15, SE_BUILD(0x00, 0, 0, 0));
     }
 }
 
