@@ -92,7 +92,7 @@ void player_main() {
             if (curr_player.dashing) {
                 // Calculate y movement
                 s32 tan = tan_calc(curr_player.dashing_rot);
-                s32 calculated_y = FIXED_MUL(step_divide(curr_player.player_x_speed, num_steps), (tan << 4));
+                s32 calculated_y = FIXED_MUL_LONG(step_divide(curr_player.player_x_speed, num_steps), (tan << 4));
                 curr_player.player_y = dashing_y + calculated_y; // it is Q12 so make it Q16
 
                 curr_player.player_y_speed = 0;
