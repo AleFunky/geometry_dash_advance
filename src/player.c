@@ -202,7 +202,7 @@ void cube_gamemode() {
         curr_player.player_height = MINI_CUBE_HEIGHT;
     }
 
-    curr_player.gravity = CUBE_GRAVITY;
+    curr_player.gravity = FIXED_MUL_LONG(CUBE_GRAVITY, gravity_multiplier);
 
     s8 sign = curr_player.gravity_dir ? -1 : 1;
     s8 rotation_sign = curr_player.inverse_rotation_flag ? -1 : 1;
@@ -394,7 +394,7 @@ void ball_gamemode() {
         curr_player.player_height = MINI_BALL_HEIGHT;
     }
 
-    curr_player.gravity = BALL_GRAVITY;
+    curr_player.gravity = FIXED_MUL_LONG(BALL_GRAVITY, gravity_multiplier);;
 
     s8 sign = (curr_player.gravity_dir == GRAVITY_UP) ? -1 : 1;
     s8 mirror_sign = screen_mirrored ? -1 : 1;
@@ -605,6 +605,8 @@ void do_ship_gravity(s32 max_y_speed, s32 max_y_speed_holding) {
     if (holding && curr_player.falling) {
         curr_player.gravity = ((curr_player.player_size == SIZE_BIG) ? SHIP_GRAVITY_HOLD_FALL : SHIP_MINI_GRAVITY_HOLD_FALL);
     }
+
+    curr_player.gravity = FIXED_MUL_LONG(curr_player.gravity, gravity_multiplier);
     
     if (holding) {
         if (curr_player.gravity_dir == GRAVITY_DOWN) {
@@ -640,6 +642,8 @@ void do_ufo_gravity(s32 max_y_speed) {
     } else {
         curr_player.gravity = (curr_player.player_size == SIZE_BIG) ? UFO_GRAVITY_RAISING : UFO_MINI_GRAVITY_RAISING;
     }
+    
+    curr_player.gravity = FIXED_MUL_LONG(curr_player.gravity, gravity_multiplier);
 
     // Depending on which direction the curr_player.gravity points, apply curr_player.gravity and cap speed in one direction or in the other
     if (curr_player.gravity_dir) {

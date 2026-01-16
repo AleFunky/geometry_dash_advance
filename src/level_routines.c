@@ -367,6 +367,8 @@ void reset_variables() {
     player_1.cube_rotation = 0;
     player_1.lerped_cube_rotation = 0;
 
+    gravity_multiplier = TO_FIXED(1);
+
     curr_endless_part_id = -1;
     curr_column_relative = 0;
     curr_column_absolute = 0;

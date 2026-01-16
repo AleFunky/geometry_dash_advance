@@ -74,7 +74,7 @@ void load_objects(u32 load_chr, u32 loading_level) {
     for (s32 index = 0; index < MAX_OBJECTS; index++) {
         if (object_buffer[index].occupied == FALSE) {
             if ((*sprite_pointer & 0xff000000) != 0xff000000) {
-                struct Object new_object;
+                struct Object new_object = { 0 };
 
                 // Get x position
                 u16 delta_x = *sprite_pointer;
@@ -103,10 +103,20 @@ void load_objects(u32 load_chr, u32 loading_level) {
                     case COL_TRIGGER:
                         new_object.attrib1 = *sprite_pointer;  // Frames and channel
                         sprite_pointer++;
-                        new_object.attrib2 = *sprite_pointer; // Color
+                        new_object.attrib2 = *sprite_pointer;  // Color
                         sprite_pointer++;
                         new_object.attrib3 = *sprite_pointer;  // Copy channel
                         sprite_pointer++;
+                        new_object.is_touch_trigger = (new_object.attrib3 & COL_TRIGGER_ATTRIB3_TOUCH_MASK) != 0;
+                        new_object.is_trigger = TRUE;
+                        break;
+                    case GRAVITY_TRIGGER:
+                        new_object.attrib1 = *sprite_pointer; // Gravity mult
+                        sprite_pointer++;
+                        new_object.attrib2 = *sprite_pointer; // Flags
+                        sprite_pointer++;
+                        new_object.is_trigger = TRUE;
+                        new_object.is_touch_trigger = (new_object.attrib2 & 1) != 0;
                         break;
                     case BASIC_BLOCK_OBJ:
                     case BASIC_SLAB_OBJ:
@@ -422,7 +432,7 @@ ARM_CODE void display_objects() {
             struct Object curr_object = object_buffer[index].object;
             
             // Color triggers are handler earlier in the frame
-            if (curr_object.type != COL_TRIGGER) {
+            if (!curr_object.is_trigger) {
                 // Calculate the relative positions
                 s32 relative_x = curr_object.x - ((scroll_x >> SUBPIXEL_BITS) & 0xffffffff);
                 s32 relative_y = curr_object.y - ((scroll_y >> SUBPIXEL_BITS) & 0xffff);
@@ -469,7 +479,7 @@ ARM_CODE void display_objects() {
                     object_buffer[index].object.y = coin_y_pos[coin_id] >> SUBPIXEL_BITS;
                     if (global_timer & 1) object_buffer[index].object.x -= 1;
                 }
-            } else if (!(curr_object.attrib3 & COL_TRIGGER_ATTRIB3_TOUCH_MASK)) {
+            } else if (!(curr_object.is_touch_trigger)) {
                 // If a color trigger and not touch trigger, then just run collision
                 do_collision(&object_buffer[index]);
             }

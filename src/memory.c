@@ -61,6 +61,9 @@ u8 swap_queue = FALSE;
 u16 loaded_level_id;
 u16 loaded_song_id;
 
+// Gravity multiplier
+FIXED gravity_multiplier;
+
 // If the current level select menu is for custom levels
 u8 custom_levels;
 

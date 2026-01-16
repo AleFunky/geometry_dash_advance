@@ -731,4 +731,22 @@ test_spr_data:
    .hword 0xa1 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
+@ Object 120
+   .hword 0x3f0 @ delta x
+   .hword 0x180 @ y
+   .hword 0xb0 @ type
+   .hword 0x80 @ gravity multiplier 0.5
+   .hword 0x0 @ normal trigger
+@ Object 121
+   .hword 0x140 @ delta x
+   .hword 0x190 @ y
+   .hword 0xb0 @ type
+   .hword 0x200 @ gravity multiplier 2.0
+   .hword 0x0 @ normal trigger
+@ Object 122
+   .hword 0xd0 @ delta x
+   .hword 0x190 @ y
+   .hword 0xb0 @ type
+   .hword 0x100 @ gravity multiplier 1.0
+   .hword 0x0 @ normal trigger
    .byte 0xff

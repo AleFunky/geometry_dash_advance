@@ -2228,6 +2228,8 @@ ROM_DATA const u16 *obj_sprites[] = {
     NULL, // H block
     NULL, // D block
     NULL, // F block
+
+    NULL, // Gravity Trigger
 };
 
 #undef P1
@@ -2478,6 +2480,8 @@ const u32 obj_chr_offset[][2] = {
     CHR_SLOT("H_BLOCK", SPRITE_NO_CHR,0)
     CHR_SLOT("D_BLOCK", SPRITE_NO_CHR,0)
     CHR_SLOT("F_BLOCK", SPRITE_NO_CHR,0)
+    
+    CHR_SLOT("GRAVITY_TRIGGER", SPRITE_NO_CHR,0)
 
 
 };

@@ -1021,8 +1021,8 @@ ARM_CODE void do_collision_with_objects() {
         if (curr_object.occupied && check_collision_distance(curr_object, player_x_pixels, player_y_pixels)) {
             // If it hasn't been activated yet, continue
             if (curr_object.activated[curr_player_id] == FALSE) {
-                // If it has collision, continue. Check if this object is a touch col trigger, if so, check collision
-                if (curr_object.has_collision || (curr_object.object.type == COL_TRIGGER && curr_object.object.attrib3 & COL_TRIGGER_ATTRIB3_TOUCH_MASK)) {   
+                // If it has collision, continue. Check if this object is a touch trigger, if so, check collision
+                if (curr_object.has_collision || (curr_object.object.is_trigger && curr_object.object.is_touch_trigger)) {   
                     check_obj_collision(slot); 
                 }
             }

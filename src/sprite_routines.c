@@ -341,7 +341,7 @@ void blue_dual_portal(struct ObjectSlot *objectSlot) {
 void col_trigger(struct ObjectSlot *objectSlot) {
     struct Object col_trigger = objectSlot->object;
     
-    u32 is_touch_trigger = col_trigger.attrib3 & COL_TRIGGER_ATTRIB3_TOUCH_MASK;
+    u32 is_touch_trigger = col_trigger.is_touch_trigger;
 
     // If the trigger is a touch trigger, then behave like a normal object,
     // else if the player is right of the horizontal center of the trigger, activate the color trigger
@@ -398,6 +398,19 @@ void col_trigger(struct ObjectSlot *objectSlot) {
         col_trigger_buffer[channel][COL_TRIG_BUFF_CURRENT_FRAMES] = 0;      // Current frame
 
         // Deoccupy slot
+        objectSlot->occupied = FALSE;
+    }
+}
+
+void gravity_trigger(struct ObjectSlot *objectSlot) {
+    struct Object gravity_trigger = objectSlot->object;
+    
+    u32 is_touch_trigger = gravity_trigger.is_touch_trigger;
+
+    // If the trigger is a touch trigger, then behave like a normal object,
+    // else if the player is right of the horizontal center of the trigger, activate the color trigger
+    if (is_touch_trigger || (curr_player.player_x >> SUBPIXEL_BITS) >= (gravity_trigger.x + 8)) {
+        gravity_multiplier = gravity_trigger.attrib1 << (SUBPIXEL_BITS-8);
         objectSlot->occupied = FALSE;
     }
 }
@@ -1152,6 +1165,8 @@ const jmp_table routines_jump_table[] = {
     h_block,
     d_block,
     f_block,
+
+    gravity_trigger,
 };
 
 // In pixels
@@ -1384,6 +1399,7 @@ const s16 obj_hitbox[][6] = {
     Object_Hitbox_Rectangle("D_BLOCK", 20, 20, -2, -2, 8, 8)
     Object_Hitbox_Rectangle("F_BLOCK", 20, 20, -2, -2, 8, 8)
 
+    Object_Hitbox_Rectangle("GRAVITY_TRIGGER", 16, 16, 0, 0, 8, 8)
 };
 
 #undef Object_Hitbox

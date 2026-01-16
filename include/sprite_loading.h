@@ -64,6 +64,8 @@ struct Object {
     u16 attrib3;
     u16 z_index;
     u16 rotation;
+    u8 is_trigger:1;
+    u8 is_touch_trigger:1;
 };
 
 struct ObjectSlot {

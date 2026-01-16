@@ -254,6 +254,8 @@ enum ObjTypes {
     D_BLOCK,
     F_BLOCK,
 
+    GRAVITY_TRIGGER,
+
     OBJ_COUNT
 };
 
