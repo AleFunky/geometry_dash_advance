@@ -110,6 +110,22 @@ void put_ground() {
         }
     }
 }
+
+u32 get_endless_part(u32 random) {
+    u32 counter = 0;
+    for (u32 part = 0; part < ENDLESS_PART_COUNT; part++) {
+        u32 *endless_part_properties_pointer = (u32*) endless_part_defines[part][LEVEL_PROPERTIES_INDEX];
+        u32 part_weight = endless_part_properties_pointer[ENDLESS_LEVEL_RARITY_INDEX];
+        
+        if (random >= counter && random < counter + part_weight) {
+            return part;
+        }
+        counter += part_weight;
+    }
+
+    return ENDLESS_PART_COUNT - 1;
+}
+
 void increment_column() {
     // Increment for the next column of metatiles
     curr_column++;
@@ -129,7 +145,9 @@ void increment_column() {
 
         if (curr_column_relative >= part_width) {
             curr_column_relative = 0;
-            curr_endless_part_id = qran_range(0, ENDLESS_PART_COUNT);
+
+            u32 random = qran_range(0, ENDLESS_PART_TOTAL_RARITY);
+            curr_endless_part_id = get_endless_part(random);
 
             // Reset bitstream            
             bitstream[0] = bitstream[1] = 0;

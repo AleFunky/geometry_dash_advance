@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="10" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="432">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="10" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="434">
  <editorsettings>
   <export target="part_01.json" format="json"/>
  </editorsettings>
+ <properties>
+  <property name="rarity" type="int" value="100"/>
+ </properties>
  <tileset firstgid="1" source="../famidash.tsx"/>
  <tileset firstgid="16385" source="../sprites.tsx"/>
  <layer id="4" name="l2" width="10" height="27">
@@ -31,9 +34,9 @@
 1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,
 1,1,1,5105,1,5105,1,1,1,1,
-1,1,1,5105,1,5105,1,1,1,1,
-1,1,1,5105,1,5105,1,1,1,1,
-1,1,1,5105,1,5105,1,1,1,1
+1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1
 </data>
  </layer>
  <layer id="1" name="l1" width="10" height="27">
@@ -72,5 +75,7 @@
   <object id="429" gid="2" x="52" y="432" width="16" height="16"/>
   <object id="430" gid="16393" x="48" y="352" width="16" height="16"/>
   <object id="431" gid="16393" x="80" y="352" width="16" height="16"/>
+  <object id="432" gid="16396" x="96" y="432" width="16" height="16"/>
+  <object id="433" gid="16396" x="32" y="432" width="16" height="16"/>
  </objectgroup>
 </map>

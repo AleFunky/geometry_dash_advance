@@ -6,6 +6,7 @@
 
 // Properties indexes
 #define ENDLESS_LEVEL_WIDTH_INDEX 0
+#define ENDLESS_LEVEL_RARITY_INDEX 1
 // part_00
 #define part_00_ID 0
 
@@ -22,5 +23,14 @@
 #include "endless_parts/part_01/SP.h"
 #include "endless_parts/part_01/properties.h"
 
-#define ENDLESS_PART_COUNT 2
+// part_02
+#define part_02_ID 2
+
+#include "endless_parts/part_02/l1.h"
+#include "endless_parts/part_02/l2.h"
+#include "endless_parts/part_02/SP.h"
+#include "endless_parts/part_02/properties.h"
+
+#define ENDLESS_PART_COUNT 3
+#define ENDLESS_PART_TOTAL_RARITY 300
 extern ROM_DATA const u16 *endless_part_defines[][4];

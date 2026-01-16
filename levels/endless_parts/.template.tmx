@@ -3,6 +3,9 @@
  <editorsettings>
   <export target="test.json" format="json"/>
  </editorsettings>
+ <properties>
+  <property name="rarity" type="int" value="100"/>
+ </properties>
  <tileset firstgid="1" source="../famidash.tsx"/>
  <tileset firstgid="16385" source="../sprites.tsx"/>
  <layer id="4" name="l2" width="25" height="27">

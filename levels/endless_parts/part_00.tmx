@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="25" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="428">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="25" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="430">
  <editorsettings>
-  <export target="test.json" format="json"/>
+  <export target="part_00.json" format="json"/>
  </editorsettings>
+ <properties>
+  <property name="rarity" type="int" value="100"/>
+ </properties>
  <tileset firstgid="1" source="../famidash.tsx"/>
  <tileset firstgid="16385" source="../sprites.tsx"/>
  <layer id="4" name="l2" width="25" height="27">
@@ -64,14 +67,12 @@
 1,1,1,1,1,1,1,24,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-1,1,1,1,1,1,1,2,1,1,1,1,1,2,2,1,9,5,5,5,5,10,1,1,1
+1,1,1,1,1,1,1,2,1,1,1,1,1,1,2,2,9,5,5,5,5,10,1,1,1
 </data>
  </layer>
  <objectgroup id="7" name="SP">
   <object id="423" gid="16393" x="112" y="352" width="16" height="16"/>
-  <object id="424" gid="16408" x="48" y="400" width="16" height="16"/>
-  <object id="425" gid="16408" x="176" y="384" width="16" height="16"/>
-  <object id="426" gid="16408" x="288" y="400" width="16" height="16"/>
-  <object id="427" gid="16408" x="352" y="368" width="16" height="16"/>
+  <object id="428" gid="16396" x="168" y="432" width="16" height="16"/>
+  <object id="429" gid="16396" x="296" y="416" width="16" height="16"/>
  </objectgroup>
 </map>

@@ -514,14 +514,31 @@ def export_includes_h(levels):
         
         file.write("};\n")
 
-def export_endless_part_properties_to_h(level_name, output_path_h, output_path_c, level_array):
+def export_endless_part_properties_to_h(level_name, output_path_h, output_path_c, json_file_path, level_array):
     level_width = len(level_array[0])
+    rarity = 100
+
+    with open(json_file_path, 'r') as f:
+        json_data = json.load(f)
+    try: 
+        properties = json_data["properties"]
+        
+        for prop in properties:
+            if prop['name'] == 'rarity':
+                rarity = int(prop['value'])
+                
+                if rarity > 100:
+                    raise Exception(f"Endless part ${level_name} has an invalid rarity, it should be 100 or lower.") 
+
+    except Exception:
+        pass
     
     with open(output_path_c, 'w') as file:
         file.write(f"// Endless {level_name} properties\n")
 
         file.write(f"const unsigned int endless_{level_name}_properties[] = {{\n")
-        file.write(f" /*level width*/   {level_width}\n")
+        file.write(f" /*level width*/   {level_width},\n")
+        file.write(f" /*rarity*/        {rarity}\n")
         file.write(f"}};\n\n")
 
     with open(output_path_h, 'w') as file:
@@ -529,8 +546,10 @@ def export_endless_part_properties_to_h(level_name, output_path_h, output_path_c
         file.write(f"// Endless {level_name} properties\n")
 
         file.write(f"extern const unsigned int endless_{level_name}_properties[];\n")
+    
+    return rarity
 
-def export_endless_part_includes_h(levels):
+def export_endless_part_includes_h(levels, total_rarity):
     with open("levels/endless_includes.h", 'w') as file:
         level_counter = 0
         file.write("#pragma once\n\n")
@@ -538,6 +557,7 @@ def export_endless_part_includes_h(levels):
         file.write("#include \"memory.h\"\n\n")
         file.write("// Properties indexes\n")
         file.write("#define ENDLESS_LEVEL_WIDTH_INDEX 0\n")
+        file.write("#define ENDLESS_LEVEL_RARITY_INDEX 1\n")
         for level_name in levels:
             file.write(f"// {level_name}\n")
             file.write(f"#define {level_name}_ID {level_counter}\n\n")
@@ -549,6 +569,7 @@ def export_endless_part_includes_h(levels):
             level_counter += 1
 
         file.write(f"#define ENDLESS_PART_COUNT {level_counter}\n")
+        file.write(f"#define ENDLESS_PART_TOTAL_RARITY {total_rarity}\n")
         file.write(f"extern ROM_DATA const u16 *endless_part_defines[][4];\n")
     
     with open("levels/endless_includes.c", 'w') as file:
@@ -709,6 +730,7 @@ def get_size(level_array):
 
 def export_parts(original_size_list, size_list):
     total_size = 0
+    total_rarity = 0
     import os
     files = []
     for file_name in os.listdir("levels/endless_parts"):
@@ -766,9 +788,9 @@ def export_parts(original_size_list, size_list):
             output_h_path = f"levels/endless_parts/{level_name}/properties.h"  # Output .h file
             output_c_path = f"levels/endless_parts/{level_name}/properties.c"  # Output .c file
 
-            export_endless_part_properties_to_h(level_name, output_h_path, output_c_path, level_array)
+            total_rarity += export_endless_part_properties_to_h(level_name, output_h_path, output_c_path, file_path, level_array)
 
-    export_endless_part_includes_h(files)
+    export_endless_part_includes_h(files, total_rarity)
 
     return total_size
 
