@@ -8610,7 +8610,17 @@ const SCR_ENTRY metatiles[][5] = {
 	Metatile("EMPTY",    TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), COL_NONE)
 	Metatile("EMPTY",    TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), COL_NONE)
 	Metatile("EMPTY",    TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), TILE(0, 0, 0, 0), COL_NONE)
-
+    
+    Metatile("LBG_GLOW_THIN_MIDBLOCK_V",  TILE(0x2fa, LBG_PAL, 0, 0), TILE(0x2fa, LBG_PAL, H, 0), TILE(0x2fa, LBG_PAL, 0, 0), TILE(0x2fa, LBG_PAL, H, 0), COL_NONE)
+    Metatile("LBG_GLOW_THIN_MIDBLOCK_H",  TILE(0x33f, LBG_PAL, 0, 0), TILE(0x33f, LBG_PAL, 0, 0), TILE(0x33f, LBG_PAL, 0, V), TILE(0x33f, LBG_PAL, 0, V), COL_NONE)
+    Metatile("COL1_GLOW_THIN_MIDBLOCK_V",  TILE(0x2fa, COL1_PAL, 0, 0), TILE(0x2fa, COL1_PAL, H, 0), TILE(0x2fa, COL1_PAL, 0, 0), TILE(0x2fa, COL1_PAL, H, 0), COL_NONE)
+    Metatile("COL1_GLOW_THIN_MIDBLOCK_H",  TILE(0x33f, COL1_PAL, 0, 0), TILE(0x33f, COL1_PAL, 0, 0), TILE(0x33f, COL1_PAL, 0, V), TILE(0x33f, COL1_PAL, 0, V), COL_NONE)
+    Metatile("COL2_GLOW_THIN_MIDBLOCK_V",  TILE(0x2fa, COL2_PAL, 0, 0), TILE(0x2fa, COL2_PAL, H, 0), TILE(0x2fa, COL2_PAL, 0, 0), TILE(0x2fa, COL2_PAL, H, 0), COL_NONE)
+    Metatile("COL2_GLOW_THIN_MIDBLOCK_H",  TILE(0x33f, COL2_PAL, 0, 0), TILE(0x33f, COL2_PAL, 0, 0), TILE(0x33f, COL2_PAL, 0, V), TILE(0x33f, COL2_PAL, 0, V), COL_NONE)
+    Metatile("COL3_GLOW_THIN_MIDBLOCK_V",  TILE(0x2fa, COL3_PAL, 0, 0), TILE(0x2fa, COL3_PAL, H, 0), TILE(0x2fa, COL3_PAL, 0, 0), TILE(0x2fa, COL3_PAL, H, 0), COL_NONE)
+    Metatile("COL3_GLOW_THIN_MIDBLOCK_H",  TILE(0x33f, COL3_PAL, 0, 0), TILE(0x33f, COL3_PAL, 0, 0), TILE(0x33f, COL3_PAL, 0, V), TILE(0x33f, COL3_PAL, 0, V), COL_NONE)
+    Metatile("COL4_GLOW_THIN_MIDBLOCK_V",  TILE(0x2fa, COL4_PAL, 0, 0), TILE(0x2fa, COL4_PAL, H, 0), TILE(0x2fa, COL4_PAL, 0, 0), TILE(0x2fa, COL4_PAL, H, 0), COL_NONE)
+    Metatile("COL4_GLOW_THIN_MIDBLOCK_H",  TILE(0x33f, COL4_PAL, 0, 0), TILE(0x33f, COL4_PAL, 0, 0), TILE(0x33f, COL4_PAL, 0, V), TILE(0x33f, COL4_PAL, 0, V), COL_NONE)
 
 	//gonna just drop these at the very end
 	
