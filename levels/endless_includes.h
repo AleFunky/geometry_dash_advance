@@ -23,14 +23,30 @@
 #include "endless_parts/part_01/SP.h"
 #include "endless_parts/part_01/properties.h"
 
+// part_04
+#define part_04_ID 2
+
+#include "endless_parts/part_04/l1.h"
+#include "endless_parts/part_04/l2.h"
+#include "endless_parts/part_04/SP.h"
+#include "endless_parts/part_04/properties.h"
+
 // part_02
-#define part_02_ID 2
+#define part_02_ID 3
 
 #include "endless_parts/part_02/l1.h"
 #include "endless_parts/part_02/l2.h"
 #include "endless_parts/part_02/SP.h"
 #include "endless_parts/part_02/properties.h"
 
-#define ENDLESS_PART_COUNT 3
-#define ENDLESS_PART_TOTAL_RARITY 300
+// part_03
+#define part_03_ID 4
+
+#include "endless_parts/part_03/l1.h"
+#include "endless_parts/part_03/l2.h"
+#include "endless_parts/part_03/SP.h"
+#include "endless_parts/part_03/properties.h"
+
+#define ENDLESS_PART_COUNT 5
+#define ENDLESS_PART_TOTAL_RARITY 500
 extern ROM_DATA const u16 *endless_part_defines[][4];

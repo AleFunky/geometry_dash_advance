@@ -13,7 +13,7 @@ part_01_spr_data:
    .hword 0x0 @ z index 0
 @ Object 2
    .hword 0x10 @ delta x
-   .hword 0x160 @ y
+   .hword 0x150 @ y
    .hword 0x8 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
@@ -31,7 +31,7 @@ part_01_spr_data:
    .hword 1 @ metatile ID appareance
 @ Object 5
    .hword 0x4 @ delta x
-   .hword 0x160 @ y
+   .hword 0x150 @ y
    .hword 0x8 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0

@@ -185,6 +185,29 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                         out_file.write(f"   .hword {hex(color_bgr555)} @ color\n")
                         out_file.write(f"   .hword {hex((touch << 6) | (blending << 5) | (copy_channel_id << 1) | copy)} @ {"copies {copy_channel}" if copy else "doesn't copy any channel"} {"blending " if blending else ""}{"touch trigger" if touch else "normal trigger"}\n")
                         byte_counter += 6
+                    elif gid == 176: # Gravity trigger
+                        gravity_mul = 1.0
+                        touch = False
+                        try: 
+                            properties = obj['properties']
+                            for prop in properties:
+                                if prop['name'] == 'Gravity Multiplier':
+                                    gravity_mul = float(prop['value'])
+                                elif prop['name'] == 'Touch trigger':
+                                    touch = bool(prop['value'])
+
+                        except Exception:
+                            raise Exception(f"Encountered gravity trigger without attributes on pos x {x/16}, y {y/16}. THIS SHOULD NOT APPEAR")
+                        # Gravity trigger
+                        # M -> multiplier fixed point integer part  m -> multiplier fixed poitn fractional part
+                        # T -> touch trigger
+                        # hword 4: MMMM MMMM mmmm mmmm 
+                        # hword 5: 0000 0000 0000 000T
+                        gravity_mul_fixed = int(gravity_mul * (1 << 8))
+                        out_file.write(f"   .hword {hex(gravity_mul_fixed & 0xffff)} @ gravity multiplier {gravity_mul}\n")
+                        out_file.write(f"   .hword {hex(touch)} @ {"touch trigger" if touch else "normal trigger"}\n")
+                        byte_counter += 4
+
                     else:
                         h_flip = False
                         v_flip = False
