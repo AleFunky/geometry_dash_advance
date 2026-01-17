@@ -39,8 +39,16 @@
 #include "endless_parts/part_01/SP.h"
 #include "endless_parts/part_01/properties.h"
 
+// part_08
+#define part_08_ID 4
+
+#include "endless_parts/part_08/l1.h"
+#include "endless_parts/part_08/l2.h"
+#include "endless_parts/part_08/SP.h"
+#include "endless_parts/part_08/properties.h"
+
 // part_06
-#define part_06_ID 4
+#define part_06_ID 5
 
 #include "endless_parts/part_06/l1.h"
 #include "endless_parts/part_06/l2.h"
@@ -48,7 +56,7 @@
 #include "endless_parts/part_06/properties.h"
 
 // part_04
-#define part_04_ID 5
+#define part_04_ID 6
 
 #include "endless_parts/part_04/l1.h"
 #include "endless_parts/part_04/l2.h"
@@ -56,7 +64,7 @@
 #include "endless_parts/part_04/properties.h"
 
 // part_02
-#define part_02_ID 6
+#define part_02_ID 7
 
 #include "endless_parts/part_02/l1.h"
 #include "endless_parts/part_02/l2.h"
@@ -64,7 +72,7 @@
 #include "endless_parts/part_02/properties.h"
 
 // part_03
-#define part_03_ID 7
+#define part_03_ID 8
 
 #include "endless_parts/part_03/l1.h"
 #include "endless_parts/part_03/l2.h"
@@ -72,13 +80,13 @@
 #include "endless_parts/part_03/properties.h"
 
 // endlessdualforce
-#define endlessdualforce_ID 8
+#define endlessdualforce_ID 9
 
 #include "endless_parts/endlessdualforce/l1.h"
 #include "endless_parts/endlessdualforce/l2.h"
 #include "endless_parts/endlessdualforce/SP.h"
 #include "endless_parts/endlessdualforce/properties.h"
 
-#define ENDLESS_PART_COUNT 9
-#define ENDLESS_PART_TOTAL_RARITY 900
+#define ENDLESS_PART_COUNT 10
+#define ENDLESS_PART_TOTAL_RARITY 1000
 extern ROM_DATA const u16 *endless_part_defines[][4];
