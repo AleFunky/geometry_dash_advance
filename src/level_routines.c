@@ -146,8 +146,13 @@ void increment_column() {
         if (curr_column_relative >= part_width) {
             curr_column_relative = 0;
 
-            u32 random = qran_range(0, ENDLESS_PART_TOTAL_RARITY);
-            curr_endless_part_id = get_endless_part(random);
+            // Get a new part (and make sure its not the same one)
+            s32 new_part;
+            do {
+                u32 random = qran_range(0, ENDLESS_PART_TOTAL_RARITY);
+                new_part = get_endless_part(random);
+            } while (curr_endless_part_id == new_part);
+            curr_endless_part_id = new_part;
 
             // Reset bitstream            
             bitstream[0] = bitstream[1] = 0;
