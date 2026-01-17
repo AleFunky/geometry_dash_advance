@@ -71,6 +71,14 @@
 #include "endless_parts/part_03/SP.h"
 #include "endless_parts/part_03/properties.h"
 
-#define ENDLESS_PART_COUNT 8
-#define ENDLESS_PART_TOTAL_RARITY 800
+// endlessdualforce
+#define endlessdualforce_ID 8
+
+#include "endless_parts/endlessdualforce/l1.h"
+#include "endless_parts/endlessdualforce/l2.h"
+#include "endless_parts/endlessdualforce/SP.h"
+#include "endless_parts/endlessdualforce/properties.h"
+
+#define ENDLESS_PART_COUNT 9
+#define ENDLESS_PART_TOTAL_RARITY 900
 extern ROM_DATA const u16 *endless_part_defines[][4];

@@ -9,5 +9,6 @@ ROM_DATA const u16 *endless_part_defines[][4] = {
    { part_04_l1_level_data, part_04_l2_level_data, part_04_spr_data, (u16 *) endless_part_04_properties },
    { part_02_l1_level_data, part_02_l2_level_data, part_02_spr_data, (u16 *) endless_part_02_properties },
    { part_03_l1_level_data, part_03_l2_level_data, part_03_spr_data, (u16 *) endless_part_03_properties },
+   { endlessdualforce_l1_level_data, endlessdualforce_l2_level_data, endlessdualforce_spr_data, (u16 *) endless_endlessdualforce_properties },
 };
 
