@@ -255,6 +255,8 @@ enum ObjTypes {
     F_BLOCK,
 
     GRAVITY_TRIGGER,
+    FREE_CAMERA_TRIGGER,
+    LOCKED_CAMERA_TRIGGER,
 
     OBJ_COUNT
 };

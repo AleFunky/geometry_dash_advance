@@ -373,6 +373,7 @@ void reset_variables() {
     player_1.lerped_cube_rotation = 0;
 
     gravity_multiplier = TO_FIXED(1);
+    free_camera = FALSE;
 
     curr_endless_part_id = -1;
     curr_column_relative = 0;
@@ -737,7 +738,7 @@ void scroll_screen_vertically() {
     
     s32 relative_player_y = FROM_FIXED(curr_player.player_y) - FROM_FIXED(intended_scroll_y);
 
-    if (player_1.gamemode == GAMEMODE_CUBE && dual == DUAL_OFF) {
+    if ((player_1.gamemode == GAMEMODE_CUBE && dual == DUAL_OFF) || free_camera) {
         // This scrolls the screen on the y axis
         if (relative_player_y + 16 >= BOTTOM_SCROLL_Y) {
             scroll_y_dir = 1;

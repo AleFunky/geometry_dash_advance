@@ -205,6 +205,8 @@ struct PracticeCheckpoint {
 
 extern FIXED gravity_multiplier;
 
+extern u8 free_camera;
+
 extern u8 in_practice_mode;
 
 #define WAVE_TRAIL_MAX_POINTS 128-5

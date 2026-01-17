@@ -207,6 +207,20 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                         out_file.write(f"   .hword {hex(gravity_mul_fixed & 0xffff)} @ gravity multiplier {gravity_mul}\n")
                         out_file.write(f"   .hword {hex(touch)} @ {"touch trigger" if touch else "normal trigger"}\n")
                         byte_counter += 4
+                    elif gid == 177 or gid == 178: # No parameter trigger
+                        touch = False
+                        try: 
+                            properties = obj['properties']
+                            for prop in properties:
+                                if prop['name'] == 'Touch trigger':
+                                    touch = bool(prop['value'])
+                        except Exception:
+                            pass
+                        # Trigger
+                        # T -> touch trigger
+                        # hword 4: 0000 0000 0000 000T
+                        out_file.write(f"   .hword {hex(touch)} @ {"touch trigger" if touch else "normal trigger"}\n")
+                        byte_counter += 2
 
                     else:
                         h_flip = False

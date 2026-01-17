@@ -415,6 +415,32 @@ void gravity_trigger(struct ObjectSlot *objectSlot) {
     }
 }
 
+void free_camera_trigger(struct ObjectSlot *objectSlot) {
+    struct Object trigger = objectSlot->object;
+    
+    u32 is_touch_trigger = trigger.is_touch_trigger;
+
+    // If the trigger is a touch trigger, then behave like a normal object,
+    // else if the player is right of the horizontal center of the trigger, activate the color trigger
+    if (is_touch_trigger || (curr_player.player_x >> SUBPIXEL_BITS) >= (trigger.x + 8)) {
+        free_camera = TRUE;
+        objectSlot->occupied = FALSE;
+    }
+}
+
+void locked_camera_trigger(struct ObjectSlot *objectSlot) {
+    struct Object trigger = objectSlot->object;
+    
+    u32 is_touch_trigger = trigger.is_touch_trigger;
+
+    // If the trigger is a touch trigger, then behave like a normal object,
+    // else if the player is right of the horizontal center of the trigger, activate the color trigger
+    if (is_touch_trigger || (curr_player.player_x >> SUBPIXEL_BITS) >= (trigger.x + 8)) {
+        free_camera = FALSE;
+        objectSlot->occupied = FALSE;
+    }
+}
+
 void yellow_orb(struct ObjectSlot *objectSlot) {
     if (curr_player.player_buffering == ORB_BUFFER_READY) {
         s32 sign = (curr_player.gravity_dir == GRAVITY_UP) ? 1 : -1;
@@ -1167,6 +1193,9 @@ const jmp_table routines_jump_table[] = {
     f_block,
 
     gravity_trigger,
+
+    free_camera_trigger,
+    locked_camera_trigger,
 };
 
 // In pixels
@@ -1400,6 +1429,8 @@ const s16 obj_hitbox[][6] = {
     Object_Hitbox_Rectangle("F_BLOCK", 20, 20, -2, -2, 8, 8)
 
     Object_Hitbox_Rectangle("GRAVITY_TRIGGER", 16, 16, 0, 0, 8, 8)
+    Object_Hitbox_Rectangle("FREE_CAMERA_TRIGGER", 16, 16, 0, 0, 8, 8)
+    Object_Hitbox_Rectangle("LOCKED_CAMERA_TRIGGER", 16, 16, 0, 0, 8, 8)
 };
 
 #undef Object_Hitbox

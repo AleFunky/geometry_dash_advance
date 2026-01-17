@@ -64,6 +64,8 @@ u16 loaded_song_id;
 // Gravity multiplier
 FIXED gravity_multiplier;
 
+u8 free_camera;
+
 // If the current level select menu is for custom levels
 u8 custom_levels;
 

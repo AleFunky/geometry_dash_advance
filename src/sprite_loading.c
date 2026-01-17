@@ -118,6 +118,13 @@ void load_objects(u32 load_chr, u32 loading_level) {
                         new_object.is_trigger = TRUE;
                         new_object.is_touch_trigger = (new_object.attrib2 & 1) != 0;
                         break;
+                    case FREE_CAMERA_TRIGGER:
+                    case LOCKED_CAMERA_TRIGGER:
+                        new_object.attrib1 = *sprite_pointer; // Flags
+                        sprite_pointer++;
+                        new_object.is_trigger = TRUE;
+                        new_object.is_touch_trigger = (new_object.attrib1 & 1) != 0;
+                        break;
                     case BASIC_BLOCK_OBJ:
                     case BASIC_SLAB_OBJ:
                         new_object.attrib1 = *sprite_pointer; // Flags
