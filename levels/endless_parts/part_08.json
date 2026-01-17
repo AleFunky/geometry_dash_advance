@@ -486,6 +486,11 @@
                          "name":"Color",
                          "type":"color",
                          "value":"#ff0000ff"
+                        }, 
+                        {
+                         "name":"Frames",
+                         "type":"int",
+                         "value":30
                         }],
                  "rotation":0,
                  "type":"",
@@ -673,6 +678,34 @@
                  "width":16,
                  "x":528,
                  "y":312
+                }, 
+                {
+                 "gid":16388,
+                 "height":16,
+                 "id":474,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Channel",
+                         "type":"string",
+                         "value":"GROUND"
+                        }, 
+                        {
+                         "name":"Color",
+                         "type":"color",
+                         "value":"#ff0000ff"
+                        }, 
+                        {
+                         "name":"Frames",
+                         "type":"int",
+                         "value":30
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":0,
+                 "y":384
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -681,7 +714,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":474,
+ "nextobjectid":475,
  "orientation":"orthogonal",
  "properties":[
         {

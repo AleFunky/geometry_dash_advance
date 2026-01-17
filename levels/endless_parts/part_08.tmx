@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="50" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="474">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="50" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="475">
  <editorsettings>
   <export target="part_08.json" format="json"/>
  </editorsettings>
@@ -154,6 +154,7 @@
    <properties>
     <property name="Channel" value="BG"/>
     <property name="Color" type="color" value="#ff0000ff"/>
+    <property name="Frames" type="int" value="30"/>
    </properties>
   </object>
   <object id="457" gid="16426" x="576" y="320" width="16" height="16"/>
@@ -171,5 +172,12 @@
   <object id="469" gid="16462" x="624" y="312" width="16" height="16"/>
   <object id="470" gid="16462" x="576" y="312" width="16" height="16"/>
   <object id="471" gid="16462" x="528" y="312" width="16" height="16"/>
+  <object id="474" gid="16388" x="0" y="384" width="16" height="16">
+   <properties>
+    <property name="Channel" value="GROUND"/>
+    <property name="Color" type="color" value="#ff0000ff"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
