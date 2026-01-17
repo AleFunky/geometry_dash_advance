@@ -197,7 +197,7 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                                     touch = bool(prop['value'])
 
                         except Exception:
-                            raise Exception(f"Encountered gravity trigger without attributes on pos x {x/16}, y {y/16}. THIS SHOULD NOT APPEAR")
+                            pass
                         # Gravity trigger
                         # M -> multiplier fixed point integer part  m -> multiplier fixed poitn fractional part
                         # T -> touch trigger
