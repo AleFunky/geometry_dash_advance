@@ -446,6 +446,17 @@ void reset_variables() {
     set_attempt_x();
 }
 
+const u16 endless_bg_g_colors[] = {
+    CLR_RED,
+    CLR_BLUE,
+    CLR_LIME,
+    CLR_YELLOW,
+    CLR_ORANGE,
+    CLR_CYAN,
+    CLR_MAG,
+    CLR_SKYBLUE,
+};
+
 void load_level(u32 level_ID) {
     // Set level pointers
     level_pointer[0] = (u32*) level_defines[level_ID][L1_DATA_INDEX];
@@ -469,6 +480,12 @@ void load_level(u32 level_ID) {
     loaded_song_id = properties_pointer[LEVEL_SONG_INDEX];
     u32 background_type = properties_pointer[LEVEL_BACKGROUND_TYPE];
     u32 ground_type = properties_pointer[LEVEL_GROUND_TYPE];
+
+    if (level_ID == endless_ID) {
+        u16 random_color = endless_bg_g_colors[qran() & 0x7];
+        bg_color = random_color;
+        ground_color = random_color;
+    }
 
     // Limit values to safe values
     if (loaded_song_id >= MSL_NSONGS) loaded_song_id = 0;
