@@ -1842,12 +1842,8 @@
  </tile>
  <tile id="176">
   <properties>
-   <property name="bg layer" value="-1"/>
-   <property name="enable rotation" type="bool" value="false"/>
-   <property name="hflip" type="bool" value="false"/>
-   <property name="rotation angle" type="int" value="0"/>
-   <property name="vflip" type="bool" value="false"/>
-   <property name="z index" type="int" value="0"/>
+   <property name="Gravity Multiplier" type="float" value="1"/>
+   <property name="Touch trigger" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="177">
