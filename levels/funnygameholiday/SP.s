@@ -6037,13 +6037,13 @@ funnygameholiday_spr_data:
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 908
-   .hword 0x10 @ delta x
+   .hword 0x8 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4 @ type
    .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 909
-   .hword 0x3b @ delta x
+   .hword 0x43 @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
@@ -6230,28 +6230,28 @@ funnygameholiday_spr_data:
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 939
-   .hword 0x50 @ delta x
+   .hword 0x48 @ delta x
+   .hword 0x1a0 @ y
+   .hword 0x4 @ type
+   .hword 0x10 @ bg layer 2 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 940
+   .hword 0x8 @ delta x
    .hword 0x180 @ y
    .hword 0x15 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 940
+@ Object 941
    .hword 0x0 @ delta x
    .hword 0x180 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 941
+@ Object 942
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4f @ type
    .hword 0x20 @ bg layer 4 non rotated   
-   .hword 0x0 @ z index 0
-@ Object 942
-   .hword 0x0 @ delta x
-   .hword 0x1a0 @ y
-   .hword 0x4 @ type
-   .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 943
    .hword 0x40 @ delta x
@@ -6506,7 +6506,7 @@ funnygameholiday_spr_data:
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4 @ type
-   .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
+   .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 984
    .hword 0x18 @ delta x
@@ -6544,7 +6544,7 @@ funnygameholiday_spr_data:
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4 @ type
-   .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
+   .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 990
    .hword 0x50 @ delta x
@@ -6568,7 +6568,7 @@ funnygameholiday_spr_data:
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4 @ type
-   .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
+   .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 994
    .hword 0x34 @ delta x
@@ -6605,905 +6605,905 @@ funnygameholiday_spr_data:
 @ Object 999
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
-   .hword 0x4f @ type
-   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x4 @ type
+   .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
 @ Object 1000
-   .hword 0x0 @ delta x
-   .hword 0x1a0 @ y
-   .hword 0x4 @ type
-   .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
-   .hword 0x0 @ z index 0
-@ Object 1001
    .hword 0x50 @ delta x
    .hword 0x180 @ y
    .hword 0x15 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1002
+@ Object 1001
    .hword 0x0 @ delta x
    .hword 0x180 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1003
+@ Object 1002
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4f @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1004
+@ Object 1003
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x4 @ type
-   .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
+   .hword 0x10 @ bg layer 2 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1005
+@ Object 1004
    .hword 0x40 @ delta x
    .hword 0x130 @ y
    .hword 0x4f @ type
    .hword 0x21 @ bg layer 4 non rotated  flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1006
+@ Object 1005
    .hword 0x0 @ delta x
    .hword 0x130 @ y
    .hword 0x7 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1007
+@ Object 1006
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x15 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1008
+@ Object 1007
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1009
+@ Object 1008
    .hword 0xd @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1f @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1010
+@ Object 1009
    .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0xd @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1011
+@ Object 1010
    .hword 0x10 @ delta x
    .hword 0x130 @ y
    .hword 0x4 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1012
+@ Object 1011
    .hword 0x30 @ delta x
    .hword 0x130 @ y
    .hword 0x4f @ type
    .hword 0x21 @ bg layer 4 non rotated  flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1013
+@ Object 1012
    .hword 0x0 @ delta x
    .hword 0x130 @ y
    .hword 0x7 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1014
+@ Object 1013
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x15 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1015
+@ Object 1014
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1016
+@ Object 1015
    .hword 0x0 @ delta x
    .hword 0x170 @ y
    .hword 0x9 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1017
+@ Object 1016
    .hword 0x20 @ delta x
    .hword 0x170 @ y
    .hword 0x11 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1018
+@ Object 1017
    .hword 0x10 @ delta x
    .hword 0x130 @ y
    .hword 0x5 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1019
+@ Object 1018
    .hword 0x0 @ delta x
+   .hword 0x170 @ y
+   .hword 0x11 @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 1019
+   .hword 0x10 @ delta x
    .hword 0x170 @ y
    .hword 0x11 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 1020
    .hword 0x10 @ delta x
-   .hword 0x170 @ y
-   .hword 0x11 @ type
-   .hword 0x20 @ bg layer 4 non rotated   
-   .hword 0x0 @ z index 0
-@ Object 1021
-   .hword 0x10 @ delta x
    .hword 0x130 @ y
    .hword 0x4f @ type
    .hword 0x21 @ bg layer 4 non rotated  flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1022
+@ Object 1021
    .hword 0x0 @ delta x
    .hword 0x130 @ y
    .hword 0x7 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1023
+@ Object 1022
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x15 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1024
+@ Object 1023
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1025
+@ Object 1024
    .hword 0x2b @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1f @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1026
+@ Object 1025
    .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0xd @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1027
+@ Object 1026
    .hword 0x2 @ delta x
    .hword 0x130 @ y
    .hword 0x6 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1028
+@ Object 1027
    .hword 0x20 @ delta x
    .hword 0x130 @ y
    .hword 0x4f @ type
    .hword 0x21 @ bg layer 4 non rotated  flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1029
+@ Object 1028
    .hword 0x0 @ delta x
    .hword 0x130 @ y
    .hword 0x7 @ type
    .hword 0x13 @ bg layer 2 non rotated flipped horizontally flipped vertically 
    .hword 0x0 @ z index 0
-@ Object 1030
+@ Object 1029
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x15 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1031
+@ Object 1030
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1032
+@ Object 1031
    .hword 0x93 @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1f @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1033
+@ Object 1032
    .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0xd @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1034
+@ Object 1033
    .hword 0xbb @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1f @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1035
+@ Object 1034
    .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0xd @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1036
+@ Object 1035
    .hword 0xa6 @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1f @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1037
+@ Object 1036
    .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0xd @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1038
+@ Object 1037
    .hword 0xcb @ delta x
    .hword 0xa0 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1f @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1039
+@ Object 1038
    .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0xd @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1040
+@ Object 1039
    .hword 0x5 @ delta x
    .hword 0xf0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1041
+@ Object 1040
    .hword 0x40 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1042
+@ Object 1041
    .hword 0x0 @ delta x
    .hword 0x100 @ y
    .hword 0x3 @ type
    .hword 0x6 @ changes OBJ for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1043
+@ Object 1042
    .hword 0x0 @ delta x
    .hword 0x110 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1044
+@ Object 1043
    .hword 0x0 @ delta x
    .hword 0x128 @ y
    .hword 0x2 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 16384 @ rotation
-@ Object 1045
+@ Object 1044
    .hword 0x10 @ delta x
    .hword 0xf0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
    .hword 0x1c3 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1046
+@ Object 1045
    .hword 0x0 @ delta x
    .hword 0x100 @ y
    .hword 0x3 @ type
    .hword 0x36 @ changes OBJ for 6 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1047
+@ Object 1046
    .hword 0x0 @ delta x
    .hword 0x110 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1048
+@ Object 1047
    .hword 0x20 @ delta x
    .hword 0xd0 @ y
    .hword 0x1 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 49152 @ rotation
-@ Object 1049
+@ Object 1048
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0xe @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 49152 @ rotation
-@ Object 1050
+@ Object 1049
    .hword 0x7 @ delta x
    .hword 0x130 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1051
+@ Object 1050
    .hword 0x0 @ delta x
    .hword 0x140 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1052
+@ Object 1051
    .hword 0x0 @ delta x
    .hword 0x150 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1053
+@ Object 1052
    .hword 0x0 @ delta x
    .hword 0x160 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1054
+@ Object 1053
    .hword 0x0 @ delta x
    .hword 0x170 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1055
+@ Object 1054
    .hword 0x0 @ delta x
    .hword 0x180 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1056
+@ Object 1055
    .hword 0x0 @ delta x
    .hword 0x190 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1057
+@ Object 1056
    .hword 0x0 @ delta x
    .hword 0x1a0 @ y
    .hword 0x3 @ type
    .hword 0x0 @ changes 1 for 0 frames
    .hword 0x1f @ color
    .hword 0x60 @ doesn't copy any channel blending touch trigger
-@ Object 1058
+@ Object 1057
    .hword 0x29 @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1059
+@ Object 1058
    .hword 0x10 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1060
+@ Object 1059
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1061
+@ Object 1060
    .hword 0x2d @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1062
+@ Object 1061
    .hword 0x20 @ delta x
    .hword 0xd0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1063
+@ Object 1062
    .hword 0x40 @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1064
+@ Object 1063
    .hword 0x20 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1065
+@ Object 1064
    .hword 0xe @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1066
+@ Object 1065
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1067
+@ Object 1066
    .hword 0x2f @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1068
+@ Object 1067
    .hword 0x0 @ delta x
    .hword 0x120 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1069
+@ Object 1068
    .hword 0x16 @ delta x
    .hword 0xb8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1070
+@ Object 1069
    .hword 0xa @ delta x
    .hword 0xb8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1071
+@ Object 1070
    .hword 0x20 @ delta x
    .hword 0xb8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1072
+@ Object 1071
    .hword 0x20 @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1073
+@ Object 1072
    .hword 0x0 @ delta x
    .hword 0xb8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1074
+@ Object 1073
    .hword 0x10 @ delta x
    .hword 0x100 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1075
+@ Object 1074
    .hword 0x10 @ delta x
    .hword 0xb8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1076
+@ Object 1075
    .hword 0x8 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1077
+@ Object 1076
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1078
+@ Object 1077
    .hword 0x55 @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1079
+@ Object 1078
    .hword 0x30 @ delta x
    .hword 0xc0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1080
+@ Object 1079
    .hword 0x6 @ delta x
    .hword 0x108 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1081
+@ Object 1080
    .hword 0xa @ delta x
    .hword 0x108 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1082
+@ Object 1081
    .hword 0x20 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1083
+@ Object 1082
    .hword 0x4 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1084
+@ Object 1083
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1085
+@ Object 1084
    .hword 0x19 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1086
+@ Object 1085
    .hword 0x20 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1087
+@ Object 1086
    .hword 0x10 @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1088
+@ Object 1087
    .hword 0x50 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1089
+@ Object 1088
    .hword 0x1d @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1090
+@ Object 1089
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1091
+@ Object 1090
    .hword 0x30 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1092
+@ Object 1091
    .hword 0x20 @ delta x
    .hword 0x100 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1093
+@ Object 1092
    .hword 0x30 @ delta x
    .hword 0xd0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1094
+@ Object 1093
    .hword 0x30 @ delta x
    .hword 0x120 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1095
+@ Object 1094
    .hword 0x6 @ delta x
    .hword 0xa8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1096
+@ Object 1095
    .hword 0x0 @ delta x
    .hword 0xe8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1097
+@ Object 1096
    .hword 0x5 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1098
+@ Object 1097
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1099
+@ Object 1098
    .hword 0x2 @ delta x
    .hword 0xa8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1100
+@ Object 1099
    .hword 0x0 @ delta x
    .hword 0xe8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1101
+@ Object 1100
    .hword 0x20 @ delta x
    .hword 0xa8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1102
+@ Object 1101
    .hword 0x0 @ delta x
    .hword 0xe8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1103
+@ Object 1102
    .hword 0x20 @ delta x
    .hword 0xa8 @ y
+   .hword 0x3d @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 1103
+   .hword 0x0 @ delta x
+   .hword 0xe8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 1104
    .hword 0x0 @ delta x
-   .hword 0xe8 @ y
-   .hword 0x3d @ type
-   .hword 0x20 @ bg layer 4 non rotated   
-   .hword 0x0 @ z index 0
-@ Object 1105
-   .hword 0x0 @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1106
+@ Object 1105
    .hword 0x20 @ delta x
    .hword 0xa8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1107
+@ Object 1106
    .hword 0x0 @ delta x
    .hword 0xc0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1108
+@ Object 1107
    .hword 0x0 @ delta x
    .hword 0xe8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1109
+@ Object 1108
    .hword 0x63 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1110
+@ Object 1109
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1111
+@ Object 1110
    .hword 0x2a @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1112
+@ Object 1111
    .hword 0x10 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1113
+@ Object 1112
    .hword 0x36 @ delta x
    .hword 0xc8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1114
+@ Object 1113
    .hword 0x0 @ delta x
    .hword 0x108 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1115
+@ Object 1114
    .hword 0xa @ delta x
    .hword 0xc8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1116
+@ Object 1115
    .hword 0x0 @ delta x
    .hword 0x108 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1117
+@ Object 1116
    .hword 0x20 @ delta x
    .hword 0xc8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1118
+@ Object 1117
    .hword 0x0 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1119
+@ Object 1118
    .hword 0x10 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1120
+@ Object 1119
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1121
+@ Object 1120
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1122
+@ Object 1121
    .hword 0xc @ delta x
    .hword 0xc8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1123
+@ Object 1122
    .hword 0x0 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1124
+@ Object 1123
    .hword 0x20 @ delta x
    .hword 0xc8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1125
+@ Object 1124
    .hword 0x0 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1126
+@ Object 1125
    .hword 0x10 @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1127
+@ Object 1126
    .hword 0x8b @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1128
+@ Object 1127
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1129
+@ Object 1128
    .hword 0x12 @ delta x
    .hword 0xf0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1130
+@ Object 1129
    .hword 0x40 @ delta x
    .hword 0x100 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1131
+@ Object 1130
    .hword 0x6 @ delta x
    .hword 0xa8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1132
+@ Object 1131
    .hword 0xa @ delta x
    .hword 0xa8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1133
+@ Object 1132
    .hword 0x20 @ delta x
    .hword 0xa8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1134
+@ Object 1133
    .hword 0x10 @ delta x
    .hword 0x120 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1135
+@ Object 1134
    .hword 0x10 @ delta x
    .hword 0xa8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1136
+@ Object 1135
    .hword 0x6 @ delta x
    .hword 0xd8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1137
+@ Object 1136
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1138
+@ Object 1137
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1139
+@ Object 1138
    .hword 0x5 @ delta x
    .hword 0xd8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1140
+@ Object 1139
    .hword 0x10 @ delta x
    .hword 0xa8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1141
+@ Object 1140
    .hword 0x10 @ delta x
+   .hword 0xd8 @ y
+   .hword 0x3d @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 1141
+   .hword 0x20 @ delta x
    .hword 0xd8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
@@ -7516,72 +7516,72 @@ funnygameholiday_spr_data:
    .hword 0x0 @ z index 0
 @ Object 1143
    .hword 0x20 @ delta x
-   .hword 0xd8 @ y
-   .hword 0x3d @ type
-   .hword 0x20 @ bg layer 4 non rotated   
-   .hword 0x0 @ z index 0
-@ Object 1144
-   .hword 0x20 @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1145
+@ Object 1144
    .hword 0x30 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1146
+@ Object 1145
    .hword 0x0 @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1147
+@ Object 1146
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1148
+@ Object 1147
    .hword 0x7d @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1149
+@ Object 1148
    .hword 0x10 @ delta x
    .hword 0x90 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1150
+@ Object 1149
    .hword 0x2e @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1151
+@ Object 1150
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1152
+@ Object 1151
    .hword 0x15 @ delta x
    .hword 0x108 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1153
+@ Object 1152
    .hword 0xa @ delta x
    .hword 0x108 @ y
    .hword 0x3e @ type
+   .hword 0x20 @ bg layer 4 non rotated   
+   .hword 0x0 @ z index 0
+@ Object 1153
+   .hword 0x20 @ delta x
+   .hword 0x108 @ y
+   .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 1154
@@ -7591,2984 +7591,2978 @@ funnygameholiday_spr_data:
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 1155
-   .hword 0x20 @ delta x
-   .hword 0x108 @ y
-   .hword 0x3d @ type
-   .hword 0x20 @ bg layer 4 non rotated   
-   .hword 0x0 @ z index 0
-@ Object 1156
    .hword 0x6 @ delta x
    .hword 0xd8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1157
+@ Object 1156
    .hword 0xa @ delta x
    .hword 0xd8 @ y
    .hword 0x3e @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1158
+@ Object 1157
    .hword 0x10 @ delta x
    .hword 0x108 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1159
+@ Object 1158
    .hword 0x10 @ delta x
    .hword 0xd8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1160
+@ Object 1159
    .hword 0x10 @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1161
+@ Object 1160
    .hword 0x10 @ delta x
    .hword 0xd8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1162
+@ Object 1161
    .hword 0x16 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1163
+@ Object 1162
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1164
+@ Object 1163
    .hword 0x7 @ delta x
    .hword 0xd8 @ y
    .hword 0x3d @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1165
+@ Object 1164
    .hword 0x50 @ delta x
    .hword 0x120 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1166
+@ Object 1165
    .hword 0x10 @ delta x
    .hword 0xa0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1167
+@ Object 1166
    .hword 0x44 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1168
+@ Object 1167
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1169
+@ Object 1168
    .hword 0x9 @ delta x
    .hword 0xb0 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1170
+@ Object 1169
    .hword 0x90 @ delta x
    .hword 0x90 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1171
+@ Object 1170
    .hword 0x1c @ delta x
    .hword 0xbb @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1172
+@ Object 1171
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3e0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1173
+@ Object 1172
    .hword 0x3 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x34 @ changes BG for 6 frames
    .hword 0x1c0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1174
+@ Object 1173
    .hword 0xb @ delta x
    .hword 0xc6 @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1175
+@ Object 1174
    .hword 0x4 @ delta x
    .hword 0x110 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1176
+@ Object 1175
    .hword 0xc @ delta x
    .hword 0xd1 @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1177
+@ Object 1176
    .hword 0x10 @ delta x
    .hword 0xdc @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1178
+@ Object 1177
    .hword 0x10 @ delta x
    .hword 0xe7 @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1179
+@ Object 1178
    .hword 0x10 @ delta x
    .hword 0xf2 @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1180
+@ Object 1179
    .hword 0x10 @ delta x
    .hword 0xfd @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1181
+@ Object 1180
    .hword 0x4 @ delta x
    .hword 0x90 @ y
    .hword 0x1b @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1182
+@ Object 1181
    .hword 0xc @ delta x
    .hword 0x108 @ y
    .hword 0x81 @ type
    .hword 0x24 @ bg layer 4 rotated   
    .hword 0x0 @ z index 0
    .hword 5097 @ rotation
-@ Object 1183
+@ Object 1182
    .hword 0x12 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x6 @ changes OBJ for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1184
+@ Object 1183
    .hword 0x0 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x73bc @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1185
+@ Object 1184
    .hword 0x2 @ delta x
    .hword 0x109 @ y
    .hword 0x34 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1186
+@ Object 1185
    .hword 0x0 @ delta x
    .hword 0x117 @ y
    .hword 0x34 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1187
+@ Object 1186
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0xf6 @ changes OBJ for 30 frames
    .hword 0x0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1188
+@ Object 1187
    .hword 0x0 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x1e4 @ changes BG for 60 frames
    .hword 0x0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
-@ Object 1189
+@ Object 1188
    .hword 0xf @ delta x
    .hword 0xa0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1190
+@ Object 1189
    .hword 0x4 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1191
+@ Object 1190
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1192
+@ Object 1191
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1193
+@ Object 1192
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1194
+@ Object 1193
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1195
+@ Object 1194
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1196
+@ Object 1195
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1197
+@ Object 1196
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1198
+@ Object 1197
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1199
+@ Object 1198
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1200
+@ Object 1199
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1201
+@ Object 1200
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1202
+@ Object 1201
    .hword 0x1 @ delta x
    .hword 0x110 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1203
+@ Object 1202
    .hword 0xf @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1204
+@ Object 1203
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1205
+@ Object 1204
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1206
+@ Object 1205
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1207
+@ Object 1206
    .hword 0xe @ delta x
    .hword 0xb0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1208
+@ Object 1207
    .hword 0x0 @ delta x
    .hword 0xb0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1209
+@ Object 1208
    .hword 0xf @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1210
+@ Object 1209
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1211
+@ Object 1210
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1212
+@ Object 1211
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1213
+@ Object 1212
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1214
+@ Object 1213
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1215
+@ Object 1214
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1216
+@ Object 1215
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1217
+@ Object 1216
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1218
+@ Object 1217
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1219
+@ Object 1218
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1220
+@ Object 1219
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1221
+@ Object 1220
    .hword 0x6 @ delta x
    .hword 0xd0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1222
+@ Object 1221
    .hword 0xa @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1223
+@ Object 1222
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1224
+@ Object 1223
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1225
+@ Object 1224
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1226
+@ Object 1225
    .hword 0x1e @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1227
+@ Object 1226
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1228
+@ Object 1227
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1229
+@ Object 1228
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1230
+@ Object 1229
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1231
+@ Object 1230
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1232
+@ Object 1231
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1233
+@ Object 1232
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1234
+@ Object 1233
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1235
+@ Object 1234
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1236
+@ Object 1235
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1237
+@ Object 1236
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1238
+@ Object 1237
    .hword 0xa @ delta x
    .hword 0x90 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1239
+@ Object 1238
    .hword 0x0 @ delta x
    .hword 0x90 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1240
+@ Object 1239
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1241
+@ Object 1240
    .hword 0x6 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1242
+@ Object 1241
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1243
+@ Object 1242
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1244
+@ Object 1243
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1245
+@ Object 1244
    .hword 0x1c @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1246
+@ Object 1245
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1247
+@ Object 1246
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1248
+@ Object 1247
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1249
+@ Object 1248
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1250
+@ Object 1249
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1251
+@ Object 1250
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1252
+@ Object 1251
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1253
+@ Object 1252
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1254
+@ Object 1253
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1255
+@ Object 1254
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1256
+@ Object 1255
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1257
+@ Object 1256
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1258
+@ Object 1257
    .hword 0x0 @ delta x
    .hword 0xa0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1259
+@ Object 1258
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1260
+@ Object 1259
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1261
+@ Object 1260
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1262
+@ Object 1261
    .hword 0xd @ delta x
    .hword 0xe0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1263
+@ Object 1262
    .hword 0x0 @ delta x
    .hword 0xe0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1264
+@ Object 1263
    .hword 0x10 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1265
+@ Object 1264
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1266
+@ Object 1265
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1267
+@ Object 1266
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1268
+@ Object 1267
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1269
+@ Object 1268
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1270
+@ Object 1269
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1271
+@ Object 1270
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1272
+@ Object 1271
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1273
+@ Object 1272
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1274
+@ Object 1273
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1275
+@ Object 1274
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1276
+@ Object 1275
    .hword 0x5 @ delta x
    .hword 0xd0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1277
+@ Object 1276
    .hword 0xb @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1278
+@ Object 1277
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1279
+@ Object 1278
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1280
+@ Object 1279
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1281
+@ Object 1280
    .hword 0x5 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1282
+@ Object 1281
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1283
+@ Object 1282
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1284
+@ Object 1283
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1285
+@ Object 1284
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1286
+@ Object 1285
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1287
+@ Object 1286
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1288
+@ Object 1287
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1289
+@ Object 1288
    .hword 0x17 @ delta x
    .hword 0xa0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1290
+@ Object 1289
    .hword 0x0 @ delta x
    .hword 0xa0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1291
+@ Object 1290
    .hword 0x6 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1292
+@ Object 1291
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1293
+@ Object 1292
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1294
+@ Object 1293
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1295
+@ Object 1294
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1296
+@ Object 1295
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1297
+@ Object 1296
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1298
+@ Object 1297
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1299
+@ Object 1298
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1300
+@ Object 1299
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1301
+@ Object 1300
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1302
+@ Object 1301
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1303
+@ Object 1302
    .hword 0xf @ delta x
    .hword 0xa0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1304
+@ Object 1303
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1305
+@ Object 1304
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1306
+@ Object 1305
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1307
+@ Object 1306
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1308
+@ Object 1307
    .hword 0x1c @ delta x
    .hword 0x90 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1309
+@ Object 1308
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1310
+@ Object 1309
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1311
+@ Object 1310
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1312
+@ Object 1311
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1313
+@ Object 1312
    .hword 0xc @ delta x
    .hword 0xd0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1314
+@ Object 1313
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1315
+@ Object 1314
    .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1316
+@ Object 1315
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1317
+@ Object 1316
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1318
+@ Object 1317
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1319
+@ Object 1318
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1320
+@ Object 1319
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1321
+@ Object 1320
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1322
+@ Object 1321
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1323
+@ Object 1322
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1324
+@ Object 1323
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1325
+@ Object 1324
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1326
+@ Object 1325
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1327
+@ Object 1326
    .hword 0x1d @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1328
+@ Object 1327
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1329
+@ Object 1328
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1330
+@ Object 1329
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1331
+@ Object 1330
    .hword 0x1 @ delta x
    .hword 0xb0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1332
+@ Object 1331
    .hword 0x0 @ delta x
    .hword 0xb0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1333
+@ Object 1332
    .hword 0x0 @ delta x
    .hword 0xe0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1334
+@ Object 1333
    .hword 0xf @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1335
+@ Object 1334
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1336
+@ Object 1335
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1337
+@ Object 1336
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1338
+@ Object 1337
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1339
+@ Object 1338
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1340
+@ Object 1339
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1341
+@ Object 1340
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1342
+@ Object 1341
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1343
+@ Object 1342
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1344
+@ Object 1343
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1345
+@ Object 1344
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1346
+@ Object 1345
    .hword 0x5 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1347
+@ Object 1346
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1348
+@ Object 1347
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1349
+@ Object 1348
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1350
+@ Object 1349
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1351
+@ Object 1350
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1352
+@ Object 1351
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1353
+@ Object 1352
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1354
+@ Object 1353
    .hword 0xb @ delta x
    .hword 0xc0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1355
+@ Object 1354
    .hword 0x11 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1356
+@ Object 1355
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1357
+@ Object 1356
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1358
+@ Object 1357
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1359
+@ Object 1358
    .hword 0xc @ delta x
    .hword 0xd0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1360
+@ Object 1359
    .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1361
+@ Object 1360
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1362
+@ Object 1361
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1363
+@ Object 1362
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1364
+@ Object 1363
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1365
+@ Object 1364
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1366
+@ Object 1365
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1367
+@ Object 1366
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1368
+@ Object 1367
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1369
+@ Object 1368
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1370
+@ Object 1369
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1371
+@ Object 1370
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1372
+@ Object 1371
    .hword 0x11 @ delta x
    .hword 0x90 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1373
+@ Object 1372
    .hword 0x0 @ delta x
    .hword 0x90 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1374
+@ Object 1373
    .hword 0xc @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1375
+@ Object 1374
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1376
+@ Object 1375
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1377
+@ Object 1376
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1378
+@ Object 1377
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1379
+@ Object 1378
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1380
+@ Object 1379
    .hword 0x0 @ delta x
    .hword 0xb0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1381
+@ Object 1380
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1382
+@ Object 1381
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1383
+@ Object 1382
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1384
+@ Object 1383
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1385
+@ Object 1384
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1386
+@ Object 1385
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1387
+@ Object 1386
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1388
+@ Object 1387
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1389
+@ Object 1388
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1390
+@ Object 1389
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1391
+@ Object 1390
    .hword 0x6 @ delta x
    .hword 0xd0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1392
+@ Object 1391
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1393
+@ Object 1392
    .hword 0x10 @ delta x
    .hword 0xf0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1394
+@ Object 1393
    .hword 0x7 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1395
+@ Object 1394
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1396
+@ Object 1395
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1397
+@ Object 1396
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1398
+@ Object 1397
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1399
+@ Object 1398
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1400
+@ Object 1399
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1401
+@ Object 1400
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1402
+@ Object 1401
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1403
+@ Object 1402
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1404
+@ Object 1403
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1405
+@ Object 1404
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1406
+@ Object 1405
    .hword 0xe @ delta x
    .hword 0xa0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1407
+@ Object 1406
    .hword 0x2 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1408
+@ Object 1407
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1409
+@ Object 1408
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1410
+@ Object 1409
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1411
+@ Object 1410
    .hword 0x5 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1412
+@ Object 1411
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1413
+@ Object 1412
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1414
+@ Object 1413
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1415
+@ Object 1414
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1416
+@ Object 1415
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1417
+@ Object 1416
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1418
+@ Object 1417
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1419
+@ Object 1418
    .hword 0x0 @ delta x
    .hword 0xb0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1420
+@ Object 1419
    .hword 0x1b @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1421
+@ Object 1420
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1422
+@ Object 1421
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1423
+@ Object 1422
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1424
+@ Object 1423
    .hword 0x2 @ delta x
    .hword 0xb0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1425
+@ Object 1424
    .hword 0x0 @ delta x
    .hword 0xb0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1426
+@ Object 1425
    .hword 0xe @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1427
+@ Object 1426
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1428
+@ Object 1427
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1429
+@ Object 1428
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1430
+@ Object 1429
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1431
+@ Object 1430
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1432
+@ Object 1431
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1433
+@ Object 1432
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1434
+@ Object 1433
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1435
+@ Object 1434
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1436
+@ Object 1435
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1437
+@ Object 1436
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1438
+@ Object 1437
    .hword 0x17 @ delta x
    .hword 0xe0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1439
+@ Object 1438
    .hword 0x6 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1440
+@ Object 1439
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1441
+@ Object 1440
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1442
+@ Object 1441
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1443
+@ Object 1442
    .hword 0x7 @ delta x
    .hword 0x90 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1444
+@ Object 1443
    .hword 0x0 @ delta x
    .hword 0x90 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1445
+@ Object 1444
    .hword 0x9 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1446
+@ Object 1445
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1447
+@ Object 1446
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1448
+@ Object 1447
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1449
+@ Object 1448
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1450
+@ Object 1449
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1451
+@ Object 1450
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1452
+@ Object 1451
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1453
+@ Object 1452
    .hword 0xf @ delta x
    .hword 0xe0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1454
+@ Object 1453
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1455
+@ Object 1454
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1456
+@ Object 1455
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1457
+@ Object 1456
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1458
+@ Object 1457
    .hword 0x1c @ delta x
    .hword 0xb0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1459
+@ Object 1458
    .hword 0x3 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1460
+@ Object 1459
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1461
+@ Object 1460
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1462
+@ Object 1461
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1463
+@ Object 1462
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1464
+@ Object 1463
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1465
+@ Object 1464
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1466
+@ Object 1465
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1467
+@ Object 1466
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1468
+@ Object 1467
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1469
+@ Object 1468
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1470
+@ Object 1469
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1471
+@ Object 1470
    .hword 0x2 @ delta x
    .hword 0xa0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1472
+@ Object 1471
    .hword 0xe @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1473
+@ Object 1472
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1474
+@ Object 1473
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1475
+@ Object 1474
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1476
+@ Object 1475
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1477
+@ Object 1476
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1478
+@ Object 1477
    .hword 0x1d @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1479
+@ Object 1478
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1480
+@ Object 1479
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1481
+@ Object 1480
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1482
+@ Object 1481
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1483
+@ Object 1482
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1484
+@ Object 1483
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1485
+@ Object 1484
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1486
+@ Object 1485
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1487
+@ Object 1486
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1488
+@ Object 1487
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1489
+@ Object 1488
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1490
+@ Object 1489
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1491
+@ Object 1490
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1492
+@ Object 1491
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1493
+@ Object 1492
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1494
+@ Object 1493
    .hword 0x4 @ delta x
    .hword 0xa0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1495
+@ Object 1494
    .hword 0x0 @ delta x
    .hword 0xa0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1496
+@ Object 1495
    .hword 0x0 @ delta x
    .hword 0xe0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1497
+@ Object 1496
    .hword 0x19 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1498
+@ Object 1497
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1499
+@ Object 1498
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1500
+@ Object 1499
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1501
+@ Object 1500
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1502
+@ Object 1501
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1503
+@ Object 1502
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1504
+@ Object 1503
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1505
+@ Object 1504
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1506
+@ Object 1505
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1507
+@ Object 1506
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1508
+@ Object 1507
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1509
+@ Object 1508
    .hword 0xc @ delta x
    .hword 0xe0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1510
+@ Object 1509
    .hword 0x0 @ delta x
    .hword 0xe0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1511
+@ Object 1510
    .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1512
+@ Object 1511
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1513
+@ Object 1512
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1514
+@ Object 1513
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1515
+@ Object 1514
    .hword 0x5 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1516
+@ Object 1515
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1517
+@ Object 1516
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1518
+@ Object 1517
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1519
+@ Object 1518
    .hword 0x1 @ delta x
    .hword 0xc0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1520
+@ Object 1519
    .hword 0xf @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1521
+@ Object 1520
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1522
+@ Object 1521
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1523
+@ Object 1522
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1524
+@ Object 1523
    .hword 0x1b @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1525
+@ Object 1524
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1526
+@ Object 1525
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1527
+@ Object 1526
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1528
+@ Object 1527
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1529
+@ Object 1528
    .hword 0x0 @ delta x
    .hword 0x90 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1530
+@ Object 1529
    .hword 0x0 @ delta x
    .hword 0x90 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1531
+@ Object 1530
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1532
+@ Object 1531
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1533
+@ Object 1532
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1534
+@ Object 1533
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1535
+@ Object 1534
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1536
+@ Object 1535
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1537
+@ Object 1536
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1538
+@ Object 1537
    .hword 0x8 @ delta x
    .hword 0xe0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1539
+@ Object 1538
    .hword 0x8 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1540
+@ Object 1539
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1541
+@ Object 1540
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1542
+@ Object 1541
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1543
+@ Object 1542
    .hword 0x1d @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1544
+@ Object 1543
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1545
+@ Object 1544
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1546
+@ Object 1545
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1547
+@ Object 1546
    .hword 0x5 @ delta x
    .hword 0xb0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1548
+@ Object 1547
    .hword 0xb @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1549
+@ Object 1548
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1550
+@ Object 1549
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1551
+@ Object 1550
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1552
+@ Object 1551
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1553
+@ Object 1552
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1554
+@ Object 1553
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1555
+@ Object 1554
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1556
+@ Object 1555
    .hword 0xd @ delta x
    .hword 0xb0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1557
+@ Object 1556
    .hword 0x0 @ delta x
    .hword 0xb0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1558
+@ Object 1557
    .hword 0x3 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1559
+@ Object 1558
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1560
+@ Object 1559
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1561
+@ Object 1560
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1562
+@ Object 1561
    .hword 0x1a @ delta x
    .hword 0xc0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1563
+@ Object 1562
    .hword 0x5 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1564
+@ Object 1563
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1565
+@ Object 1564
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1566
+@ Object 1565
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1567
+@ Object 1566
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1568
+@ Object 1567
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1569
+@ Object 1568
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1570
+@ Object 1569
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1571
+@ Object 1570
    .hword 0x2 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1572
+@ Object 1571
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1573
+@ Object 1572
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1574
+@ Object 1573
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1575
+@ Object 1574
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1576
+@ Object 1575
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1577
+@ Object 1576
    .hword 0x0 @ delta x
    .hword 0xd0 @ y
    .hword 0x14 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1578
+@ Object 1577
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1579
+@ Object 1578
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1580
+@ Object 1579
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1581
+@ Object 1580
    .hword 0x1d @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x33 @ changes 4 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1582
+@ Object 1581
    .hword 0x0 @ delta x
    .hword 0xe0 @ y
    .hword 0x17 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
-@ Object 1583
+@ Object 1582
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x32 @ changes 3 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1584
+@ Object 1583
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x31 @ changes 2 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1585
+@ Object 1584
    .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x30 @ changes 1 for 6 frames
    .hword 0x7dc0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1586
+@ Object 1585
    .hword 0x10 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x60 @ changes 1 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1587
+@ Object 1586
    .hword 0x1 @ delta x
    .hword 0x70 @ y
    .hword 0x3 @ type
    .hword 0x61 @ changes 2 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1588
+@ Object 1587
    .hword 0x1 @ delta x
    .hword 0x60 @ y
    .hword 0x3 @ type
    .hword 0x62 @ changes 3 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1589
+@ Object 1588
    .hword 0x1 @ delta x
    .hword 0x50 @ y
    .hword 0x3 @ type
    .hword 0x63 @ changes 4 for 12 frames
    .hword 0x0 @ color
    .hword 0x20 @ doesn't copy any channel blending normal trigger
-@ Object 1590
+@ Object 1589
    .hword 0xa @ delta x
    .hword 0xa0 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 1370 @ metatile ID appareance
-@ Object 1591
+@ Object 1590
    .hword 0x0 @ delta x
    .hword 0xa0 @ y
    .hword 0x14 @ type

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="1024" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="2935">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="1024" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="2943">
  <editorsettings>
   <export target="funnygameholiday.json" format="json"/>
  </editorsettings>
@@ -8790,12 +8790,11 @@
     <property name="vflip" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="2382" gid="16464" x="10352" y="416" width="16" height="16"/>
   <object id="2383" gid="16464" x="10432" y="416" width="16" height="16"/>
-  <object id="2384" gid="16464" x="10512" y="416" width="16" height="16"/>
-  <object id="2385" gid="16464" x="10592" y="416" width="16" height="16"/>
-  <object id="2425" gid="16464" x="10592" y="416" width="16" height="16"/>
-  <object id="2386" gid="16464" x="10672" y="416" width="16" height="16"/>
+  <object id="2942" gid="16464" x="10352" y="416" width="16" height="16"/>
+  <object id="2936" gid="16464" x="10512" y="416" width="16" height="16"/>
+  <object id="2938" gid="16464" x="10592" y="416" width="16" height="16"/>
+  <object id="2940" gid="16464" x="10672" y="416" width="16" height="16"/>
   <object id="2387" gid="16464" x="10736" y="304" width="16" height="16">
    <properties>
     <property name="vflip" type="bool" value="true"/>
@@ -8887,7 +8886,7 @@
     <property name="bg layer" value="1"/>
    </properties>
   </object>
-  <object id="2407" gid="16389" x="9008" y="416" width="16" height="16">
+  <object id="2407" gid="16389" x="9000" y="416" width="16" height="16">
    <properties>
     <property name="bg layer" value="1"/>
    </properties>
@@ -8925,7 +8924,7 @@
     <property name="bg layer" value="1"/>
    </properties>
   </object>
-  <object id="2413" gid="16389" x="9552" y="416" width="16" height="16">
+  <object id="2413" gid="16389" x="9544" y="416" width="16" height="16">
    <properties>
     <property name="bg layer" value="1"/>
    </properties>
@@ -8979,39 +8978,39 @@
     <property name="vflip" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="2421" gid="16389" x="10352" y="416" width="16" height="16">
-   <properties>
-    <property name="bg layer" value="1"/>
-    <property name="hflip" type="bool" value="true"/>
-    <property name="vflip" type="bool" value="true"/>
-   </properties>
-  </object>
   <object id="2422" gid="16389" x="10432" y="416" width="16" height="16">
    <properties>
     <property name="bg layer" value="1"/>
-    <property name="hflip" type="bool" value="true"/>
-    <property name="vflip" type="bool" value="true"/>
+    <property name="hflip" type="bool" value="false"/>
+    <property name="vflip" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="2423" gid="16389" x="10512" y="416" width="16" height="16">
+  <object id="2941" gid="16389" x="10352" y="416" width="16" height="16">
    <properties>
     <property name="bg layer" value="1"/>
-    <property name="hflip" type="bool" value="true"/>
-    <property name="vflip" type="bool" value="true"/>
+    <property name="hflip" type="bool" value="false"/>
+    <property name="vflip" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="2424" gid="16389" x="10592" y="416" width="16" height="16">
+  <object id="2935" gid="16389" x="10512" y="416" width="16" height="16">
    <properties>
     <property name="bg layer" value="1"/>
-    <property name="hflip" type="bool" value="true"/>
-    <property name="vflip" type="bool" value="true"/>
+    <property name="hflip" type="bool" value="false"/>
+    <property name="vflip" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="2426" gid="16389" x="10672" y="416" width="16" height="16">
+  <object id="2937" gid="16389" x="10592" y="416" width="16" height="16">
    <properties>
     <property name="bg layer" value="1"/>
-    <property name="hflip" type="bool" value="true"/>
-    <property name="vflip" type="bool" value="true"/>
+    <property name="hflip" type="bool" value="false"/>
+    <property name="vflip" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="2939" gid="16389" x="10672" y="416" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="1"/>
+    <property name="hflip" type="bool" value="false"/>
+    <property name="vflip" type="bool" value="false"/>
    </properties>
   </object>
   <object id="2427" gid="16392" x="10736" y="304" width="16" height="16">

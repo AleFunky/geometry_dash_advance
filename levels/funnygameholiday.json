@@ -38481,18 +38481,6 @@
                 {
                  "gid":16464,
                  "height":16,
-                 "id":2382,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":10352,
-                 "y":416
-                }, 
-                {
-                 "gid":16464,
-                 "height":16,
                  "id":2383,
                  "name":"",
                  "rotation":0,
@@ -38505,7 +38493,19 @@
                 {
                  "gid":16464,
                  "height":16,
-                 "id":2384,
+                 "id":2942,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":10352,
+                 "y":416
+                }, 
+                {
+                 "gid":16464,
+                 "height":16,
+                 "id":2936,
                  "name":"",
                  "rotation":0,
                  "type":"",
@@ -38517,7 +38517,7 @@
                 {
                  "gid":16464,
                  "height":16,
-                 "id":2385,
+                 "id":2938,
                  "name":"",
                  "rotation":0,
                  "type":"",
@@ -38529,19 +38529,7 @@
                 {
                  "gid":16464,
                  "height":16,
-                 "id":2425,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":10592,
-                 "y":416
-                }, 
-                {
-                 "gid":16464,
-                 "height":16,
-                 "id":2386,
+                 "id":2940,
                  "name":"",
                  "rotation":0,
                  "type":"",
@@ -38915,7 +38903,7 @@
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":9008,
+                 "x":9000,
                  "y":416
                 }, 
                 {
@@ -39063,7 +39051,7 @@
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":9552,
+                 "x":9544,
                  "y":416
                 }, 
                 {
@@ -39265,34 +39253,6 @@
                 {
                  "gid":16389,
                  "height":16,
-                 "id":2421,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"bg layer",
-                         "type":"string",
-                         "value":"1"
-                        }, 
-                        {
-                         "name":"hflip",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"vflip",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":16,
-                 "x":10352,
-                 "y":416
-                }, 
-                {
-                 "gid":16389,
-                 "height":16,
                  "id":2422,
                  "name":"",
                  "properties":[
@@ -39304,12 +39264,12 @@
                         {
                          "name":"hflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"vflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"",
@@ -39321,7 +39281,7 @@
                 {
                  "gid":16389,
                  "height":16,
-                 "id":2423,
+                 "id":2941,
                  "name":"",
                  "properties":[
                         {
@@ -39332,12 +39292,40 @@
                         {
                          "name":"hflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"vflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":10352,
+                 "y":416
+                }, 
+                {
+                 "gid":16389,
+                 "height":16,
+                 "id":2935,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"bg layer",
+                         "type":"string",
+                         "value":"1"
+                        }, 
+                        {
+                         "name":"hflip",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"vflip",
+                         "type":"bool",
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"",
@@ -39349,7 +39337,7 @@
                 {
                  "gid":16389,
                  "height":16,
-                 "id":2424,
+                 "id":2937,
                  "name":"",
                  "properties":[
                         {
@@ -39360,12 +39348,12 @@
                         {
                          "name":"hflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"vflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"",
@@ -39377,7 +39365,7 @@
                 {
                  "gid":16389,
                  "height":16,
-                 "id":2426,
+                 "id":2939,
                  "name":"",
                  "properties":[
                         {
@@ -39388,12 +39376,12 @@
                         {
                          "name":"hflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"vflip",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"",
@@ -41284,7 +41272,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":2935,
+ "nextobjectid":2943,
  "orientation":"orthogonal",
  "properties":[
         {
