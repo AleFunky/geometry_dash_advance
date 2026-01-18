@@ -53,3 +53,4 @@ ARM_CODE void remove_glow_pixels(u8 *dst, u8 *src, u8 tile_num);
 void copy_pulsing_sprite();
 
 void upload_player_chr(u32 gamemode, u32 player_id);
+void upload_ply_chr(u32 gamemode, u32 icon_selected, u32 player_id, u32 glow_enabled);

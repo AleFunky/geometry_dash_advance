@@ -577,9 +577,7 @@ u16 *color_selection_table[] = {
     &save_data.glow_col_selected
 };
 
-void upload_player_chr(u32 gamemode, u32 player_id) {
-    u16 icon_selected = *icon_selection_table[gamemode];
-
+void upload_ply_chr(u32 gamemode, u32 icon_selected, u32 player_id, u32 glow_enabled) {
     // Get lower nybble, this is inside the row of icons
     u32 lower = (icon_selected & 0b11) << 2;
 
@@ -590,7 +588,7 @@ void upload_player_chr(u32 gamemode, u32 player_id) {
 
     if (player_id == ID_PLAYER_1) {
         // Copy player sprite into VRAM
-        if (save_data.glow_enabled) {
+        if (glow_enabled) {
             memcpy32(&tile_mem_obj[0][0], &icon_kit[gamemode][index], PLAYER_CHR_SIZE);
             memcpy32(&tile_mem_obj[0][4], &icon_kit[gamemode][index + 0x10], PLAYER_CHR_SIZE);
             memcpy32(&tile_mem_obj[0][8], &icon_kit[gamemode][index + 0x20], PLAYER_CHR_SIZE);
@@ -623,4 +621,10 @@ void upload_player_chr(u32 gamemode, u32 player_id) {
         flip_player_colors(vram_copy_buffer, (u8*)(&icon_kit[gamemode][index + 0x30]), 4);
         memcpy32(&tile_mem_obj[0][28], vram_copy_buffer, PLAYER_CHR_SIZE);
     }
+}
+
+void upload_player_chr(u32 gamemode, u32 player_id) {
+    u16 icon_selected = *icon_selection_table[gamemode];
+
+    upload_ply_chr(gamemode, icon_selected, player_id, save_data.glow_enabled);
 }

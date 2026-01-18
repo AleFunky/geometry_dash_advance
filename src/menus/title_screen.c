@@ -157,10 +157,10 @@ void title_screen_loop() {
 
         nextSpr = 0;
 
+        draw_button_glyphs_title_screen();
+        
         // Handle title screen players
         title_screen_players();
-
-        draw_button_glyphs_title_screen();
         
         sort_oam_by_prio();
         
@@ -186,15 +186,49 @@ void reset_title_screen_player() {
     player_1.player_y_speed = 0;
 
     memset16(trail_enabled, 0x0000, sizeof(trail_enabled) / sizeof(u16));
-
-    // Get random gamemode
-    player_1.gamemode = qran() % GAMEMODE_COUNT;
     
     // 1/4 chance for player to be mini
     if (!(qran() & 0b11)) player_1.player_size = SIZE_MINI;
     else player_1.player_size = SIZE_BIG;
     
-    upload_player_chr(player_1.gamemode, ID_PLAYER_1);
+    u32 gamemode = qran() % GAMEMODE_COUNT;
+    // Get random gamemode
+    player_1.gamemode = gamemode;
+    
+    u32 random_icon = 0;
+    switch (gamemode) {
+        case GAMEMODE_CUBE:
+            random_icon = qran() % ICON_COUNT_CUBES; 
+            break;
+        case GAMEMODE_SHIP:
+            random_icon = qran() % ICON_COUNT_SHIPS; 
+            break;
+        case GAMEMODE_BALL:
+            random_icon = qran() % ICON_COUNT_BALLS; 
+            break;
+        case GAMEMODE_UFO:
+            random_icon = qran() % ICON_COUNT_UFOS; 
+            break;
+        case GAMEMODE_WAVE:
+            random_icon = qran() % ICON_COUNT_WAVES; 
+            break;
+    }
+    
+    upload_ply_chr(gamemode, random_icon, ID_PLAYER_1, qran() & 0b1);
+    
+    // Choose random colors
+    u32 p1 = qran() % NUM_COLORS;
+    u32 p2 = qran() % NUM_COLORS;
+    set_player_colors(palette_buffer, palette_kit_colors[p1], palette_kit_colors[p2], palette_kit_colors[qran() & 0b1 ? p1 : p2]);
+    
+    // Reset sprites
+    obj_copy(oam_mem, shadow_oam, 128);
+    obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
+    memset32(shadow_oam, ATTR0_HIDE, 256);
+    
+    nextSpr = 0;
+    draw_button_glyphs_title_screen();
+    sort_oam_by_prio();
 
     // Get random speed
     speed_id = qran() % SPEED_COUNT;
