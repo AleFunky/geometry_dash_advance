@@ -506,7 +506,7 @@ void ufo_gamemode() {
         // Run collision
         collision_ship_ball_ufo();
         // If on floor and holding A or UP, jump
-        if (!curr_player.disable_jumping && (key_hit(KEY_A | KEY_UP) && curr_player.player_buffering == ORB_BUFFER_READY)) {
+        if (!curr_player.disable_jumping && (key_is_down(KEY_A | KEY_UP) && curr_player.player_buffering == ORB_BUFFER_READY)) {
             if (curr_player.player_size == SIZE_BIG) {
                 curr_player.player_y_speed = -UFO_JUMP_SPEED * sign;     
             } else {
