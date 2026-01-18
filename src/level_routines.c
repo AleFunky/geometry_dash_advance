@@ -593,14 +593,19 @@ void transition_update_spr() {
     // Update OAM
     obj_copy(oam_mem, shadow_oam, 128);
     obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
+    
+    memset32(shadow_oam, ATTR0_HIDE, 256);
+    memset16(rotation_buffer, 0x0000, NUM_ROT_SLOTS);
+    memset16(rotation_flags_buffer, 0x0000, NUM_ROT_SLOTS);
+
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
-    draw_both_players();
     display_objects();
     rotate_saws();
     scale_pulsing_objects();
     draw_checkpoints();
+    run_use_effects();
     
     // Sort OAM
     sort_oam_by_prio();
@@ -619,7 +624,7 @@ void fade_out() {
 }
 
 void fade_out_level() {
-    update_flags = UPDATE_NONE;
+    update_flags = UPDATE_NONE | UPDATE_OAM;
     // Fade out
     for (s32 frame = 0; frame <= 32; frame += 4) {
         VBlankIntrWait();
@@ -697,11 +702,15 @@ void reset_level() {
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
     draw_attempt_counter();
-    draw_both_players();
     display_objects();
     rotate_saws();
     scale_pulsing_objects();
     draw_checkpoints();
+
+    struct Player dead_player = (player_death - 1 == ID_PLAYER_1) ? player_1 : player_2;
+    
+    spawn_use_effect(dead_player.player_x >> SUBPIXEL_BITS, dead_player.player_y >> SUBPIXEL_BITS, USE_EFFECT_PLAYER_DEATH, 0);
+    run_use_effects();
 
     // Sort OAM
     sort_oam_by_prio();
@@ -710,7 +719,7 @@ void reset_level() {
     for (s32 frame = 0; frame < 30; frame++) {
         VBlankIntrWait();
         key_poll();
-        
+
         transition_update_spr();
     }
 
@@ -1917,6 +1926,8 @@ void player_code() {
     
     // Run player 1
     player_main();
+
+    if (player_death) player_death = ID_PLAYER_1 + 1;
     
     // Draw player 1
     draw_player();
@@ -1929,6 +1940,8 @@ void player_code() {
 
     player_1 = curr_player;
 
+    if (player_death) return;
+
     // Run player 2 if on dual
     if (dual == DUAL_ON) {
         curr_player_id = ID_PLAYER_2;
@@ -1936,6 +1949,8 @@ void player_code() {
 
         // Run player 2
         player_main();
+
+        if (player_death) player_death = ID_PLAYER_2 + 1;
 
         // Draw player 2
         draw_player();
@@ -2377,6 +2392,12 @@ ARM_CODE void run_use_effects() {
             FIXED t = (current / curr_slot->frames);
             if (curr_slot->type != USE_EFFECT_PAD) t = int2fx(1) - t;
             curr_slot->scale = fxmul(t + 0x10, float2fx(1.3333));
+
+            if (curr_slot->type == USE_EFFECT_PLAYER_DEATH) {
+                t = int2fx(1) - t;
+                tile_id = 0x3A8;
+                curr_slot->scale = fxmul(t + 0x10, int2fx(2));
+            }
 
             s32 priority = 2;
             if (curr_slot->type == USE_EFFECT_PORTAL) priority = 0;

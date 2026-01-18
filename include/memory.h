@@ -49,6 +49,7 @@ enum UseEffectType {
     USE_EFFECT_ORB,
     USE_EFFECT_PAD,
     USE_EFFECT_PORTAL,
+    USE_EFFECT_PLAYER_DEATH,
 };
 
 struct UseEffectSlot {
