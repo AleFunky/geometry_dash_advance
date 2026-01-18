@@ -1,0 +1,4 @@
+// Level Data Header
+#define PART_0A_ENDLESSDUALFORCE_l1_TOTAL_BLOCKS 3780
+#define PART_0A_ENDLESSDUALFORCE_l1_RLE_DATA_SIZE 1456
+extern const unsigned short part_0a_endlessdualforce_l1_level_data[PART_0A_ENDLESSDUALFORCE_l1_RLE_DATA_SIZE];

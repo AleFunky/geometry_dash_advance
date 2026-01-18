@@ -3,9 +3,9 @@
 
 .section .rodata
 .align 2
-.global endlessdualforce_l1_level_data
-.hidden endlessdualforce_l1_level_data
-endlessdualforce_l1_level_data:
+.global part_0a_endlessdualforce_l1_level_data
+.hidden part_0a_endlessdualforce_l1_level_data
+part_0a_endlessdualforce_l1_level_data:
     .word 0b00000011111110001101111011001010 @ 0x03f8deca
     .word 0b10000000000010011001101111011001 @ 0x80099bd9
     .word 0b10000000000000010011001010111000 @ 0x800132b8

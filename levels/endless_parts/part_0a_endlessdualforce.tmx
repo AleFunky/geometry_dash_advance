@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="140" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="1916">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="140" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="1919">
  <editorsettings>
   <export target="endlessdualforce.json" format="json"/>
  </editorsettings>
@@ -268,18 +268,19 @@
   <object id="1894" gid="16510" x="2048" y="384" width="16" height="16"/>
   <object id="1895" gid="16446" x="2048" y="384" width="16" height="16"/>
   <object id="1898" gid="59" x="912" y="304" width="16" height="16"/>
-  <object id="1899" gid="59" x="928" y="304" width="16" height="16"/>
   <object id="1900" gid="59" x="944" y="304" width="16" height="16"/>
-  <object id="1901" gid="59" x="960" y="304" width="16" height="16"/>
+  <object id="1901" gid="59" x="976" y="304" width="16" height="16"/>
   <object id="1904" gid="59" x="912" y="432" width="16" height="16"/>
-  <object id="1905" gid="59" x="928" y="432" width="16" height="16"/>
   <object id="1906" gid="59" x="944" y="432" width="16" height="16"/>
-  <object id="1907" gid="59" x="960" y="432" width="16" height="16"/>
+  <object id="1907" gid="59" x="976" y="432" width="16" height="16"/>
   <object id="1908" gid="59" x="1760" y="432" width="16" height="16"/>
-  <object id="1909" gid="59" x="1776" y="432" width="16" height="16"/>
+  <object id="1909" gid="59" x="1824" y="432" width="16" height="16"/>
   <object id="1910" gid="59" x="1792" y="432" width="16" height="16"/>
   <object id="1912" gid="59" x="1760" y="304" width="16" height="16"/>
-  <object id="1913" gid="59" x="1776" y="304" width="16" height="16"/>
+  <object id="1913" gid="59" x="1824" y="304" width="16" height="16"/>
   <object id="1915" gid="59" x="1792" y="304" width="16" height="16"/>
+  <object id="1916" gid="59" x="1536" y="304" width="16" height="16"/>
+  <object id="1917" gid="59" x="1568" y="304" width="16" height="16"/>
+  <object id="1918" gid="59" x="1600" y="304" width="16" height="16"/>
  </objectgroup>
 </map>
