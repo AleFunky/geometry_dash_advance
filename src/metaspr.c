@@ -1283,7 +1283,7 @@ const u16 bigBgDecoSpr[] = {
     ATTR1_SIZE_64x64,
     ATTR2_PALBANK(P1) | ATTR2_PRIO(3),
     -24,   // x
-    -42,   // y
+    -26,   // y
     PRIO_IDOFF(5, 0, 0), // id offset
     CENTER(8, 8),
     0xffff
@@ -1294,7 +1294,7 @@ const u16 mediumBgDecoSpr[] = {
     ATTR1_SIZE_64x64,
     ATTR2_PALBANK(P1) | ATTR2_PRIO(3),
     -24, // x
-    -42, // y
+    -26, // y
     PRIO_IDOFF(5, 0, 0), // id offset
     CENTER(8, 8),
     0xffff
@@ -1305,7 +1305,7 @@ const u16 smallBgDecoSpr[] = {
     ATTR1_SIZE_32x32,
     ATTR2_PALBANK(P1) | ATTR2_PRIO(3),
     -8, // x
-    -16,// y
+    -8,// y
     PRIO_IDOFF(5, 0, 0), // id offset
     CENTER(8, 8),
     0xffff
@@ -1327,7 +1327,7 @@ const u16 bigBgDecoP2Spr[] = {
     ATTR1_SIZE_64x64,
     ATTR2_PALBANK(P2) | ATTR2_PRIO(3),
     -24,   // x
-    -42,   // y
+    -26,   // y
     PRIO_IDOFF(5, 0, 0), // id offset
     CENTER(8, 8),
     0xffff
@@ -1338,7 +1338,7 @@ const u16 mediumBgDecoP2Spr[] = {
     ATTR1_SIZE_64x64,
     ATTR2_PALBANK(P2) | ATTR2_PRIO(3),
     -24, // x
-    -42, // y
+    -26, // y
     PRIO_IDOFF(5, 0, 0), // id offset
     CENTER(8, 8),
     0xffff
@@ -1349,7 +1349,7 @@ const u16 smallBgDecoP2Spr[] = {
     ATTR1_SIZE_32x32,
     ATTR2_PALBANK(P2) | ATTR2_PRIO(3),
     -8, // x
-    -16,  // y
+    -8,  // y
     PRIO_IDOFF(5, 0, 0), // id offset
     CENTER(8, 8),
     0xffff
