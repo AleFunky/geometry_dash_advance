@@ -32,6 +32,7 @@ INLINE void do_button_draw() {
     obj_copy(oam_mem, shadow_oam, 128);
     obj_aff_copy(obj_aff_mem, obj_aff_buffer, 32);
 }
+u32 draw_sprite_number(const u32 x, const u32 y, const u32 value, const u32 vram_index, const u16* number_metasprite, const u32 priority);
 
 void title_screen_loop() {
     REG_DISPCNT = DCNT_MODE0 | DCNT_OBJ | DCNT_OBJ_1D | DCNT_BG0 | DCNT_BG1 | DCNT_BG2;
@@ -179,6 +180,7 @@ void draw_button_glyphs_title_screen() {
 }
 
 void reset_title_screen_player() {
+    gravity_multiplier = TO_FIXED(1);
     player_1.player_x = TO_FIXED(-16);
     player_1.player_y = ((GROUND_HEIGHT - 1) << (4 + SUBPIXEL_BITS)) + (0x2 << SUBPIXEL_BITS);
     player_1.player_y_speed = 0;
