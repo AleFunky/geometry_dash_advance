@@ -1,5 +1,6 @@
 #include <tonc.h>
 #include "memory.h"
+#include "../levels/endless_includes.h"
 
 #pragma once
 

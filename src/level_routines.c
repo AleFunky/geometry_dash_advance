@@ -29,6 +29,11 @@ u32 curr_column_relative;
 u32 curr_column_absolute;
 s32 curr_endless_part_id;
 
+#define ENDLESS_PART_BAG_SIZE (ENDLESS_PART_COUNT * 10)
+EWRAM_DATA u16 endless_part_bag[ENDLESS_PART_BAG_SIZE];
+EWRAM_DATA u16 bag_index = 0;
+EWRAM_DATA u16 bag_size = 0;
+
 // This tables assings the milestones to a star value that the endless level will have
 const u32 endless_stars[][2] = {
     // Blocks, Stars
@@ -111,20 +116,78 @@ void put_ground() {
     }
 }
 
-u32 get_endless_part(u32 random) {
-    u32 counter = 0;
-    for (u32 part = 0; part < ENDLESS_PART_COUNT; part++) {
-        u32 *endless_part_properties_pointer = (u32*) endless_part_defines[part][LEVEL_PROPERTIES_INDEX];
-        u32 part_weight = endless_part_properties_pointer[ENDLESS_LEVEL_RARITY_INDEX];
-        
-        if (random >= counter && random < counter + part_weight) {
-            return part;
-        }
-        counter += part_weight;
+void refill_endless_bag() {
+    u16 temp_id[ENDLESS_PART_BAG_SIZE];
+    u16 temp_remaining[ENDLESS_PART_BAG_SIZE];
+
+    s32 total_weight = 0;
+    s32 max_weight = 0;
+
+    for (int i = 0; i < ENDLESS_PART_COUNT; i++) {
+        u32 *endless_part_properties_pointer = (u32*) endless_part_defines[i][LEVEL_PROPERTIES_INDEX];
+        s32 part_weight = endless_part_properties_pointer[ENDLESS_LEVEL_RARITY_INDEX];
+        temp_id[i] = i;
+
+        // Rare means rare
+        int weight = (part_weight >= 80) ? 10 :
+             (part_weight >= 60) ? 7  :
+             (part_weight >= 40) ? 4  :
+             (part_weight >= 20) ? 2  : 1;
+             
+        temp_remaining[i] = weight;
+
+        total_weight += weight;
+        if (weight > max_weight) max_weight = weight;
     }
 
-    return ENDLESS_PART_COUNT - 1;
+    // Safety check in case it is impossible to avoid adjacency
+    s32 safe_max = (total_weight + 1) >> 1;
+    if (max_weight > safe_max) {
+        for (u32 i = 0; i < ENDLESS_PART_COUNT; i++) {
+            if (temp_remaining[i] == max_weight) {
+                temp_remaining[i] = safe_max;
+                break;
+            }
+        }
+        max_weight = safe_max;
+    }
+
+    bag_size = 0;
+    u16 last = 0xffff;
+
+    while (1) {
+        u16 candidates[ENDLESS_PART_BAG_SIZE];
+        u16 candidateCount = 0;
+
+        for (u32 i = 0; i < ENDLESS_PART_COUNT; i++) {
+            if (temp_remaining[i] > 0 && temp_id[i] != last) {
+                candidates[candidateCount++] = i;
+            }
+        }
+
+        if (candidateCount == 0)
+            break;
+
+        u16 pick = candidates[qran_range(0, candidateCount)];
+        endless_part_bag[bag_size++] = temp_id[pick];
+
+        if (bag_size >= ENDLESS_PART_BAG_SIZE) break;
+
+        temp_remaining[pick]--;
+        last = temp_id[pick];
+    }
+
+    bag_index = 0;
 }
+
+int get_next_endless_part() {
+    if (bag_index >= bag_size) {
+        refill_endless_bag();
+    }
+
+    return endless_part_bag[bag_index++];
+}
+
 
 void increment_column() {
     // Increment for the next column of metatiles
@@ -145,14 +208,9 @@ void increment_column() {
 
         if (curr_column_relative >= part_width) {
             curr_column_relative = 0;
-
-            // Get a new part (and make sure its not the same one)
-            s32 new_part;
-            do {
-                u32 random = qran_range(0, ENDLESS_PART_TOTAL_RARITY);
-                new_part = get_endless_part(random);
-            } while (curr_endless_part_id == new_part);
-            curr_endless_part_id = new_part;
+            
+            // Get next part from the bag
+            curr_endless_part_id = get_next_endless_part();
 
             // Reset bitstream            
             bitstream[0] = bitstream[1] = 0;
@@ -491,6 +549,7 @@ void load_level(u32 level_ID) {
         u16 random_color = endless_bg_g_colors[qran() & 0x7];
         bg_color = random_color;
         ground_color = random_color;
+        refill_endless_bag();
     }
 
     // Limit values to safe values
