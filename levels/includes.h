@@ -219,8 +219,16 @@
 #include "ultimatedestruction/SP.h"
 #include "ultimatedestruction/properties.h"
 
+// pyrophoric
+#define pyrophoric_ID 23
+
+#include "pyrophoric/l1.h"
+#include "pyrophoric/l2.h"
+#include "pyrophoric/SP.h"
+#include "pyrophoric/properties.h"
+
 // funnygameholiday
-#define funnygameholiday_ID 23
+#define funnygameholiday_ID 24
 
 #include "funnygameholiday/l1.h"
 #include "funnygameholiday/l2.h"
@@ -228,7 +236,7 @@
 #include "funnygameholiday/properties.h"
 
 // thenightmare
-#define thenightmare_ID 24
+#define thenightmare_ID 25
 
 #include "thenightmare/l1.h"
 #include "thenightmare/l2.h"
@@ -236,7 +244,7 @@
 #include "thenightmare/properties.h"
 
 // rose
-#define rose_ID 25
+#define rose_ID 26
 
 #include "rose/l1.h"
 #include "rose/l2.h"
@@ -244,7 +252,7 @@
 #include "rose/properties.h"
 
 // problematic
-#define problematic_ID 26
+#define problematic_ID 27
 
 #include "problematic/l1.h"
 #include "problematic/l2.h"
@@ -252,7 +260,7 @@
 #include "problematic/properties.h"
 
 // deathmoon
-#define deathmoon_ID 27
+#define deathmoon_ID 28
 
 #include "deathmoon/l1.h"
 #include "deathmoon/l2.h"
@@ -260,7 +268,7 @@
 #include "deathmoon/properties.h"
 
 // everyend
-#define everyend_ID 28
+#define everyend_ID 29
 
 #include "everyend/l1.h"
 #include "everyend/l2.h"
@@ -268,7 +276,7 @@
 #include "everyend/properties.h"
 
 // test
-#define test_ID 29
+#define test_ID 30
 
 #include "test/l1.h"
 #include "test/l2.h"
@@ -276,7 +284,7 @@
 #include "test/properties.h"
 
 // test2
-#define test2_ID 30
+#define test2_ID 31
 
 #include "test2/l1.h"
 #include "test2/l2.h"
@@ -284,13 +292,13 @@
 #include "test2/properties.h"
 
 // endless
-#define endless_ID 31
+#define endless_ID 32
 
 #include "endless/l1.h"
 #include "endless/l2.h"
 #include "endless/SP.h"
 #include "endless/properties.h"
 
-#define LEVEL_COUNT 32
+#define LEVEL_COUNT 33
 extern ROM_DATA const u16 *level_defines[][4];
 extern ROM_DATA const u8 *level_names[];
