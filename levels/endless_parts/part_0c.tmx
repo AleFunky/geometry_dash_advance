@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="75" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="576">
+ <editorsettings>
+  <export target="part_0c.json" format="json"/>
+ </editorsettings>
+ <properties>
+  <property name="rarity" type="int" value="40"/>
+ </properties>
+ <tileset firstgid="1" source="../famidash.tsx"/>
+ <tileset firstgid="16385" source="../sprites.tsx"/>
+ <layer id="4" name="l2" width="75" height="27">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,183,0,188,189,189,190,0,0,188,189,189,190,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,0,0,188,190,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,202,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,188,189,189,190,0,0,0,0,0,0,0,187,0,0,0,0,0,0,0,3385,3386,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,187,1,188,189,189,190,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,188,189,190,0,0,0,0,188,189,189,189,189,189,190,0,0,0,0,0,0,0,188,189,189,189,190,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="1" name="l1" width="75" height="27">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,187,0,184,185,185,186,0,0,184,185,185,186,0,0,0,0,0,0,0,0,26,204,0,0,0,0,0,0,0,0,0,184,186,0,0,0,0,80,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,206,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,184,185,185,186,0,0,0,0,0,0,0,183,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,79,1,1,1,183,1,184,185,185,186,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,184,185,186,0,0,0,0,184,185,185,185,185,185,186,0,0,0,0,0,0,0,184,185,185,185,186,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,1,1,83,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,79,0,0,0,0,0,0,0,
+1,1,1,1,1,1,1,1,1,0,0,83,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,49,83,0,0,0,0,0,0,0,
+1,1,1,1,1,1,86,49,49,49,49,83,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,83,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="7" name="SP">
+  <object id="428" gid="16395" x="80" y="432" width="16" height="16"/>
+  <object id="431" gid="16394" x="128" y="368" width="16" height="16"/>
+  <object id="432" gid="16411" x="176" y="352" width="16" height="16"/>
+  <object id="433" gid="16400" x="176" y="352" width="16" height="16"/>
+  <object id="435" gid="80" x="176" y="316" width="16" height="16"/>
+  <object id="436" gid="83" x="176" y="300" width="16" height="16"/>
+  <object id="437" gid="83" x="176" y="284" width="16" height="16"/>
+  <object id="438" gid="83" x="176" y="268" width="16" height="16"/>
+  <object id="439" gid="83" x="176" y="252" width="16" height="16"/>
+  <object id="440" gid="83" x="176" y="236" width="16" height="16"/>
+  <object id="441" gid="83" x="176" y="220" width="16" height="16"/>
+  <object id="442" gid="16558" x="176" y="316" width="16" height="16"/>
+  <object id="443" gid="184" x="192" y="316" width="16" height="16"/>
+  <object id="444" gid="186" x="272" y="316" width="16" height="16"/>
+  <object id="445" gid="188" x="192" y="316" width="16" height="16"/>
+  <object id="446" gid="190" x="272" y="316" width="16" height="16"/>
+  <object id="447" gid="185" x="224" y="316" width="16" height="16"/>
+  <object id="448" gid="185" x="208" y="316" width="16" height="16"/>
+  <object id="449" gid="185" x="240" y="316" width="16" height="16"/>
+  <object id="450" gid="185" x="256" y="316" width="16" height="16"/>
+  <object id="451" gid="189" x="208" y="316" width="16" height="16"/>
+  <object id="452" gid="189" x="224" y="316" width="16" height="16"/>
+  <object id="453" gid="189" x="240" y="316" width="16" height="16"/>
+  <object id="454" gid="189" x="256" y="316" width="16" height="16"/>
+  <object id="455" gid="16405" x="208" y="316" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="456" gid="16405" x="224" y="316" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="457" gid="16405" x="240" y="316" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="458" gid="16405" x="256" y="316" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="459" gid="16393" x="192" y="300" width="16" height="16"/>
+  <object id="460" gid="16393" x="272" y="300" width="16" height="16"/>
+  <object id="461" gid="16405" x="240" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="462" gid="16393" x="240" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="463" gid="16393" x="272" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="464" gid="16393" x="320" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="465" gid="16405" x="288" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="466" gid="16405" x="304" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="467" gid="16399" x="352" y="336" width="16" height="16"/>
+  <object id="469" gid="16394" x="400" y="368" width="16" height="16"/>
+  <object id="470" gid="16393" x="400" y="352" width="16" height="16"/>
+  <object id="471" gid="16393" x="400" y="384" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="472" gid="16550" x="480" y="368" width="16" height="16"/>
+  <object id="473" gid="16393" x="480" y="352" width="16" height="16"/>
+  <object id="474" gid="16393" x="480" y="384" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="475" gid="16405" x="480" y="320" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="476" gid="16393" x="480" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="477" gid="16404" x="480" y="336" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="478" gid="16405" x="544" y="320" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="479" gid="16405" x="528" y="320" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="480" gid="16405" x="624" y="320" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="481" gid="16405" x="640" y="320" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="482" gid="16405" x="592" y="368" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="483" gid="16405" x="576" y="368" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="484" gid="16393" x="512" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="485" gid="16393" x="560" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="486" gid="16393" x="608" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="487" gid="16393" x="656" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="488" gid="16393" x="560" y="384" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="489" gid="16393" x="608" y="384" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="491" gid="16405" x="688" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="492" gid="16393" x="672" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="493" gid="16393" x="704" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="494" gid="16405" x="736" y="368" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="495" gid="16393" x="736" y="384" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="496" gid="16395" x="704" y="368" width="16" height="16"/>
+  <object id="498" gid="16405" x="816" y="328" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="499" gid="16393" x="832" y="320" width="16" height="16">
+   <properties>
+    <property name="enable rotation" type="bool" value="true"/>
+    <property name="rotation angle" type="int" value="90"/>
+    <property name="vflip" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="500" gid="16393" x="832" y="336" width="16" height="16">
+   <properties>
+    <property name="enable rotation" type="bool" value="true"/>
+    <property name="rotation angle" type="int" value="90"/>
+    <property name="vflip" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="501" gid="16548" x="768" y="320" width="16" height="16"/>
+  <object id="502" gid="16393" x="768" y="304" width="16" height="16"/>
+  <object id="503" gid="16393" x="768" y="336" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="504" gid="16405" x="800" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="505" gid="16405" x="816" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="506" gid="16405" x="832" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="507" gid="16405" x="848" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="508" gid="16394" x="872" y="380" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="0"/>
+    <property name="z index" type="int" value="25"/>
+   </properties>
+  </object>
+  <object id="509" gid="16393" x="784" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="510" gid="16393" x="880" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="511" gid="16401" x="944" y="368" width="16" height="16"/>
+  <object id="512" gid="16393" x="944" y="352" width="16" height="16"/>
+  <object id="513" gid="16393" x="944" y="384" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="514" gid="16405" x="984" y="320" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="515" gid="16393" x="976" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="516" gid="16393" x="992" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="517" gid="16405" x="1024" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="518" gid="16405" x="1040" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="519" gid="16405" x="1056" y="384" width="16" height="16">
+   <properties>
+    <property name="bg layer" value="2"/>
+   </properties>
+  </object>
+  <object id="520" gid="16393" x="1008" y="400" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="522" gid="16387" x="1072" y="352" width="16" height="16"/>
+  <object id="523" gid="16399" x="1072" y="352" width="16" height="16"/>
+  <object id="524" gid="16402" x="976" y="336" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="525" gid="16402" x="992" y="336" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="526" gid="16389" x="224" y="416" width="16" height="16"/>
+  <object id="527" gid="16389" x="512" y="416" width="16" height="16"/>
+  <object id="528" gid="16389" x="832" y="416" width="16" height="16"/>
+  <object id="529" gid="16389" x="1008" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="530" gid="16389" x="384" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="531" gid="16390" x="304" y="416" width="16" height="16"/>
+  <object id="532" gid="16390" x="576" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="533" gid="16390" x="864" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="534" gid="16391" x="928" y="416" width="16" height="16"/>
+  <object id="535" gid="16391" x="1024" y="416" width="16" height="16"/>
+  <object id="536" gid="16391" x="752" y="416" width="16" height="16"/>
+  <object id="537" gid="16390" x="656" y="416" width="16" height="16"/>
+  <object id="538" gid="16390" x="432" y="416" width="16" height="16"/>
+  <object id="539" gid="16391" x="224" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="540" gid="16391" x="496" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="541" gid="16391" x="304" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="542" gid="16391" x="704" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="543" gid="16391" x="928" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="544" gid="16391" x="592" y="416" width="16" height="16"/>
+  <object id="545" gid="16391" x="368" y="416" width="16" height="16"/>
+  <object id="546" gid="16388" x="48" y="240" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff000000"/>
+    <property name="Frames" type="int" value="48"/>
+   </properties>
+  </object>
+  <object id="547" gid="16388" x="48" y="256" width="16" height="16">
+   <properties>
+    <property name="Channel" value="GROUND"/>
+    <property name="Color" type="color" value="#ff000000"/>
+    <property name="Frames" type="int" value="48"/>
+   </properties>
+  </object>
+  <object id="548" gid="16388" x="176" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="549" gid="16388" x="180" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="550" gid="16388" x="256" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="551" gid="16388" x="260" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="552" gid="16388" x="336" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="553" gid="16388" x="340" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="554" gid="16388" x="416" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="555" gid="16388" x="420" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="558" gid="16388" x="496" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="559" gid="16388" x="500" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="560" gid="16388" x="576" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="561" gid="16388" x="580" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="562" gid="16388" x="656" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="563" gid="16388" x="660" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="564" gid="16388" x="736" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="565" gid="16388" x="740" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="566" gid="16388" x="816" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="567" gid="16388" x="820" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="568" gid="16388" x="896" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="569" gid="16388" x="900" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="570" gid="16388" x="976" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff0096"/>
+   </properties>
+  </object>
+  <object id="571" gid="16388" x="980" y="160" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ff650054"/>
+    <property name="Frames" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="572" gid="16388" x="1040" y="176" width="16" height="16">
+   <properties>
+    <property name="Channel" value="BG"/>
+    <property name="Color" type="color" value="#ffff00ab"/>
+   </properties>
+  </object>
+  <object id="575" gid="16389" x="784" y="304" width="16" height="16">
+   <properties>
+    <property name="vflip" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
