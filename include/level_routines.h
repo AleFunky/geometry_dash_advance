@@ -27,8 +27,6 @@ extern s32 seam_y;
 
 extern u8 decompressed_column;
 
-extern const u32 endless_stars[][2];
-
 u32 get_endless_star_value();
 
 void decompress_first_screen();

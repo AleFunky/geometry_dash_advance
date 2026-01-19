@@ -34,39 +34,14 @@ EWRAM_DATA u16 endless_part_bag[ENDLESS_PART_BAG_SIZE];
 EWRAM_DATA u16 bag_index = 0;
 EWRAM_DATA u16 bag_size = 0;
 
-// This tables assings the milestones to a star value that the endless level will have
-const u32 endless_stars[][2] = {
-    // Blocks, Stars
-    { 250,    1 },
-    { 500,    2 },
-    { 750,    3 },
-    { 1000,   4 },
-    { 1500,   5 },
-    { 2000,   6 },
-    { 2500,   7 },
-    { 3000,   8 },
-    { 4000,   9 },
-    { 5000,   10 },
-    { 15000,  15 },
-    { 30000,  20 },
-    { 50000,  25 },
-    { 75000,  30 },
-    { 125000, 45 },
-    { 200000, 50 },
-};
-
 u32 get_endless_star_value() {
-    u32 returned_stars = 0;
-    for (u32 i = 0; i < sizeof(endless_stars) / (sizeof(u32) * 2); i++) {
-        u32 distance = endless_stars[i][0];
-        u32 stars = endless_stars[i][1];
+    int stars = save_data.endless_distance / 620;
 
-        // If we have more distance saved, then save the stars
-        if (save_data.endless_distance >= distance) returned_stars = stars;
-        else break; // We reached the first non reached milestone, stop
+    if (stars > 10) {
+        stars = ((stars + 2) / 5) * 5;  // Nearest multiple of 5
     }
 
-    return returned_stars;
+    return stars;
 }
 
 
