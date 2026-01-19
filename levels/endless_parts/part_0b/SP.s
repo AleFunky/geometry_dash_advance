@@ -6,7 +6,7 @@
 .hidden part_0b_spr_data
 part_0b_spr_data:
 @ Object 1
-   .hword 0x0 @ delta x
+   .hword 0x20 @ delta x
    .hword 0x140 @ y
    .hword 0x3 @ type
    .hword 0x7c @ changes BG for 15 frames
