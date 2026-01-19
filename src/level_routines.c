@@ -91,7 +91,7 @@ void put_ground() {
     }
 }
 
-void refill_endless_bag() {
+ARM_CODE void refill_endless_bag() {
     u16 temp_id[ENDLESS_PART_BAG_SIZE];
     u16 temp_remaining[ENDLESS_PART_BAG_SIZE];
 
@@ -103,11 +103,8 @@ void refill_endless_bag() {
         s32 part_weight = endless_part_properties_pointer[ENDLESS_LEVEL_RARITY_INDEX];
         temp_id[i] = i;
 
-        // Rare means rare
-        int weight = (part_weight >= 80) ? 10 :
-             (part_weight >= 60) ? 7  :
-             (part_weight >= 40) ? 4  :
-             (part_weight >= 20) ? 2  : 1;
+        // Ceil
+        int weight = (part_weight + 9) / 10;
              
         temp_remaining[i] = weight;
 

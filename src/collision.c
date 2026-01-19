@@ -757,7 +757,8 @@ ARM_CODE u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             return 0;
             
         case COL_OUTLINE_TOP:
-            if (y_inside_block < 3) {
+            u32 height = num_steps == 4 ? 3 : 6;
+            if (y_inside_block < height) {
                 eject_bottom = y_inside_block;
                 eject_top = 0x01 - y_inside_block;
                 break;
@@ -765,7 +766,8 @@ ARM_CODE u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             return 0;
             
         case COL_OUTLINE_BOTTOM:
-            if (y_inside_block > 12) {
+            height = num_steps == 4 ? 12 : 9;
+            if (y_inside_block > height) {
                 eject_bottom = y_inside_block - 0xf;
                 eject_top = 0x10 - y_inside_block;
                 break;
@@ -773,7 +775,8 @@ ARM_CODE u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             return 0;
             
         case COL_OUTLINE_LEFT:
-            if (x_inside_block < 2) {
+            u32 width = num_steps == 4 ? 3 : 6;
+            if (x_inside_block < width) {
                 eject_bottom = y_inside_block;
                 eject_top = 0x10 - y_inside_block;
                 break;
@@ -781,7 +784,8 @@ ARM_CODE u32 col_type_lookup(u16 col_type, u32 x, u32 y, u8 side, u32 layer) {
             return 0;
             
         case COL_OUTLINE_RIGHT:
-            if (x_inside_block > 13) {
+            width = num_steps == 4 ? 12 : 9;
+            if (x_inside_block > width) {
                 eject_bottom = y_inside_block;
                 eject_top = 0x10 - y_inside_block;
                 break;
