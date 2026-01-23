@@ -1748,19 +1748,19 @@ electrodynamix_spr_data:
    .hword 48 @ metatile ID appareance
 @ Object 280
    .hword 0x10 @ delta x
-   .hword 0x160 @ y
+   .hword 0x164 @ y
    .hword 0x9 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 281
    .hword 0x0 @ delta x
-   .hword 0x160 @ y
+   .hword 0x164 @ y
    .hword 0x64 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 282
    .hword 0x0 @ delta x
-   .hword 0x160 @ y
+   .hword 0x164 @ y
    .hword 0x76 @ type
    .hword 0x20 @ bg layer 4 non rotated   
    .hword 0x0 @ z index 0
