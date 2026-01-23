@@ -338,6 +338,7 @@ void ship_gamemode() {
     s8 mirror_sign = screen_mirrored ? 1 : -1;
 
     if (key_hit(KEY_A | KEY_UP)) {
+        curr_player.came_from_black_orb = FALSE;
         curr_player.player_buffering = ORB_BUFFER_READY;
     } else {
         curr_player.player_buffering = NO_ORB_BUFFER;
@@ -513,6 +514,7 @@ void ufo_gamemode() {
                 curr_player.player_y_speed = -UFO_MINI_JUMP_SPEED * sign;     
             }
             curr_player.player_buffering = ORB_BUFFER_END;
+            curr_player.came_from_black_orb = FALSE;
         }
     }
 }
@@ -611,18 +613,18 @@ void do_ship_gravity(s32 max_y_speed, s32 max_y_speed_holding) {
     if (holding) {
         if (curr_player.gravity_dir == GRAVITY_DOWN) {
             curr_player.player_y_speed -= step_divide(curr_player.gravity, num_steps);
-            if (curr_player.player_y_speed < -max_y_speed_holding) curr_player.player_y_speed = -max_y_speed_holding;  
+            if (!curr_player.came_from_black_orb && curr_player.player_y_speed < -max_y_speed_holding) curr_player.player_y_speed = -max_y_speed_holding;  
         } else {    
             curr_player.player_y_speed += step_divide(curr_player.gravity, num_steps);
-            if (curr_player.player_y_speed > max_y_speed_holding) curr_player.player_y_speed = max_y_speed_holding;  
+            if (!curr_player.came_from_black_orb && curr_player.player_y_speed > max_y_speed_holding) curr_player.player_y_speed = max_y_speed_holding;  
         }
     } else {
         if (curr_player.gravity_dir == GRAVITY_DOWN) {
             curr_player.player_y_speed += step_divide(curr_player.gravity, num_steps);
-            if (curr_player.player_y_speed > max_y_speed) curr_player.player_y_speed = max_y_speed;    
+            if (!curr_player.came_from_black_orb && curr_player.player_y_speed > max_y_speed) curr_player.player_y_speed = max_y_speed;    
         } else {    
             curr_player.player_y_speed -= step_divide(curr_player.gravity, num_steps);
-            if (curr_player.player_y_speed < -max_y_speed) curr_player.player_y_speed = -max_y_speed;
+            if (!curr_player.came_from_black_orb && curr_player.player_y_speed < -max_y_speed) curr_player.player_y_speed = -max_y_speed;
         }
     }
 }
@@ -648,10 +650,10 @@ void do_ufo_gravity(s32 max_y_speed) {
     // Depending on which direction the curr_player.gravity points, apply curr_player.gravity and cap speed in one direction or in the other
     if (curr_player.gravity_dir) {
         curr_player.player_y_speed -= step_divide(curr_player.gravity, num_steps);
-        if (curr_player.player_y_speed < -max_y_speed) curr_player.player_y_speed = -max_y_speed;
+        if (!curr_player.came_from_black_orb && curr_player.player_y_speed < -max_y_speed) curr_player.player_y_speed = -max_y_speed;
     } else {
         curr_player.player_y_speed += step_divide(curr_player.gravity, num_steps);
-        if (curr_player.player_y_speed > max_y_speed) curr_player.player_y_speed = max_y_speed;
+        if (!curr_player.came_from_black_orb && curr_player.player_y_speed > max_y_speed) curr_player.player_y_speed = max_y_speed;
     }
 }
 

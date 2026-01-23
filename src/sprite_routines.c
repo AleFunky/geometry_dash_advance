@@ -613,7 +613,8 @@ void black_orb(struct ObjectSlot *objectSlot) {
         curr_player.player_y_speed = orb_pad_bounces[curr_player.player_size][curr_player.gamemode][BLACK_ORB_INDEX] * sign;
         curr_player.inverse_rotation_flag = FALSE;
         curr_player.trail_on = TRUE;
-        
+
+        curr_player.came_from_black_orb = TRUE;
         curr_player.came_from_orb = TRUE;
 
         spawn_use_effect(objectSlot->object.x, objectSlot->object.y, USE_EFFECT_ORB, 5);

@@ -911,6 +911,8 @@ ARM_CODE void do_ejection(s32 eject_value, u32 ejection_type) {
     // If just landed and cube did a jump, then remove jumping status
     if (!curr_player.on_floor && curr_player.airborne_jumped) curr_player.airborne_jumped = FALSE;
 
+    curr_player.came_from_black_orb = FALSE;
+
     if (ejection_type == TOP) {
         s32 check_ceiling = curr_player.should_check_ceiling;
         s32 extra_eject = 1;
