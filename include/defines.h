@@ -42,7 +42,7 @@
 
 /* ICONS */
 // Number of icons, increment when adding a new one
-#define ICON_COUNT_CUBES 72
+#define ICON_COUNT_CUBES 84
 #define ICON_COUNT_SHIPS 14
 #define ICON_COUNT_BALLS 21
 #define ICON_COUNT_UFOS 15
