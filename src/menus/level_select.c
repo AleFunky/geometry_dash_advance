@@ -773,7 +773,7 @@ void put_star_number(u16 level_id, u16 page) {
     draw_sprite_number(relative_x, STAR_COUNT_POS_Y, stars, FIRST_NUMBER_ID, menuNumberSpr, 2);
 }
 
-#define MENU_COIN_X 154
+#define MENU_COIN_X 176
 #define MENU_COIN_Y 56
 void put_coin_sprites(u16 level_id, u16 page) {
     // Obtain relatives
@@ -786,38 +786,22 @@ void put_coin_sprites(u16 level_id, u16 page) {
     u32 *properties_pointer = (u32*) level_defines[level_id][LEVEL_PROPERTIES_INDEX];
     u32 level_coins_num = properties_pointer[LEVEL_COINS_NUM];
     
-    offset_x = (3 - level_coins_num) * 11;
-    
 
     // Dont display anything if the level has no coins
     if (level_coins_num < 1) return;
 
-    // Put coin 1 sprite
-    if (level_data->coin1) {
-        oam_metaspr(relative_x + offset_x, MENU_COIN_Y, gottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
-    } else {
-        oam_metaspr(relative_x + offset_x, MENU_COIN_Y, ungottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
-    }
-    
-    // Dont display the rest of coins if the level has only one coin
-    if (level_coins_num < 2) return;
+    for (u32 i = 0; i < NUM_COINS_PER_LEVEL; i++) {
+        // Dont display more coins if ran out of coins
+        if (i >= level_coins_num) return;
 
-    // Put coin 2 sprite
-    if (level_data->coin2) {
-        oam_metaspr(relative_x + offset_x + 11, MENU_COIN_Y, gottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
-    } else {
-        oam_metaspr(relative_x + offset_x + 11, MENU_COIN_Y, ungottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
-    }
+        s32 offset = (level_coins_num - i - 1) * 11;
 
-    // Dont display the third coin if the level has only two coins
-    if (level_coins_num < 3) return;
-
-
-    // Put coin 3 sprite
-    if (level_data->coin3 && level_coins_num > 2) {
-        oam_metaspr(relative_x + offset_x + 22, MENU_COIN_Y, gottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
-    } else {
-        oam_metaspr(relative_x + offset_x + 22, MENU_COIN_Y, ungottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
+        // Put coin 1 sprite
+        if (get_coin(level_data, i)) {
+            oam_metaspr(relative_x - offset, MENU_COIN_Y, gottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
+        } else {
+            oam_metaspr(relative_x - offset, MENU_COIN_Y, ungottenCoinSpr, FALSE, FALSE, 0, -1, 2, 0, TRUE, FALSE);
+        }
     }
 }
 

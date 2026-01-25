@@ -1031,9 +1031,9 @@ void set_new_best(u32 new_best, u32 mode) {
             level_data->normal_progress = new_best;
 
             if (new_best >= 100) {
-                level_data->coin1 |= coin_buffer[0];
-                level_data->coin2 |= coin_buffer[1];
-                level_data->coin3 |= coin_buffer[2];
+                for (s32 coin = 0; coin < NUM_COINS_PER_LEVEL; coin++) {
+                    if (coin_buffer[coin]) set_coin(level_data, coin);
+                }
                 level_data->completed = TRUE;
             }
             write_save_block();

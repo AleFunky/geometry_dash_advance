@@ -10,9 +10,7 @@ struct SaveLevelData {
     u8 completed;
     u8 normal_progress;
     u8 practice_progress;
-    u8 coin1;
-    u8 coin2;
-    u8 coin3;
+    u8 coins;
     u32 attempts;
     u32 jumps;
 };
@@ -42,5 +40,7 @@ void memset8(volatile unsigned char *dst, unsigned char val, size_t length);
 void init_sram();
 void read_save_block();
 void write_save_block();
+void set_coin(struct SaveLevelData *level_data, u32 coin_id);
+u32 get_coin(struct SaveLevelData *level_data, u32 coin_id);
 
 struct SaveLevelData *obtain_level_data(u16 level_id);

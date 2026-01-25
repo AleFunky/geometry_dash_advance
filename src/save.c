@@ -39,6 +39,14 @@ void init_sram() {
 	}
 }
 
+void set_coin(struct SaveLevelData *level_data, u32 coin_id) {
+	level_data->coins |= 1 << coin_id;
+}
+
+u32 get_coin(struct SaveLevelData *level_data, u32 coin_id) {
+	return (level_data->coins >> coin_id) & 1;
+}
+
 void read_save_block() {
 	sram_read(SAVE_BLOCK_ADDR, (u8*)&save_data, sizeof(save_data));
 }

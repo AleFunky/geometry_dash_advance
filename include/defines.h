@@ -15,6 +15,7 @@
 
 // Number of coins in a single level
 #define NUM_COINS_PER_LEVEL 3
+#define NUM_COINS_PER_LEVEL 8
 
 // Number of main menu levels
 #define NUM_MAIN_MENU_LEVELS 16
@@ -30,7 +31,7 @@
 
 /* SAVES */
 // Version of the level save, increment if a new level is added
-#define LEVEL_VERSION 10
+#define LEVEL_VERSION 11
  
 // Version of the non level save, increment if a wipe is needed
 #define DATA_VERSION 9

@@ -36,9 +36,9 @@ V -> vertical flip   p -> palette
 Secret coin (sprite id == 89)
 
 P -> priority        A -> 16 bit angle   E -> enable rotation
-H -> horizontal flip Z -> z index (0-62) C, c -> coin id (usually two bits (C), but there is no bound so it can take the rest of the hword (c))
+H -> horizontal flip Z -> z index (0-62) C, c -> coin id (usually three bits (C), but there is no bound so it can take the rest of the hword (c))
 V -> vertical flip   p -> palette
-    hword 4: cccc cccc CCPP PEHV 
+    hword 4: cccc cccC CCPP PEHV 
     hword 5: 0000 00pp ppZZ ZZZZ
 If E is 1:
     hword 6: AAAA AAAA AAAA AAAA

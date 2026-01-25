@@ -66,9 +66,10 @@ void calculate_stats() {
 
         if (num_coins > 0) {
             u32 coins_collected = 0;
-            if (data->coin1) coins_collected++;
-            if (num_coins > 1 && data->coin2) coins_collected++;
-            if (num_coins > 2 && data->coin3) coins_collected++;
+
+            for (u32 coin = 0; coin < num_coins; coin++) {
+                if (get_coin(data, coin)) coins_collected++;
+            }
 
             if (i < NUM_ROBTOP_LEVELS) secret_coin_count += coins_collected;
             else user_coin_count += coins_collected;
