@@ -7,7 +7,9 @@
 #include "level_select.h"
 #include "physics_defines.h"
 #include "../levels/includes.h"
+#ifdef INCLUDE_ENDLESS
 #include "../levels/endless_includes.h"
+#endif
 #include "icon_kit.h"
 #include "math.h"
 
@@ -29,6 +31,7 @@ u32 curr_column_relative;
 u32 curr_column_absolute;
 s32 curr_endless_part_id;
 
+#ifdef INCLUDE_ENDLESS
 #define ENDLESS_PART_BAG_SIZE (ENDLESS_PART_COUNT * 10)
 EWRAM_DATA u16 endless_part_bag[ENDLESS_PART_BAG_SIZE];
 EWRAM_DATA u16 bag_index = 0;
@@ -43,6 +46,7 @@ u32 get_endless_star_value() {
 
     return stars;
 }
+#endif
 
 
 void screen_scroll_load();
