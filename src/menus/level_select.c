@@ -247,6 +247,15 @@ ARM_CODE void hblank_lvl_select_handler() {
 }
 
 void level_select_loop() {
+    // Failsafes in case of 0 levels in a menu
+    if (custom_levels && NUM_ROBTOP_LEVELS == LEVEL_COUNT) {
+        game_state = STATE_TITLE_SCREEN;
+        return;
+    } else if (!custom_levels && NUM_ROBTOP_LEVELS == 0) {
+        game_state = STATE_TITLE_SCREEN;
+        return;
+    }
+
     // Enable all BGs, also enable sprites
     REG_DISPCNT = DCNT_OBJ | DCNT_OBJ_1D | DCNT_MODE0 | DCNT_BG0 | DCNT_BG1 | DCNT_BG2 | DCNT_BG3;
 
@@ -650,9 +659,10 @@ void print_level_info(u16 level_id) {
             se_plot(&se_mem[sb_number][0], x + face_x - 1, y + face_y - 1, SE_BUILD(tile, palette, 0, 0));
         }
     }
-
     // Put progress bar text
+#ifdef INCLUDE_ENDLESS
     if (level_id != endless_ID) {
+#endif
         // Non endless have normal mode and practice mode texts
         for (u32 i = 0; i < sizeof(normal_mode_text); i++) {
             se_plot(&se_mem[sb_number][0], NORMAL_MODE_X + i, NORMAL_MODE_Y, SE_BUILD(normal_mode_text[i], 2, 0, 0));
@@ -661,6 +671,7 @@ void print_level_info(u16 level_id) {
         for (u32 i = 0; i < sizeof(practice_mode_text); i++) {
             se_plot(&se_mem[sb_number][0], PRACTICE_MODE_X + i, PRACTICE_MODE_Y, SE_BUILD(practice_mode_text[i], 2, 0, 0));
         }
+#ifdef INCLUDE_ENDLESS
     } else {
         // Endless only has a bar, called best distance
         for (u32 i = 0; i < sizeof(best_distance_text); i++) {
@@ -669,6 +680,7 @@ void print_level_info(u16 level_id) {
         
         se_rect(&se_mem[sb_number][0], 6, 13, 24, 15, SE_BUILD(0x00, 0, 0, 0));
     }
+#endif
 }
 
 #define PROGRESS_BAR_POS_X 6
@@ -698,14 +710,17 @@ void put_level_info_sprites(u16 level_id, s32 min, s32 max) {
 
     put_star_number(level_id, page);
     put_coin_sprites(level_id, page);
-
+#ifdef INCLUDE_ENDLESS
     if (level_id != endless_ID) {
+#endif
         draw_progress_bar(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, sb, page, level_properties->normal_progress, 100, BAR_WIDTH_PX, BAR_TYPE_NORMAL_MODE);
         draw_progress_bar(PROGRESS_BAR_POS_X, PRACTICE_PROGRESS_BAR_POS_Y, sb, page, level_properties->practice_progress, 100, BAR_WIDTH_PX, BAR_TYPE_PRACTICE_MODE);
+#ifdef INCLUDE_ENDLESS
     } else {
         draw_endless_distance_menu(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, page, save_data.endless_distance);
     }
-    
+#endif
+
     // Adjacent page (going to that one when switching)
     struct SaveLevelData *adjacent_properties = obtain_level_data(adjacent_level_id);
 
@@ -713,13 +728,16 @@ void put_level_info_sprites(u16 level_id, s32 min, s32 max) {
 
     put_star_number(adjacent_level_id, page ^ 1);
     put_coin_sprites(adjacent_level_id, page ^ 1);
-    
+#ifdef INCLUDE_ENDLESS
     if (adjacent_level_id != endless_ID) {
+#endif
         draw_progress_bar(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, adjacent_sb, page ^ 1, adjacent_properties->normal_progress, 100, BAR_WIDTH_PX, BAR_TYPE_NORMAL_MODE);
         draw_progress_bar(PROGRESS_BAR_POS_X, PRACTICE_PROGRESS_BAR_POS_Y, adjacent_sb, page ^ 1, adjacent_properties->practice_progress, 100, BAR_WIDTH_PX, BAR_TYPE_PRACTICE_MODE);
+#ifdef INCLUDE_ENDLESS
     } else {
         draw_endless_distance_menu(PROGRESS_BAR_POS_X, NORMAL_PROGRESS_BAR_POS_Y, page ^ 1, save_data.endless_distance);
     }
+#endif
 }
 
 void draw_endless_distance_menu(s32 x, s32 y, s32 page, u32 value) {
@@ -749,9 +767,9 @@ void put_star_number(u16 level_id, u16 page) {
     
     u32 *properties_pointer = (u32*) level_defines[level_id][LEVEL_PROPERTIES_INDEX];
     u32 stars = properties_pointer[LEVEL_STARS_NUM];
-
+#ifdef INCLUDE_ENDLESS
     if (level_id == endless_ID) stars = get_endless_star_value();
-
+#endif
     draw_sprite_number(relative_x, STAR_COUNT_POS_Y, stars, FIRST_NUMBER_ID, menuNumberSpr, 2);
 }
 

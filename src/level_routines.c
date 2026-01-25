@@ -90,7 +90,7 @@ void put_ground() {
         }
     }
 }
-
+#ifdef INCLUDE_ENDLESS
 ARM_CODE void refill_endless_bag() {
     u16 temp_id[ENDLESS_PART_BAG_SIZE];
     u16 temp_remaining[ENDLESS_PART_BAG_SIZE];
@@ -159,6 +159,7 @@ int get_next_endless_part() {
 
     return endless_part_bag[bag_index++];
 }
+#endif
 
 
 void increment_column() {
@@ -166,7 +167,7 @@ void increment_column() {
     curr_column++;
     curr_column_absolute++;
     curr_column_relative++;
-
+#ifdef INCLUDE_ENDLESS
     if (loaded_level_id == endless_ID) {
         u32 part_width;
 
@@ -196,6 +197,7 @@ void increment_column() {
             sprite_pointer   = (u16*) endless_part_defines[curr_endless_part_id][SPRITE_DATA_INDEX];
         }
     }
+#endif
 
     // If we are past the buffer width, go back to the start of it
     if (curr_column >= LEVEL_BUFFER_WIDTH) curr_column = 0;
@@ -518,12 +520,14 @@ void load_level(u32 level_ID) {
     u32 background_type = properties_pointer[LEVEL_BACKGROUND_TYPE];
     u32 ground_type = properties_pointer[LEVEL_GROUND_TYPE];
 
+#ifdef INCLUDE_ENDLESS
     if (level_ID == endless_ID) {
         u16 random_color = endless_bg_g_colors[qran() & 0x7];
         bg_color = random_color;
         ground_color = random_color;
         refill_endless_bag();
     }
+#endif
 
     // Limit values to safe values
     if (loaded_song_id >= MSL_NSONGS) loaded_song_id = 0;
@@ -630,8 +634,12 @@ void transition_update_spr() {
     memset16(rotation_buffer, 0x0000, NUM_ROT_SLOTS);
     memset16(rotation_flags_buffer, 0x0000, NUM_ROT_SLOTS);
 
+#ifdef INCLUDE_ENDLESS
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#else
+    draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#endif
     draw_attempt_counter();
     display_objects();
     rotate_saws();
@@ -683,8 +691,13 @@ void fade_in_level() {
     VBlankIntrWait();
     key_poll();
     nextSpr = 0;
+    
+#ifdef INCLUDE_ENDLESS
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#else
+    draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#endif
     draw_attempt_counter();
     
     update_flags = UPDATE_ALL;
@@ -731,8 +744,12 @@ void reset_level() {
     update_flags = UPDATE_OAM | UPDATE_SCROLL;
     
     nextSpr = 0;
+#ifdef INCLUDE_ENDLESS
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#else
+    draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#endif
     draw_attempt_counter();
     display_objects();
     rotate_saws();
@@ -816,7 +833,11 @@ void scroll_screen_horizontally() {
     if (player_1.player_x >= 0x500000) {
         // Stop scroll at the end wall
         u64 screen_scroll_limit = ((u64)(curr_level_width - (SCREEN_WIDTH_T/2)) << (SUBPIXEL_BITS + 4));
+#ifdef INCLUDE_ENDLESS
         if (loaded_level_id != endless_ID && scroll_x > screen_scroll_limit - TO_FIXED(7)) {
+#else
+        if (scroll_x > screen_scroll_limit - TO_FIXED(7)) {
+#endif
             // Ease out
             scroll_x = approach_value_asymptotic(scroll_x, screen_scroll_limit, 0x2800, 0x30000);
         } else {  
@@ -966,12 +987,14 @@ void draw_attempt_counter() {
 }
 
 u32 get_level_progress() {
+#ifdef INCLUDE_ENDLESS
     if (loaded_level_id == endless_ID) {
         if (curr_player.player_x < 0) return 0;
         
         // Return blocks
         return curr_player.player_x >> (SUBPIXEL_BITS + 4);
     }
+#endif
 
     u32 percentage;
     if (curr_player.player_x < 0) {
@@ -986,6 +1009,7 @@ u32 get_level_progress() {
 
 void set_new_best(u32 new_best, u32 mode) {
     // Handle endless distance record
+#ifdef INCLUDE_ENDLESS
     if (loaded_level_id == endless_ID) {
         if (save_data.endless_distance <= new_best) {
             save_data.endless_distance = new_best;
@@ -993,7 +1017,7 @@ void set_new_best(u32 new_best, u32 mode) {
         }
         return;
     }
-
+#endif
 
     struct SaveLevelData *level_data = obtain_level_data(loaded_level_id);
 
@@ -1966,7 +1990,11 @@ void player_code() {
 
     // Start the song once the player goes from negative to positive x position, if not in practice mode
     if ((last_player_x < 0) != (curr_player.player_x < 0) && !in_practice_mode) {
+#ifdef INCLUDE_ENDLESS
         mm_pmode loop = (loaded_level_id == endless_ID ? MM_PLAY_LOOP : MM_PLAY_ONCE);
+#else
+        mm_pmode loop = MM_PLAY_ONCE;
+#endif
         mmStart(loaded_song_id, loop);
     }
 

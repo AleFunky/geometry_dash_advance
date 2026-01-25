@@ -380,8 +380,12 @@ void level_loop() {
 #endif
 
         // Draw level progress
+#ifdef INCLUDE_ENDLESS
         if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
         else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#else
+        draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+#endif
         
 
         if (player_death) {
@@ -446,7 +450,11 @@ u32 paused_routines() {
         }
 
         // Practice mode
+#ifdef INCLUDE_ENDLESS
         if (key_hit(KEY_SELECT) && loaded_level_id != endless_ID) {
+#else
+        if (key_hit(KEY_SELECT)) {
+#endif
             clear_checkpoints();
             
             in_practice_mode ^= 1;

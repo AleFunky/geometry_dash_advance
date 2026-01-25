@@ -16,8 +16,8 @@
 // Number of coins in a single level
 #define NUM_COINS_PER_LEVEL 3
 
-// Number of robtop levels
-#define NUM_ROBTOP_LEVELS 16
+// Number of main menu levels
+#define NUM_MAIN_MENU_LEVELS 16
 
 /* GAMEPLAY */
 // Number of stored checkpoints before older ones are overwritten
@@ -51,3 +51,13 @@
 // DO NOT TOUCH IF YOU DON'T KNOW WHAT THIS DOES
 #define GROUND_HEIGHT MAX_LEVEL_HEIGHT - 4
 #define LEVEL_BUFFER_WIDTH 32
+
+
+// Endless stuff
+#define INCLUDE_ENDLESS
+#ifndef endless_ID
+    #undef INCLUDE_ENDLESS
+#endif
+
+// Level menu stuff
+#define NUM_ROBTOP_LEVELS (s32) (MIN(NUM_MAIN_MENU_LEVELS, LEVEL_COUNT))

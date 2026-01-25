@@ -54,8 +54,9 @@ void calculate_stats() {
     user_coin_count = 0;
 
     for (s32 i = 0; i < LEVEL_COUNT; i++) {
+#ifdef INCLUDE_ENDLESS
         if (i == endless_ID) continue;
-
+#endif
         struct SaveLevelData *data = obtain_level_data(i);
         u32 *properties_pointer = (u32*) level_defines[i][LEVEL_PROPERTIES_INDEX];
         u32 stars = properties_pointer[LEVEL_STARS_NUM];
@@ -73,9 +74,10 @@ void calculate_stats() {
             else user_coin_count += coins_collected;
         }
     }
-
+#ifdef INCLUDE_ENDLESS
     // Give endless stars
     stars_count += get_endless_star_value();
+#endif
 }
 
 void icon_kit_loop() {

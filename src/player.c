@@ -158,8 +158,9 @@ void player_main() {
         }
 
         if (curr_player.horizontal_slope_counter) curr_player.horizontal_slope_counter--;
-        
+#ifdef INCLUDE_ENDLESS
         if (loaded_level_id != endless_ID) {
+#endif
             // Check if the level complete cutscene should start
             s64 player_x_limit = (s64)((curr_level_width << 4) - 0x98) << (SUBPIXEL_BITS);
             if (curr_player.player_x > player_x_limit) {
@@ -175,7 +176,9 @@ void player_main() {
                     player_2.cutscene_initial_player_y = player_2.player_y >> SUBPIXEL_BITS;
                 }
             }
+#ifdef INCLUDE_ENDLESS
         }
+#endif
 
         block_object_buffer_offset = 0;
 
