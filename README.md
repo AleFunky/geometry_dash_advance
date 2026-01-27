@@ -28,7 +28,8 @@ If you want to access to developer builds, you can download the latest nightly b
 |[KirikkSiSq](https://github.com/KirikkSiSq)|graphics|
 |Hatswitch|Music and levels|
 |[SeaGlowingPro](https://github.com/SeaGlowingPro)|levels|
-|Crafty Jumper|music and levels (Select Payment Type)|
+|Crafty Jumper|music and levels (Select Payment Type, Pyrophoric)|
+|YourLocalProgrammer|levels|
 |Nicolestarlight|music|
 |[Sotos_24](https://github.com/Soteris24)|music|
 |Redgd|graphics|
