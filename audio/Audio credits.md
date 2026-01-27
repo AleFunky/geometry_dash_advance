@@ -35,4 +35,6 @@
 |Ultimate Destruction|TMM43|Orionconstel|
 |Clown Party Remix (Dorabaebasic 7) |Waterflame|Orionconstel|
 |Death Moon|SoundHolicK|HatSwitch|
-|Select Payment Type|Crafty Jumper| Crafty Jumper|
+|Select Payment Type|Crafty Jumper|Crafty Jumper|
+|Pyrophoric|Crafty Jumper|Crafty Jumper|
+|Final Battle (Acropolis)|WaterFlame|HatSwitch|

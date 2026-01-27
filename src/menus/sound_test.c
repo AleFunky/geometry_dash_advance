@@ -40,6 +40,7 @@ ROM_DATA char *sound_test_songs_names[] = {
     "ROSE",
     "PROBLEMATIC",
     "DEATH MOON",
+    "FINAL BATTLE",
     "EVERY END"
 };
 
@@ -71,6 +72,7 @@ ROM_DATA char *sound_test_song_files[] = {
     "ROSE.XM",
     "PROBLEMATIC.XM",
     "DEATHMOON.XM",
+    "FINALBATTLE.XM",
     "EVERYEND.XM"
 };
 
@@ -101,6 +103,7 @@ ROM_DATA u16 sound_test_song_ids[] = {
     MOD_PYRO,
     MOD_ROSE,
     MOD_PROBLEM,
+    MOD_FINALBATTLE,
     MOD_DEATHMOON,
     MOD_EVERYEND
 };
