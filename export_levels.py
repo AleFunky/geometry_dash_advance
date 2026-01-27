@@ -360,6 +360,44 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                             out_file.write(f"   .hword {hex(zindex | (pal << 6))} @ z index {zindex}{f" pal {pal}" if pal != 0 else ""}\n")
                             out_file.write(f"   .hword {offset} @ orange orb offset\n")
                             byte_counter += 6
+                        elif gid == 179:
+                            # Blue teleport portal sprite
+                            # P -> priority        Y -> orange orb y offset
+                            # H -> horizontal flip Z -> z index (0-62)
+                            # V -> vertical flip   p -> palette
+                            # hword 4: 0000 0000 00PP PEHV 
+                            # hword 5: 0000 00pp ppZZ ZZZZ
+                            # hword 6: YYYY YYYY YYYY YYYY
+                            # If E is 1:
+                            # hword 7: AAAA AAAA AAAA AAAA
+
+                            offset = None
+                            for obj_search in sorted_objects:
+                                x_search = int(obj_search['x'])
+                                gid_search = int(obj_search['gid'])
+                                gid_search &= 0x0fffffff
+                                if gid_search > 16384:
+                                    gid_search = int(obj_search['gid']) - 16385  # Sprite
+                                else:
+                                    saved_metatile_id = gid_search - 1
+                                    gid_search = 43
+                                    
+                                gid_search &= 0x0fffffff
+
+                                if gid_search == 180 and x == x_search:
+                                    offset = y - int(obj_search['y'])
+
+                            if offset is None:
+                                raise Exception(f"No orange teleport portal object in pos x {x/16} for blue teleport portal in x {x/16}, y {y/16}. Please make sure they are pixel aligned (use arrow keys).")  
+
+
+                            out_file.write(f"   .hword {hex(((priority & 0x7) << 3) | (enable_rotation << 2) | (h_flip << 1) | v_flip)} @ bg layer {priority} {"rotated" if enable_rotation else "non rotated"} {"flipped horizontally" if h_flip else ""} {"flipped vertically" if v_flip else ""} \n")
+                            out_file.write(f"   .hword {hex(zindex | (pal << 6))} @ z index {zindex}{f" pal {pal}" if pal != 0 else ""}\n")
+                            out_file.write(f"   .hword {offset} @ orange portal offset\n")
+                            if enable_rotation:
+                                out_file.write(f"   .hword {int(rotation / 360.0 * 65536)} @ rotation\n")
+                                byte_counter += 2
+                            byte_counter += 6
                         else:
                             # Normal sprite
                             # P -> priority        A -> 16 bit angle   E -> enable rotation
@@ -369,6 +407,32 @@ def export_objects_to_assembly(json_file_path, level_name, layer_name, output_s_
                             # hword 5: 0000 00pp ppZZ ZZZZ
                             # If E is 1:
                             # hword 6: AAAA AAAA AAAA AAAA
+
+                            if gid == 180 and not enable_rotation:
+                                for obj_search in sorted_objects:
+                                    x_search = int(obj_search['x'])
+                                    gid_search = int(obj_search['gid'])
+                                    gid_search &= 0x0fffffff
+                                    if gid_search > 16384:
+                                        gid_search = int(obj_search['gid']) - 16385  # Sprite
+                                    else:
+                                        saved_metatile_id = gid_search - 1
+                                        gid_search = 43
+                                        
+                                    gid_search &= 0x0fffffff
+
+                                    if gid_search == 179 and x == x_search:
+                                        enable_rotation = True
+                                        rotation = 180
+
+                                        # Search for rotation and add 180 to it
+                                        if "properties" in obj_search:
+                                            properties_search = obj_search['properties']
+
+                                            for prop in properties_search:
+                                                if prop['name'] == 'rotation angle':
+                                                    rotation = (int(prop['value']) + 180) % 360
+                            
                             out_file.write(f"   .hword {hex(((priority & 0x7) << 3) | (enable_rotation << 2) | (h_flip << 1) | v_flip)} @ bg layer {priority} {"rotated" if enable_rotation else "non rotated"} {"flipped horizontally" if h_flip else ""} {"flipped vertically" if v_flip else ""} \n")
                             out_file.write(f"   .hword {hex(zindex | (pal << 6))} @ z index {zindex}{f" pal {pal}" if pal != 0 else ""}\n")
                             if enable_rotation:

@@ -3141,6 +3141,65 @@
                  "width":16,
                  "x":2208,
                  "y":48
+                }, 
+                {
+                 "gid":16564,
+                 "height":16,
+                 "id":905,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":672,
+                 "y":1680
+                }, 
+                {
+                 "gid":16565,
+                 "height":16,
+                 "id":906,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":672,
+                 "y":1552
+                }, 
+                {
+                 "gid":16564,
+                 "height":16,
+                 "id":908,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"enable rotation",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"rotation angle",
+                         "type":"int",
+                         "value":90
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":720,
+                 "y":1616
+                }, 
+                {
+                 "gid":16565,
+                 "height":16,
+                 "id":909,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":720,
+                 "y":1504
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3149,7 +3208,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":905,
+ "nextobjectid":910,
  "orientation":"orthogonal",
  "properties":[
         {

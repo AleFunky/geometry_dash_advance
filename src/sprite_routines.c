@@ -866,6 +866,44 @@ void blue_tp_orb(struct ObjectSlot *objectSlot) {
     }
 }
 
+void blue_tp_portal(struct ObjectSlot *objectSlot) {
+    curr_player.inverse_rotation_flag = FALSE;
+
+    curr_player.player_y_speed = 0;
+    curr_player.player_y = (objectSlot->object.y - objectSlot->object.attrib3) << SUBPIXEL_BITS;
+    curr_player.old_player_y = curr_player.player_y;
+    spawn_use_effect(objectSlot->object.x, objectSlot->object.y, USE_EFFECT_PORTAL, 4);
+    spawn_use_effect(objectSlot->object.x, objectSlot->object.y - objectSlot->object.attrib3, USE_EFFECT_PORTAL, 6);
+    
+    s32 relative_player_y = FROM_FIXED(curr_player.player_y) - FROM_FIXED(scroll_y);    
+
+    if (curr_player.gamemode == GAMEMODE_CUBE) {
+        if (relative_player_y <= TOP_SCROLL_Y) {
+            u32 new_scroll_y = (TOP_SCROLL_Y - relative_player_y) << SUBPIXEL_BITS;
+            intended_scroll_y -= new_scroll_y;
+            if (relative_player_y <= TOP_SCROLL_Y - 0x40) {
+                scroll_y = intended_scroll_y;    
+
+                if (player_death) load_camera_screen();
+                else update_flags |= REFRESH_SCREEN;
+            } 
+        } else if (relative_player_y + 16 >= BOTTOM_SCROLL_Y) {
+            u32 new_scroll_y = (BOTTOM_SCROLL_Y - relative_player_y) << SUBPIXEL_BITS;
+
+            intended_scroll_y -= new_scroll_y;
+
+            if (relative_player_y + 16 >= BOTTOM_SCROLL_Y + 0x40) {
+                scroll_y = intended_scroll_y;    
+
+                if (player_death) load_camera_screen();
+                else update_flags |= REFRESH_SCREEN;
+            }
+        }
+    }
+
+    objectSlot->activated[curr_player_id] = TRUE;
+}
+
 void block(UNUSED struct ObjectSlot *objectSlot) {
     // Check if this object is already in the buffer
     for (s32 i = block_object_buffer_offset; i > 0; i--) {
@@ -1197,6 +1235,9 @@ const jmp_table routines_jump_table[] = {
 
     free_camera_trigger,
     locked_camera_trigger,
+
+    blue_tp_portal,
+    do_nothing,
 };
 
 // In pixels
@@ -1420,8 +1461,8 @@ const s16 obj_hitbox[][6] = {
 
     Object_Hitbox_Rectangle("RED_PAD", 16, 3, 0, 13, 8, 8)
     Object_Hitbox_Rectangle("SPIDER_PAD", 16, 4, 0, 12, 8, 8)
-    Object_Hitbox_Rectangle("ORANGE_TP_ORB", 20, 20, -2, -2, 8, 8)
-    Object_Hitbox_Rectangle("BLUE_TP_ORB", 0, 0, 0, 0, 8, 8)
+    Object_Hitbox_Rectangle("BLUE_TP_ORB", 20, 20, -2, -2, 8, 8)
+    Object_Hitbox_Rectangle("ORANGE_TP_ORB", 0, 0, 0, 0, 8, 8)
 
     Object_Hitbox_Rectangle("S_BLOCK", 20, 20, -2, -2, 8, 8)
     Object_Hitbox_Rectangle("J_BLOCK", 20, 20, -2, -2, 8, 8)
@@ -1432,6 +1473,10 @@ const s16 obj_hitbox[][6] = {
     Object_Hitbox_Rectangle("GRAVITY_TRIGGER", 16, 16, 0, 0, 8, 8)
     Object_Hitbox_Rectangle("FREE_CAMERA_TRIGGER", 16, 16, 0, 0, 8, 8)
     Object_Hitbox_Rectangle("LOCKED_CAMERA_TRIGGER", 16, 16, 0, 0, 8, 8)
+
+    Object_Hitbox_Rectangle("BLUE_TP_PORTAL", 14, 48, 6, -16, 8, 8)
+    Object_Hitbox_Rectangle("ORANGE_TP_PORTAL", 0, 0, 0, 0, 8, 8)
+
 };
 
 #undef Object_Hitbox

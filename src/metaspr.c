@@ -2232,6 +2232,9 @@ ROM_DATA const u16 *obj_sprites[] = {
     NULL, // Gravity Trigger
     NULL, // Free Camera Trigger
     NULL, // Locked Camera Trigger
+
+    wavePortalSpr, // Blue tp portal
+    ufoPortalSpr,  // Orange tp portal
 };
 
 #undef P1
@@ -2486,6 +2489,9 @@ const u32 obj_chr_offset[][2] = {
     CHR_SLOT("GRAVITY_TRIGGER", SPRITE_NO_CHR,0)
     CHR_SLOT("FREE_CAMERA_TRIGGER", SPRITE_NO_CHR,0)
     CHR_SLOT("LOCKED_CAMERA_TRIGGER", SPRITE_NO_CHR,0)
+    
+    CHR_SLOT("BLUE_TP_PORTAL",   0xa90, 0x28)
+    CHR_SLOT("ORANGE_TP_PORTAL", 0xa90, 0x28)
 };
 #undef CHR_SLOT
 
