@@ -1984,13 +1984,13 @@ acropolis_spr_data:
    .hword 0x0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 318
-   .hword 0x1e @ delta x
+   .hword 0x20 @ delta x
    .hword 0x1b0 @ y
    .hword 0x59 @ type
    .hword 0xa0 @ coin 1 bg layer 4 non rotated   
    .hword 0x0 @ z index 0
 @ Object 319
-   .hword 0x16 @ delta x
+   .hword 0x14 @ delta x
    .hword 0x1f0 @ y
    .hword 0x2b @ type
    .hword 0x20 @ bg layer 4   z index 0 
