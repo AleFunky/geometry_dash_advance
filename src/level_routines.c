@@ -642,7 +642,7 @@ void transition_update_spr() {
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
 #else
-    draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+    draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
 #endif
     draw_attempt_counter();
     display_objects();
@@ -700,7 +700,7 @@ void fade_in_level() {
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
 #else
-    draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+    draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
 #endif
     draw_attempt_counter();
     
@@ -752,7 +752,7 @@ void reset_level() {
     if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
     else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
 #else
-    draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+    draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
 #endif
     draw_attempt_counter();
     display_objects();
