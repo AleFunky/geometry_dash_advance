@@ -275,8 +275,16 @@
 #include "deathmoon/SP.h"
 #include "deathmoon/properties.h"
 
+// acropolis
+#define acropolis_ID 30
+
+#include "acropolis/l1.h"
+#include "acropolis/l2.h"
+#include "acropolis/SP.h"
+#include "acropolis/properties.h"
+
 // everyend
-#define everyend_ID 30
+#define everyend_ID 31
 
 #include "everyend/l1.h"
 #include "everyend/l2.h"
@@ -284,7 +292,7 @@
 #include "everyend/properties.h"
 
 // test
-#define test_ID 31
+#define test_ID 32
 
 #include "test/l1.h"
 #include "test/l2.h"
@@ -292,7 +300,7 @@
 #include "test/properties.h"
 
 // test2
-#define test2_ID 32
+#define test2_ID 33
 
 #include "test2/l1.h"
 #include "test2/l2.h"
@@ -300,13 +308,13 @@
 #include "test2/properties.h"
 
 // endless
-#define endless_ID 33
+#define endless_ID 34
 
 #include "endless/l1.h"
 #include "endless/l2.h"
 #include "endless/SP.h"
 #include "endless/properties.h"
 
-#define LEVEL_COUNT 34
+#define LEVEL_COUNT 35
 extern ROM_DATA const u16 *level_defines[][4];
 extern ROM_DATA const u8 *level_names[];
