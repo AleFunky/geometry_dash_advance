@@ -384,7 +384,7 @@ void level_loop() {
         if (loaded_level_id != endless_ID) draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
         else draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
 #else
-        draw_endless_distance(108, 8, get_level_progress(), numberSpr, 0);
+        draw_percentage(108, 8, get_level_progress(), numberSpr, 0);
 #endif
         
 
