@@ -832,8 +832,8 @@ void anim_player_to_wall() {
     u32 final_y = (scroll_y >> SUBPIXEL_BITS) + (SCREEN_HEIGHT/2) - 8;
 
     // Calculate points
-    u16 height_diff = curr_player.cutscene_initial_player_y - (scroll_y >> SUBPIXEL_BITS);
-    u32 offset = height_diff >> 1;
+    s16 height_diff = curr_player.cutscene_initial_player_y - (scroll_y >> SUBPIXEL_BITS);
+    s32 offset = height_diff >> 1;
 
     u64 top_x = curr_player.cutscene_initial_player_x + offset; 
     u32 top_y = curr_player.cutscene_initial_player_y - offset; 
