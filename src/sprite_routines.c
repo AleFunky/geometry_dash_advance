@@ -152,7 +152,10 @@ void cube_portal(struct ObjectSlot *objectSlot) {
     if (curr_player.gamemode != GAMEMODE_CUBE) {
         curr_player.inverse_rotation_flag = FALSE;
         curr_player.trail_on = FALSE;
+        curr_player.lerped_cube_rotation = 0;
+        curr_player.cube_rotation = 0;
     }
+    
     curr_player.gamemode = GAMEMODE_CUBE;
     curr_player.on_floor = FALSE;
     curr_player.airborne_jumped = TRUE;
@@ -165,11 +168,14 @@ void cube_portal(struct ObjectSlot *objectSlot) {
 }
 
 void ship_portal(struct ObjectSlot *objectSlot) {
+    s8 mirror_sign = screen_mirrored ? 1 : -1;
     portal_transition_speed(GAMEMODE_SHIP);
     curr_player.gamemode = GAMEMODE_SHIP;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
     curr_player.airborne_jumped = TRUE;
+
+    curr_player.lerped_cube_rotation = ArcTan2(curr_player.player_x_diff >> 8, curr_player.player_y_diff >> 8) * mirror_sign;
 
     gamemode_upload_buffer[curr_player_id] = GAMEMODE_SHIP;
 
@@ -183,6 +189,11 @@ void ship_portal(struct ObjectSlot *objectSlot) {
 
 void ball_portal(struct ObjectSlot *objectSlot) {
     portal_transition_speed(GAMEMODE_BALL);
+    if (curr_player.gamemode != GAMEMODE_BALL) {
+        curr_player.lerped_cube_rotation = 0;
+        curr_player.cube_rotation = 0;
+    }
+
     curr_player.gamemode = GAMEMODE_BALL;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
@@ -200,6 +211,11 @@ void ball_portal(struct ObjectSlot *objectSlot) {
 
 void ufo_portal(struct ObjectSlot *objectSlot) {
     portal_transition_speed(GAMEMODE_UFO);
+    if (curr_player.gamemode != GAMEMODE_UFO) {
+        curr_player.lerped_cube_rotation = 0;
+        curr_player.cube_rotation = 0;
+    }
+
     curr_player.gamemode = GAMEMODE_UFO;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
@@ -216,6 +232,11 @@ void ufo_portal(struct ObjectSlot *objectSlot) {
 }
 
 void wave_portal(struct ObjectSlot *objectSlot) {
+    if (curr_player.gamemode != GAMEMODE_WAVE) {
+        curr_player.lerped_cube_rotation = 0;
+        curr_player.cube_rotation = 0;
+    }
+
     curr_player.gamemode = GAMEMODE_WAVE;
     curr_player.on_floor = FALSE;
     curr_player.inverse_rotation_flag = FALSE;
