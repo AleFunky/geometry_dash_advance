@@ -44,7 +44,5 @@ py export_levels.py^
  deathmoon^
  acropolis^
  everyend^
- test^
- test2^
  endless
 pause

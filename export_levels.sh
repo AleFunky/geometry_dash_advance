@@ -44,8 +44,6 @@ levels=(
   deathmoon
   acropolis
   everyend
-  test
-  test2
   endless
 )
 
