@@ -323,8 +323,16 @@
 #include "funnygameholiday/SP.h"
 #include "funnygameholiday/properties.h"
 
+// revolution
+#define revolution_ID 36
+
+#include "revolution/l1.h"
+#include "revolution/l2.h"
+#include "revolution/SP.h"
+#include "revolution/properties.h"
+
 // tig_oglevel
-#define tig_oglevel_ID 36
+#define tig_oglevel_ID 37
 
 #include "tig_oglevel/l1.h"
 #include "tig_oglevel/l2.h"
@@ -332,7 +340,7 @@
 #include "tig_oglevel/properties.h"
 
 // fireaura_tig
-#define fireaura_tig_ID 37
+#define fireaura_tig_ID 38
 
 #include "fireaura_tig/l1.h"
 #include "fireaura_tig/l2.h"
@@ -340,7 +348,7 @@
 #include "fireaura_tig/properties.h"
 
 // thenightmare
-#define thenightmare_ID 38
+#define thenightmare_ID 39
 
 #include "thenightmare/l1.h"
 #include "thenightmare/l2.h"
@@ -348,7 +356,7 @@
 #include "thenightmare/properties.h"
 
 // demonjumper
-#define demonjumper_ID 39
+#define demonjumper_ID 40
 
 #include "demonjumper/l1.h"
 #include "demonjumper/l2.h"
@@ -356,7 +364,7 @@
 #include "demonjumper/properties.h"
 
 // rose
-#define rose_ID 40
+#define rose_ID 41
 
 #include "rose/l1.h"
 #include "rose/l2.h"
@@ -364,7 +372,7 @@
 #include "rose/properties.h"
 
 // problematic
-#define problematic_ID 41
+#define problematic_ID 42
 
 #include "problematic/l1.h"
 #include "problematic/l2.h"
@@ -372,7 +380,7 @@
 #include "problematic/properties.h"
 
 // deathmoon
-#define deathmoon_ID 42
+#define deathmoon_ID 43
 
 #include "deathmoon/l1.h"
 #include "deathmoon/l2.h"
@@ -380,7 +388,7 @@
 #include "deathmoon/properties.h"
 
 // acropolis
-#define acropolis_ID 43
+#define acropolis_ID 44
 
 #include "acropolis/l1.h"
 #include "acropolis/l2.h"
@@ -388,7 +396,7 @@
 #include "acropolis/properties.h"
 
 // everyend
-#define everyend_ID 44
+#define everyend_ID 45
 
 #include "everyend/l1.h"
 #include "everyend/l2.h"
@@ -396,7 +404,7 @@
 #include "everyend/properties.h"
 
 // test
-#define test_ID 45
+#define test_ID 46
 
 #include "test/l1.h"
 #include "test/l2.h"
@@ -404,7 +412,7 @@
 #include "test/properties.h"
 
 // test2
-#define test2_ID 46
+#define test2_ID 47
 
 #include "test2/l1.h"
 #include "test2/l2.h"
@@ -412,13 +420,13 @@
 #include "test2/properties.h"
 
 // endless
-#define endless_ID 47
+#define endless_ID 48
 
 #include "endless/l1.h"
 #include "endless/l2.h"
 #include "endless/SP.h"
 #include "endless/properties.h"
 
-#define LEVEL_COUNT 48
+#define LEVEL_COUNT 49
 extern ROM_DATA const u16 *level_defines[][4];
 extern ROM_DATA const u8 *level_names[];
