@@ -46,6 +46,7 @@ py export_levels.py^
  problematic^
  deathmoon^
  acropolis^
+ kaleidoscopic^
  everyend^
  test^
  test2^
