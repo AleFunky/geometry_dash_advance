@@ -7,7 +7,7 @@
 |Main Menu|RobTop|ElAngel378 & orionConstel|
 |Practice|OcularNebula-Stay Inside Me|orionConstel & okujassu|
 |Stereo Madness|Forever Bound|orionConstel & ElAngel378|
-|Back On Track|DJVI|ElAngel378 (old by crafty_jumper)|
+|Back On Track|DJVI|Sotos24 & okujassu|
 |Polargeist|Step|orionConstel|
 |Dry Out|DJVI|Orionconstel, ElAngel378 & okujassu|
 |Base After Base|DJVI|orionConstel, ElAngel378 & okujassu|
@@ -21,7 +21,8 @@
 |Electroman Adventures|Waterflame|orionConstel|
 |Clubstep|DJ-Nate|orionConstel|
 |Electrodynamix|DJ-Nate|orionConstel|
-|Hexagon Force|Waterflame|Sotos_24|
+|Hexagon Force|Waterflame|ElAngel378|
+|Blast Processing|Waterflame|milkywaydotmoe|
 
 ## Custom Music
 
