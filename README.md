@@ -22,7 +22,7 @@ If you want to access to developer builds, you can download the latest nightly b
 |[ElAngel378](https://github.com/ElAngel378)|music, testing, bugfixes and graphics|
 |[orionconstel](https://github.com/orionConstel)|levels, music, graphics and bugfixes|
 |[adrluc096](https://github.com/123456oil)|graphics|
-|[Okujassu](https://github.com/okujassu)|levels|
+|[Okujassu](https://github.com/okujassu)|levels, music|
 |[milkywaydotmoe](https://github.com/milkywaydotmoe)|music and graphics|
 |[KawaiiDawn](https://github.com/Astroclimber26)|graphics|
 |[KirikkSiSq](https://github.com/KirikkSiSq)|graphics|
