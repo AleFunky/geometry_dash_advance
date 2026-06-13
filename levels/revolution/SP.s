@@ -9048,21 +9048,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1396
-   .hword 0xa @ delta x
+   .hword 0x9 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x6b5b @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1397
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1398
-   .hword 0x4 @ delta x
+   .hword 0x3 @ delta x
    .hword 0x110 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
@@ -9226,21 +9226,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1424
-   .hword 0x5 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1425
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x31d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1426
-   .hword 0x29 @ delta x
+   .hword 0x28 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -9368,21 +9368,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1446
-   .hword 0x2 @ delta x
+   .hword 0x1 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1447
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x3a3 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1448
-   .hword 0xc @ delta x
+   .hword 0xb @ delta x
    .hword 0x110 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
@@ -9494,21 +9494,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1466
-   .hword 0xb @ delta x
+   .hword 0xa @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1467
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7780 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1468
-   .hword 0x3 @ delta x
+   .hword 0x2 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -9636,21 +9636,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1488
-   .hword 0x19 @ delta x
+   .hword 0x18 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1489
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7540 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1490
-   .hword 0x15 @ delta x
+   .hword 0x14 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -9718,21 +9718,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1500
-   .hword 0x5 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1501
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x740a @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1502
-   .hword 0x9 @ delta x
+   .hword 0x8 @ delta x
    .hword 0x110 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
@@ -9872,21 +9872,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1524
-   .hword 0x14 @ delta x
+   .hword 0x13 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1525
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x641d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1526
-   .hword 0x3a @ delta x
+   .hword 0x39 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -9914,21 +9914,21 @@ revolution_spr_data:
    .hword 0x7c40 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1530
-   .hword 0x35 @ delta x
+   .hword 0x34 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1531
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1532
-   .hword 0x19 @ delta x
+   .hword 0x18 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -9956,21 +9956,21 @@ revolution_spr_data:
    .hword 0x3e2 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1536
-   .hword 0x3 @ delta x
+   .hword 0x2 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1537
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x33d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1538
-   .hword 0x3b @ delta x
+   .hword 0x3a @ delta x
    .hword 0x110 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
@@ -10070,21 +10070,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1554
-   .hword 0xa @ delta x
+   .hword 0x9 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1555
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x17a0 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1556
-   .hword 0x4 @ delta x
+   .hword 0x3 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -10248,21 +10248,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1582
-   .hword 0x7 @ delta x
+   .hword 0x6 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1583
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7760 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1584
-   .hword 0x7 @ delta x
+   .hword 0x6 @ delta x
    .hword 0x110 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
@@ -10426,21 +10426,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1610
-   .hword 0x4 @ delta x
+   .hword 0x3 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1611
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7401 @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1612
-   .hword 0xa @ delta x
+   .hword 0x9 @ delta x
    .hword 0x110 @ y
    .hword 0x2b @ type
    .hword 0x8 @ bg layer 1   z index 0 
@@ -10592,21 +10592,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1636
-   .hword 0xd @ delta x
+   .hword 0xc @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1637
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x740d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1638
-   .hword 0x41 @ delta x
+   .hword 0x40 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -10682,21 +10682,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1650
-   .hword 0xb @ delta x
+   .hword 0xa @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1651
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x741c @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1652
-   .hword 0x3 @ delta x
+   .hword 0x2 @ delta x
    .hword 0xb0 @ y
    .hword 0x3 @ type
    .hword 0xf0 @ changes 1 for 30 frames
@@ -10824,21 +10824,21 @@ revolution_spr_data:
    .hword 0x8 @ bg layer 1   z index 0 
    .hword 3456 @ metatile ID appareance
 @ Object 1672
-   .hword 0x15 @ delta x
+   .hword 0x14 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x7fff @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1673
-   .hword 0x2 @ delta x
+   .hword 0x4 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0x4 @ changes BG for 0 frames
    .hword 0x1d @ color
    .hword 0x0 @ doesn't copy any channel normal trigger
 @ Object 1674
-   .hword 0x9 @ delta x
+   .hword 0x8 @ delta x
    .hword 0x80 @ y
    .hword 0x3 @ type
    .hword 0xf4 @ changes BG for 30 frames
