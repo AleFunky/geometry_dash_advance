@@ -19,6 +19,7 @@ levels=(
   hexagonforce
   blastprocessing
   autocycles
+  sonar
   retray
   invisontrack
   leveleasy
