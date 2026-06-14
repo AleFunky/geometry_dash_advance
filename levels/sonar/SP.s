@@ -733,7 +733,7 @@ sonar_spr_data:
    .hword 0x10 @ bg layer 2 non rotated   
    .hword 0xc0 @ z index 0 pal 3
 @ Object 121
-   .hword 0x17 @ delta x
+   .hword 0x27 @ delta x
    .hword 0x148 @ y
    .hword 0x29 @ type
    .hword 0x8 @ bg layer 1 non rotated   
@@ -757,7 +757,7 @@ sonar_spr_data:
    .hword 0x10 @ bg layer 2 non rotated   
    .hword 0xc0 @ z index 0 pal 3
 @ Object 125
-   .hword 0x2d @ delta x
+   .hword 0x1d @ delta x
    .hword 0x190 @ y
    .hword 0x8 @ type
    .hword 0x8 @ bg layer 1 non rotated   
@@ -1977,7 +1977,7 @@ sonar_spr_data:
    .hword 0x0 @ delta x
    .hword 0x14a @ y
    .hword 0x2b @ type
-   .hword 0x8 @ bg layer 1   z index 0 
+   .hword 0x408 @ bg layer 1   z index 16 
    .hword 6896 @ metatile ID appareance
 @ Object 327
    .hword 0x0 @ delta x
