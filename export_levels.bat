@@ -19,6 +19,7 @@ py export_levels.py^
  hexagonforce^
  blastprocessing^
  autocycles^
+ sonar^
  retray^
  invisontrack^
  leveleasy^
