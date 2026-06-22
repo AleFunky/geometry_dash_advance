@@ -7,7 +7,7 @@
 |Main Menu|RobTop|ElAngel378 & orionConstel|
 |Practice|OcularNebula-Stay Inside Me|orionConstel & okujassu|
 |Stereo Madness|Forever Bound|orionConstel & ElAngel378|
-|Back On Track|DJVI|Sotos24 & okujassu|
+|Back On Track|DJVI|Sotos_24 & okujassu|
 |Polargeist|Step|orionConstel|
 |Dry Out|DJVI|Orionconstel, ElAngel378 & okujassu|
 |Base After Base|DJVI|orionConstel, ElAngel378 & okujassu|
@@ -39,3 +39,4 @@
 |Select Payment Type|Crafty Jumper|Crafty Jumper|
 |Pyrophoric|Crafty Jumper|Crafty Jumper|
 |Final Battle (Acropolis)|WaterFlame|HatSwitch|
+|Fire Aura|Kid2Will|Sotos_24|
