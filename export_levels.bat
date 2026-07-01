@@ -18,6 +18,7 @@ py export_levels.py^
  electrodynamix^
  hexagonforce^
  blastprocessing^
+ theoryofeverything2^
  autocycles^
  sonar^
  retray^

@@ -18,6 +18,7 @@ levels=(
   electrodynamix
   hexagonforce
   blastprocessing
+  theoryofeverything2
   autocycles
   sonar
   retray
