@@ -25,6 +25,7 @@ levels=(
   invisontrack
   leveleasy
   dorabaebasic
+  dorabaebasic2
   dorabaebasic4
   dorabaebasic7
   goldenclub
@@ -38,6 +39,7 @@ levels=(
   ultimatedestruction
   pyrophoric
   cantletgov2
+  f
   funnygameholiday
   revolution
   tig_oglevel
