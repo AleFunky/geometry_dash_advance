@@ -35,6 +35,12 @@
 // Version of the non level save, increment if a wipe is needed
 #define DATA_VERSION 9
 
+// Force using flash for saves
+#define USE_FLASH_SAVE
+
+// Enable double-slot backup saves by default to avoid corruption during power loss
+#define USE_BACKUP_SAVE
+
 // Default color ID
 #define DEFAULT_P1_COLOR 15 
 #define DEFAULT_P2_COLOR 51
