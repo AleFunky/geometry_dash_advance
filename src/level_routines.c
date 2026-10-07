@@ -776,7 +776,14 @@ void reset_level() {
     for (s32 frame = 0; frame < 30; frame++) {
         VBlankIntrWait();
         key_poll();
-
+        
+        // Allow pause
+        if (key_hit(KEY_START)) {
+            if (paused_routines()) {
+                exit_level();
+                return;
+            }
+        }
         transition_update_spr();
     }
 

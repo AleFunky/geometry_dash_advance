@@ -13,3 +13,5 @@
 #include "defines.h"
 #include <maxmod.h>
 
+void exit_level();
+u32 paused_routines();

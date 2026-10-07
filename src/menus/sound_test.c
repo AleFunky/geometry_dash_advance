@@ -30,8 +30,10 @@ ROM_DATA char *sound_test_songs_names[] = {
     "ELECTRODYNAMIX",
     "HEXAGON FORCE",
     "BLAST PROCESSING",
+	"THEORY OF EVERYTHING 2",
     "MENU LOOP",
     "STAY INSIDE ME",
+    "STEREO MADNESS 2",
     "GOLDEN HAZE",
     "CLOWN PARTY",
     "SELECT PAYMENT TYPE",
@@ -65,8 +67,10 @@ ROM_DATA char *sound_test_song_files[] = {
     "DYNAMIX.XM",
     "HEXAGON.XM",
     "BLASTP.XM",
+	"TOE2.XM",
     "MENU.XM",
     "PRACTICE.XM",
+    "STEREOMA.XM",
     "RTAY.XM",
     "CLOWNPARTY.XM",
     "SELECTPAYMENT.XM",
@@ -100,8 +104,10 @@ ROM_DATA u16 sound_test_song_ids[] = {
     MOD_DYNAMIX,
     MOD_HEXAGON,
     MOD_BLASTP,
+	MOD_TOE2,
     MOD_MENU,
     MOD_PRACTICE,
+    MOD_STEREOMA2,
     MOD_RTAY,
     MOD_CLOWNPARTY,
     MOD_SELECTPAYMENT,
@@ -116,6 +122,17 @@ ROM_DATA u16 sound_test_song_ids[] = {
     MOD_INFERNO,
     MOD_EVERYEND
 };
+
+_Static_assert(sizeof(sound_test_songs_names) / sizeof(char *) == MSL_NSONGS,
+    "You forgot to add the song to sound_test_songs_names"
+);
+_Static_assert(sizeof(sound_test_song_files) / sizeof(char *) == MSL_NSONGS,
+    "You forgot to add the song to sound_test_song_files"
+);
+_Static_assert(sizeof(sound_test_song_ids) / sizeof(u16) == MSL_NSONGS,
+    "You forgot to add the song to sound_test_songs_id"
+);
+
 void put_song_info(u32 song_id);
 
 void sound_test_loop() {

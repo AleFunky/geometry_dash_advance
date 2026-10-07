@@ -1,0 +1,4 @@
+// Level Data Header
+#define THEORYOFEVERYTHING2_l2_TOTAL_BLOCKS 26136
+#define THEORYOFEVERYTHING2_l2_RLE_DATA_SIZE 15380
+extern const unsigned short theoryofeverything2_l2_level_data[THEORYOFEVERYTHING2_l2_RLE_DATA_SIZE];

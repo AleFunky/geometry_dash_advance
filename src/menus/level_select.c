@@ -506,7 +506,7 @@ s32 word_wrap(const char *text, s32 max_width, char lines[][max_width + 1], s32 
     char current_line[max_width + 1];
     s32 current_length = 0;
 
-    while (i < len) {
+    while (i < len && i < MAX_TEXT_WIDTH_ALLOWED*MAX_LINES) {
         // Skip any leading spaces.
         while (i < len && isspace((unsigned char)text[i])) {
             i++;

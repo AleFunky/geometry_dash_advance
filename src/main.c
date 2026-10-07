@@ -14,7 +14,6 @@
 
 void game_loop();
 void hblank_lvl_select_handler();
-u32 paused_routines();
 
 void vblank_handler() {
     mmVBlank();
@@ -317,6 +316,20 @@ void game_loop() {
     level_loop();
 }
 
+void exit_level() {
+    mmStop();
+    mmEffect(SFX_LEVEL_EXIT);
+    game_state = STATE_LEVEL_SELECT;      
+    memcpy32(palette_buffer, pal_bg_mem, 256);
+    clear_checkpoints();
+    in_practice_mode = FALSE;
+    screen_mirrored = FALSE;
+
+    fade_out();
+
+    mmStart(MOD_MENU, MM_PLAY_LOOP);
+}
+
 void level_loop() {
     while (1) { 
         key_poll();
@@ -327,17 +340,7 @@ void level_loop() {
         // If pressed start, pause the game
         if (key_hit(KEY_START) && !complete_cutscene) {
             if (paused_routines()) {
-                mmStop();
-                mmEffect(SFX_LEVEL_EXIT);
-                game_state = STATE_LEVEL_SELECT;      
-                memcpy32(palette_buffer, pal_bg_mem, 256);
-                clear_checkpoints();
-                in_practice_mode = FALSE;
-                screen_mirrored = FALSE;
-
-                fade_out();
-
-                mmStart(MOD_MENU, MM_PLAY_LOOP);
+                exit_level();
                 return;
             }
         }
@@ -392,6 +395,9 @@ void level_loop() {
             mmEffect(SFX_EXPLOSION);
             set_new_best(get_level_progress(), in_practice_mode);
             reset_level();
+
+            // Player exitted the level
+            if (game_state == STATE_LEVEL_SELECT) return;
         }
 
         // Run player code
