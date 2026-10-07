@@ -7,7 +7,7 @@
 |Main Menu|RobTop|ElAngel378 & orionConstel|
 |Practice|OcularNebula-Stay Inside Me|orionConstel & okujassu|
 |Stereo Madness|Forever Bound|orionConstel & ElAngel378|
-|Back On Track|DJVI|Sotos24 & okujassu|
+|Back On Track|DJVI|Sotos_24 & okujassu|
 |Polargeist|Step|orionConstel|
 |Dry Out|DJVI|Orionconstel, ElAngel378 & okujassu|
 |Base After Base|DJVI|orionConstel, ElAngel378 & okujassu|
@@ -23,6 +23,7 @@
 |Electrodynamix|DJ-Nate|orionConstel|
 |Hexagon Force|Waterflame|ElAngel378|
 |Blast Processing|Waterflame|milkywaydotmoe|
+|Theory of Everything 2|DJ-Nate|Sotos_24 & ziqiangao|
 
 ## Custom Music
 
@@ -37,5 +38,8 @@
 |Clown Party Remix (Dorabaebasic 7) |Waterflame|Orionconstel|
 |Death Moon|SoundHolicK|HatSwitch|
 |Select Payment Type|Crafty Jumper|Crafty Jumper|
-|Pyrophoric|Crafty Jumper|Crafty Jumper|
+|Pyrophoric|NerdBoy628|Crafty Jumper|
 |Final Battle (Acropolis)|WaterFlame|HatSwitch|
+|Fire Aura|Kid2Will|Sotos_24|
+|Stereo Madness 2|Forever Bound|okujassu|
+|Infernoplex|Dimrain47|Orionconstel|
