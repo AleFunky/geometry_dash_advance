@@ -24,9 +24,12 @@ py export_levels.py^
  retray^
  invisontrack^
  leveleasy^
+ endofline^
  dorabaebasic^
  dorabaebasic2^
  dorabaebasic4^
+ dorabaebasic5^
+ dorabaebasic6^
  dorabaebasic7^
  goldenclub^
  squareadv^
